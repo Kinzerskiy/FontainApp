@@ -13,11 +13,29 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productMeasureLabel: UILabel!
     @IBOutlet weak var productCostLabel: UILabel!
     @IBOutlet weak var productImageLabel: UIImageView!
-    @IBOutlet weak var productButtonLabel: UIImageView!
+    
+    @IBOutlet weak var buyView: UIView!
+    @IBOutlet weak var buyButton: UIButton!
+    
+    var buyComplition: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        prepareUI()
+    }
+    
+    func fill () {
         
     }
-
+    
+    func prepareUI() {
+        buyView.layer.cornerRadius = buyView.frame.size.width / 2
+        buyView.clipsToBounds = true
+    }
+    
+    
+    @IBAction func buyButtonPressed(_ sender: Any) {
+        buyComplition?()
+    }
+    
 }

@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResendCodeView" customModule="FontainApp" customModuleProvider="target">
             <connections>
-                <outlet property="resendCodeTimerLabel" destination="546-KS-dTB" id="lDe-lv-fzT"/>
+                <outlet property="codeTimer" destination="H8A-cR-k9I" id="8XK-q9-eQf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,20 +31,26 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GMf-cv-Xnt">
-                    <rect key="frame" x="20" y="28.666666666666664" width="164.33333333333334" height="16.666666666666664"/>
+                    <rect key="frame" x="20" y="28.666666666666664" width="185.66666666666666" height="29.666666666666664"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend the code in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrQ-PH-eQN">
-                            <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="16.666666666666668"/>
+                            <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="29.666666666666668"/>
                             <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
                             <color key="textColor" name="Primary"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="546-KS-dTB">
-                            <rect key="frame" x="126.33333333333334" y="0.0" width="38" height="16.666666666666668"/>
-                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
-                            <color key="textColor" name="Primary"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8A-cR-k9I">
+                            <rect key="frame" x="126.33333333333333" y="0.0" width="59.333333333333329" height="29.666666666666668"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="00:55"/>
+                            <buttonConfiguration key="configuration" style="plain" title="00:55">
+                                <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="resendCodeAction:" destination="-1" eventType="touchUpInside" id="vYs-oS-cqJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </stackView>
             </subviews>

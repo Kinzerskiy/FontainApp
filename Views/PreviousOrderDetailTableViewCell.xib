@@ -80,6 +80,9 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                        <connections>
+                                            <action selector="lessPresed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ysL-ej-YXN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Primary"/>
@@ -107,6 +110,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                        <connections>
+                                            <action selector="morePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aVa-Gq-5av"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Primary"/>
@@ -150,7 +156,9 @@
             <connections>
                 <outlet property="countLabel" destination="eqp-Yq-baQ" id="SKC-uw-6e7"/>
                 <outlet property="minusButton" destination="Uy7-Md-mgn" id="FVI-Nc-T0L"/>
+                <outlet property="minusView" destination="Aq3-7L-l1p" id="Ecu-DH-aIk"/>
                 <outlet property="plusButton" destination="9Si-Ao-dOP" id="1Qf-lG-Szn"/>
+                <outlet property="plusView" destination="Zgt-Qd-JNJ" id="Rxr-nw-pkr"/>
                 <outlet property="productCost" destination="Bzf-WR-o0w" id="j9K-hO-tkp"/>
                 <outlet property="productImage" destination="4sd-9I-VZf" id="0v2-BF-QVi"/>
                 <outlet property="productMeasure" destination="NVs-i9-0CA" id="gIE-JD-qwj"/>

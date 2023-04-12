@@ -48,6 +48,9 @@
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                                <connections>
+                                                    <action selector="lessPresed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eQ2-CF-6Tt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Primary"/>
@@ -75,6 +78,9 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                                <connections>
+                                                    <action selector="morePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DRA-DH-kwH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Primary"/>
@@ -145,7 +151,9 @@
                 <outlet property="basketProductName" destination="2Ie-6Q-ECQ" id="8rA-vs-U8h"/>
                 <outlet property="countLabel" destination="SxX-LT-ZJE" id="GgQ-nJ-rEx"/>
                 <outlet property="minusProductButton" destination="qrF-q5-HNd" id="PRK-3V-bGF"/>
+                <outlet property="minusView" destination="36R-NS-Qhc" id="nAe-n2-nFX"/>
                 <outlet property="plusProductButton" destination="Bfb-Pr-5VD" id="PFB-Lm-TKF"/>
+                <outlet property="plusView" destination="ssm-7D-SwG" id="ANj-Ja-FlK"/>
             </connections>
             <point key="canvasLocation" x="116.03053435114504" y="46.83098591549296"/>
         </tableViewCell>

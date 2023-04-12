@@ -13,24 +13,39 @@ class BasketProductTableViewCell: UITableViewCell {
     @IBOutlet weak var basketProductName: UILabel!
     @IBOutlet weak var basketProductCost: UILabel!
     @IBOutlet weak var basketProductMeasure: UILabel!
+    @IBOutlet weak var minusView: UIView!
+    @IBOutlet weak var plusView: UIView!
+    
     
     @IBOutlet weak var minusProductButton: UIButton!
     @IBOutlet weak var plusProductButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     
-    
-    
-    
+    var addCompletion: (() -> Void)?
+    var removeCompletion: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        prepareUI()
     }
     
+    func fill () {
+        
+    }
+    
+    func prepareUI() {
+        minusView.layer.cornerRadius = minusView.frame.size.width / 2
+        minusView.clipsToBounds = true
+        
+        plusView.layer.cornerRadius = plusView.frame.size.width / 2
+        plusView.clipsToBounds = true
+    }
+    
+    @IBAction func lessPresed(_ sender: Any) {
+        removeCompletion?()
+    }
+    
+    @IBAction func morePressed(_ sender: Any) {
+        addCompletion?()
+    }
 }

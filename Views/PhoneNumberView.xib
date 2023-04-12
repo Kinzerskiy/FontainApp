@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneNumberView" customModule="FontainApp" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="pfR-4i-nS7" id="ZZO-tS-J9H"/>
+                <outlet property="contentView" destination="pfR-4i-nS7" id="dRg-Lc-wxi"/>
                 <outlet property="errorTextLabel" destination="fgV-re-WAS" id="uY6-pM-FaS"/>
                 <outlet property="flagImageView" destination="I0M-sf-k39" id="k6C-vp-T71"/>
                 <outlet property="phoneRegionLabel" destination="OpU-ug-RS9" id="JVJ-6A-Tjj"/>
@@ -25,14 +25,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="366" height="171"/>
+            <rect key="frame" x="0.0" y="0.0" width="356" height="161"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfR-4i-nS7">
-                    <rect key="frame" x="20" y="69" width="326" height="40"/>
+                    <rect key="frame" x="0.0" y="59" width="356" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msH-9s-tfZ">
-                            <rect key="frame" x="1" y="1" width="324" height="38"/>
+                            <rect key="frame" x="1" y="1" width="354" height="38"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wge-ba-0p5">
                                     <rect key="frame" x="86" y="0.0" width="1" height="38"/>
@@ -90,7 +90,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error_text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-re-WAS">
-                    <rect key="frame" x="20" y="111" width="61" height="16"/>
+                    <rect key="frame" x="0.0" y="99" width="61" height="16"/>
                     <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="13"/>
                     <color key="textColor" name="Error"/>
                     <nil key="highlightedColor"/>
@@ -99,14 +99,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pfR-4i-nS7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="DK2-LN-Ow4"/>
-                <constraint firstItem="pfR-4i-nS7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="IOW-4r-VuG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pfR-4i-nS7" secondAttribute="trailing" constant="20" id="Izp-UX-Lx2"/>
+                <constraint firstItem="pfR-4i-nS7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="DK2-LN-Ow4"/>
+                <constraint firstItem="pfR-4i-nS7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IOW-4r-VuG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pfR-4i-nS7" secondAttribute="trailing" id="Izp-UX-Lx2"/>
+                <constraint firstItem="fgV-re-WAS" firstAttribute="top" secondItem="pfR-4i-nS7" secondAttribute="bottom" id="PJC-e3-V60"/>
                 <constraint firstItem="fgV-re-WAS" firstAttribute="leading" secondItem="pfR-4i-nS7" secondAttribute="leading" id="Rfn-j4-pHX"/>
-                <constraint firstItem="fgV-re-WAS" firstAttribute="top" secondItem="pfR-4i-nS7" secondAttribute="bottom" constant="2" id="XZP-YD-Gtt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="71.755725190839698" y="-36.267605633802816"/>
+            <point key="canvasLocation" x="64.122137404580144" y="-39.7887323943662"/>
         </view>
     </objects>
     <resources>

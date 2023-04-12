@@ -9,7 +9,6 @@ import UIKit
 
 class PhoneNumberView: UIView {
     
-    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var phoneRegionLabel: UILabel!
@@ -18,22 +17,22 @@ class PhoneNumberView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        phoneNumberViewInit()
+        prepareView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
-    private func phoneInit() {
-        Bundle.main.loadNibNamed("PhoneNumberView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    func phoneNumberViewInit() {
+        let viewFromXib = Bundle.main.loadNibNamed("PhoneNumberView", owner: self, options: nil)![0] as! UIView
+        viewFromXib.frame = self.bounds
+        addSubview(viewFromXib)
     }
 
     func prepareView() {
         errorTextLabel.isHidden = true
-//        contentView.backgroundColor = UIColor.init(named: "Error")
-        contentView.layer.cornerRadius = 12
+        contentView.layer.cornerRadius = 5
     }
 }

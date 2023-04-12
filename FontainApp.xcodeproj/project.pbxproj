@@ -12,8 +12,6 @@
 		8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */; };
 		8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CB829E6BBA700B3BBF1 /* CardView.xib */; };
 		8E714CBB29E6BE2400B3BBF1 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */; };
-		8E714CBD29E6BEE100B3BBF1 /* EnterCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CBC29E6BEE100B3BBF1 /* EnterCodeView.xib */; };
-		8E714CBF29E6BFD700B3BBF1 /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CBE29E6BFD700B3BBF1 /* EnterCodeView.swift */; };
 		8E714CC129E6C0CC00B3BBF1 /* TotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */; };
 		8E714CC329E6C2A400B3BBF1 /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CC229E6C2A400B3BBF1 /* TotalView.swift */; };
 		8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */; };
@@ -50,8 +48,6 @@
 		8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsView.swift; sourceTree = "<group>"; };
 		8E714CB829E6BBA700B3BBF1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
-		8E714CBC29E6BEE100B3BBF1 /* EnterCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterCodeView.xib; sourceTree = "<group>"; };
-		8E714CBE29E6BFD700B3BBF1 /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalView.xib; sourceTree = "<group>"; };
 		8E714CC229E6C2A400B3BBF1 /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
 		8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermOfUseView.xib; sourceTree = "<group>"; };
@@ -112,8 +108,6 @@
 				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
 				8E714CB829E6BBA700B3BBF1 /* CardView.xib */,
 				8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */,
-				8E714CBC29E6BEE100B3BBF1 /* EnterCodeView.xib */,
-				8E714CBE29E6BFD700B3BBF1 /* EnterCodeView.swift */,
 				8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */,
 				8E714CC229E6C2A400B3BBF1 /* TotalView.swift */,
 				8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */,
@@ -122,16 +116,16 @@
 				8E714CCA29E6C9F100B3BBF1 /* ResendCodeView.swift */,
 				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
 				8E714CCE29E6CB5600B3BBF1 /* ItemAddedToCardView.swift */,
-				8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */,
 				8E714CD029E6D05300B3BBF1 /* StoreInfoView.xib */,
-				8E714CD429E6D41C00B3BBF1 /* ProductCollectionViewCell.swift */,
+				8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */,
 				8E714CD529E6D41C00B3BBF1 /* ProductCollectionViewCell.xib */,
-				8E714CD829E6D81400B3BBF1 /* BasketProductTableViewCell.swift */,
+				8E714CD429E6D41C00B3BBF1 /* ProductCollectionViewCell.swift */,
 				8E714CD929E6D81400B3BBF1 /* BasketProductTableViewCell.xib */,
-				8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */,
+				8E714CD829E6D81400B3BBF1 /* BasketProductTableViewCell.swift */,
 				8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */,
-				8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */,
+				8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */,
 				8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */,
+				8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,7 +257,6 @@
 				8E714CD129E6D05300B3BBF1 /* StoreInfoView.xib in Resources */,
 				8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */,
 				8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */,
-				8E714CBD29E6BEE100B3BBF1 /* EnterCodeView.xib in Resources */,
 				8E714CC129E6C0CC00B3BBF1 /* TotalView.xib in Resources */,
 				8EC9E92929E0CDF4009CB6D3 /* ABeeZee-Italic.ttf in Resources */,
 				8E714CC929E6C9EA00B3BBF1 /* ResendCodeView.xib in Resources */,
@@ -290,7 +283,6 @@
 				8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */,
 				8E714CBB29E6BE2400B3BBF1 /* CodeView.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
-				8E714CBF29E6BFD700B3BBF1 /* EnterCodeView.swift in Sources */,
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
 				8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */,
 				8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */,

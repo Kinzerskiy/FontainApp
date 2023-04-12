@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemAddedToCardView" customModule="FontainApp" customModuleProvider="target">
             <connections>
+                <outlet property="addItemLabel" destination="LSu-eX-2Wq" id="fBP-Kz-Ex8"/>
                 <outlet property="addToCardView" destination="d3C-PQ-oXE" id="QBa-vA-yTA"/>
                 <outlet property="viewButton" destination="Zxs-nU-VTd" id="OoI-Hr-Pfa"/>
             </connections>
@@ -57,9 +58,10 @@
                                     </state>
                                 </button>
                             </subviews>
+                            <color key="tintColor" name="View"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="AccentColor"/>
+                    <color key="backgroundColor" name="View"/>
                     <constraints>
                         <constraint firstItem="DIZ-HA-xBu" firstAttribute="leading" secondItem="d3C-PQ-oXE" secondAttribute="leading" constant="20" id="LoE-0L-hQP"/>
                         <constraint firstItem="DIZ-HA-xBu" firstAttribute="top" secondItem="d3C-PQ-oXE" secondAttribute="top" constant="20" id="gf9-n4-nJT"/>
@@ -81,8 +83,8 @@
     </objects>
     <resources>
         <image name="Property 1=disabled (2)" width="24" height="23"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="View">
+            <color red="0.023529411764705882" green="0.48627450980392156" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

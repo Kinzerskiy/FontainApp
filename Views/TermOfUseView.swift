@@ -11,18 +11,29 @@ class TermOfUseView: UIView {
 
     @IBOutlet weak var termOfUseLabel: UILabel!
     
-    func setup() -> NSMutableAttributedString {
-        let attributedString = NSMutableAttributedString(string: "I have read and agree to the ")
-        let url = URL(string: "https://")!
-        let termsOfUseRange = NSRange(location: attributedString.length, length: 11)
-        attributedString.append(NSAttributedString(string: "Terms of use", attributes: [NSAttributedString.Key.link: url]))
-        attributedString.append(NSAttributedString(string: " of Water Delivery"))
-        
-        return attributedString
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        cardViewInit()
+        prepareView()
     }
     
-//    let termOfUseView = TermOfUseView()
-//    let attributedString = termOfUseView.setup()
-//    termOfUseView.termOfUseLabel.attributedText = attributedString
-
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func cardViewInit() {
+        let viewFromXib = Bundle.main.loadNibNamed("TermOfUseView", owner: self, options: nil)![0] as! UIView
+        viewFromXib.frame = self.bounds
+        addSubview(viewFromXib)
+        viewFromXib.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    func prepareView() {
+        let attributedString = NSMutableAttributedString(string: "I have read and agree to the ")
+        let url = URL(string: "https://")!
+        _ = NSRange(location: attributedString.length, length: 11)
+        attributedString.append(NSAttributedString(string: "Terms of use", attributes: [NSAttributedString.Key.link: url]))
+        attributedString.append(NSAttributedString(string: " of Water Delivery"))
+        termOfUseLabel.attributedText = attributedString
+    }
 }

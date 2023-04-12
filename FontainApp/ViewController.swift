@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var phoneNumberView: PhoneNumberView!
+    
+    @IBOutlet weak var smsView: SmsView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
