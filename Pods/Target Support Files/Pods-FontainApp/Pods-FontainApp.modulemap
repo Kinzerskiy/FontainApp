@@ -1,0 +1,6 @@
+framework module Pods_FontainApp {
+  umbrella header "Pods-FontainApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
