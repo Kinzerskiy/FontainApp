@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FlagPhoneNumber
 
 class PhoneNumberView: UIView {
     
@@ -17,6 +18,7 @@ class PhoneNumberView: UIView {
     @IBOutlet weak var errorTextLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
+//    let phoneNumberRegion = LogInViewController()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,12 +36,16 @@ class PhoneNumberView: UIView {
         return phoneNumberView
         }
     
+    func setCountryCodeAndFlagImage(code: String, flag: UIImage) {
+            phoneRegionLabel.text = code
+            flagImageView.image = flag
+        }
+    
     func getPhoneNumber() -> String {
-        
         return phoneNumberTextField.text ?? ""
     }
     
     @IBAction func selectCountryButtonAction(_ sender: Any) {
-        
+//        phoneNumberRegion.picker.isHidden = false
     }
 }

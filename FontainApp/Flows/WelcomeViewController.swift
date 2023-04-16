@@ -11,24 +11,27 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var fontaineLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        prepareUI()
-    }
+    var viewModel = WelcomeViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
+        prepareUI()
+        
         var charIndex = 0.0
         let titleText = "Fontaine"
+        let titleCount = Double(titleText.count)
         for letter in titleText {
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { [charIndex] (timer) in
                 self.fontaineLabel.text?.append(letter)
+                if charIndex == titleCount - 1 {
+                    self.performSegue(withIdentifier: "welcomeSegue", sender: self)
+                }
             }
             charIndex += 1
         }
     }
     
     func prepareUI() {
-        var font = UIFont(name: "ABeeZee Regular", size: 60.0)
+        let font = UIFont(name: "ABeeZee Regular", size: 60.0)
         fontaineLabel.font = font
         fontaineLabel.text = ""
     }

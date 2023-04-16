@@ -8,41 +8,40 @@
 import UIKit
 import CountryPicker
 
-class LogInViewController: UIViewController, CountryPickerDelegate {
+class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var phoneNumberView: UIView!
     @IBOutlet weak var termOfUseView: TermOfUseView!
     @IBOutlet weak var sendSmsButton: UIButton!
     @IBOutlet weak var picker: CountryPicker!
     
+    var selectedCountryCode: String?
+    
     var viewModel = LogInViewModel()
-    let phoneNumber = PhoneNumberView.loadFromNib()!
+    var phoneNumber = PhoneNumberView.loadFromNib()!
     let termOfUse = TermOfUseView.loadFromNib()!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.setHidesBackButton(true, animated: true)
+        phoneNumber.phoneNumberTextField.delegate = self
         prepareView()
         
     }
     
     func prepareView() {
-        
-        phoneNumber.phoneRegionLabel =
-        phoneNumber.flagImageView =
-        
+        navigationItem.setHidesBackButton(true, animated: true)
+        picker.isHidden = true
         
         let locale = Locale.current
         let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
-                //init Picker
         picker.displayOnlyCountriesWithCodes = ["UA", "SE", "NO", "DE"] //display only
         picker.exeptCountriesWithCodes = ["RU"] //exept country
-        let theme = CountryViewTheme(countryCodeTextColor: .white, countryNameTextColor: .white, rowBackgroundColor: .black, showFlagsBorder: false)        //optional for UIPickerView theme changes
-        picker.theme = theme //optional for UIPickerView theme changes
+        let theme = CountryViewTheme(countryCodeTextColor: .black, countryNameTextColor: .black, rowBackgroundColor: .white, showFlagsBorder: false)
+        picker.theme = theme
         picker.countryPickerDelegate = self
         picker.showPhoneNumbers = true
-        picker.setCountry(code!)
+        picker.setCountry(phoneNumber.phoneNumberTextField.text ?? "")
+//
         
         phoneNumber.frame = phoneNumberView.bounds
         phoneNumberView.addSubview(phoneNumber)
@@ -53,12 +52,28 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         sendSmsButton.layer.cornerRadius = 30
     }
     
-    func countryPhoneCodePicker(_ picker: CountryPicker.CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
-        code.text = phoneCode
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == phoneNumber.phoneNumberTextField {
+            picker.isHidden = false
+            termOfUse.isHidden = true
+            sendSmsButton.isHidden = true
+            return false
+           }
+           return true
+       }
+    
+    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+    
+        phoneNumber.setCountryCodeAndFlagImage(code: phoneCode, flag: flag)
+        picker.isHidden = true
+        termOfUse.isHidden = false
+        sendSmsButton.isHidden = false
     }
     
     @IBAction func loginDidTap(_ sender: Any) {
         viewModel.login(phoneNumber: "") {
+            
+            
             
         }
     }
