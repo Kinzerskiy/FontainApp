@@ -10,6 +10,7 @@ import UIKit
 class PhoneNumberView: UIView {
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView2: UIView!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var phoneRegionLabel: UILabel!
     @IBOutlet weak var selectPhoneRegionButton: UIButton!
@@ -20,8 +21,10 @@ class PhoneNumberView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        errorTextLabel.isHidden = true
-//        contentView.layer.cornerRadius = 5
+        errorTextLabel?.isHidden = true
+        contentView?.layer.cornerRadius = 5
+        contentView2?.layer.cornerRadius = 5
+        
     }
     
     static func setup(in view: UIView) -> PhoneNumberView {
@@ -34,5 +37,9 @@ class PhoneNumberView: UIView {
     func getPhoneNumber() -> String {
         
         return phoneNumberTextField.text ?? ""
+    }
+    
+    @IBAction func selectCountryButtonAction(_ sender: Any) {
+        
     }
 }

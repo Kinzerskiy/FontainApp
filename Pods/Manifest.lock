@@ -603,6 +603,7 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
   - Cloudipsp (0.10.0)
+  - CountryPickerSwift (1.8.0)
   - Firebase (10.7.0):
     - Firebase/Core (= 10.7.0)
   - Firebase/Core (10.7.0):
@@ -787,6 +788,7 @@ PODS:
 
 DEPENDENCIES:
   - Cloudipsp
+  - CountryPickerSwift (= 1.8)
   - Firebase
   - FirebaseAuth
   - FirebaseDatabase
@@ -801,6 +803,7 @@ SPEC REPOS:
     - abseil
     - BoringSSL-GRPC
     - Cloudipsp
+    - CountryPickerSwift
     - Firebase
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
@@ -831,6 +834,7 @@ SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   Cloudipsp: a58327bb325843383b80dd621a9df7a48542c42c
+  CountryPickerSwift: 4c328ae9687322cacf541120f5c43f0e2c1ba194
   Firebase: 0219acf760880eeec8ce479895bd7767466d9f81
   FirebaseAnalytics: f8133442ee6f8512e28ff19e62ce15398bfaeace
   FirebaseAppCheckInterop: 8e907eea79958960a8bd2058e067f31e03a7914b
@@ -857,6 +861,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: b3a65e8bff793550745da2eef90ec8c64edefa71
+PODFILE CHECKSUM: e2b669906ff28f02e59c7d5d3942c73c04337621
 
 COCOAPODS: 1.12.0

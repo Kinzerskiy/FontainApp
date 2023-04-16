@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,14 +44,14 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Ar-sx1" customClass="TermOfUseView" customModule="FontainApp">
-                                <rect key="frame" x="16" y="450.5" width="343" height="64"/>
+                                <rect key="frame" x="0.0" y="450.5" width="375" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="tyB-qB-mih"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrF-V9-gFQ">
-                                <rect key="frame" x="16" y="616" width="343" height="51"/>
+                                <rect key="frame" x="16" y="568" width="343" height="51"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="Vs4-vI-ZOG"/>
@@ -61,6 +62,9 @@
                                     <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
                                 </buttonConfiguration>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-cR-zf9" customClass="CountryPicker" customModule="CountryPicker">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,36 +72,108 @@
                             <constraint firstItem="wrF-V9-gFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2II-TF-E1q"/>
                             <constraint firstItem="Vgb-pV-erf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="6rd-RG-hq7"/>
                             <constraint firstItem="kd8-43-Fw5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7uj-rE-Vyf"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="wrF-V9-gFQ" secondAttribute="bottom" id="EaS-K7-VLF"/>
+                            <constraint firstAttribute="bottom" secondItem="bLy-cR-zf9" secondAttribute="bottom" id="867-KI-auu"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wrF-V9-gFQ" secondAttribute="bottom" constant="48" id="EaS-K7-VLF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJa-Ar-sx1" secondAttribute="trailing" id="HYK-ME-oun"/>
                             <constraint firstItem="wrF-V9-gFQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="L70-pq-wJ3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CJa-Ar-sx1" secondAttribute="trailing" id="Mzz-qN-tAA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJa-Ar-sx1" secondAttribute="trailing" id="Mzz-qN-tAA"/>
                             <constraint firstItem="Vgb-pV-erf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="U8X-lY-NAq"/>
+                            <constraint firstItem="bLy-cR-zf9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ay1-Ra-toe"/>
                             <constraint firstItem="CJa-Ar-sx1" firstAttribute="top" secondItem="kd8-43-Fw5" secondAttribute="bottom" constant="15" id="cZs-Th-reM"/>
                             <constraint firstItem="kd8-43-Fw5" firstAttribute="top" secondItem="SId-XD-M5k" secondAttribute="bottom" constant="60" id="d2Q-iE-ryc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vgb-pV-erf" secondAttribute="trailing" constant="110" id="daz-n2-kd3"/>
                             <constraint firstItem="SId-XD-M5k" firstAttribute="top" secondItem="Vgb-pV-erf" secondAttribute="bottom" constant="20" id="eCV-0R-KBK"/>
+                            <constraint firstItem="wrF-V9-gFQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="CJa-Ar-sx1" secondAttribute="bottom" constant="205" id="fY6-x8-2vr"/>
                             <constraint firstItem="wrF-V9-gFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jX5-hg-A7U"/>
-                            <constraint firstItem="CJa-Ar-sx1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mpj-RS-Ckd"/>
+                            <constraint firstItem="CJa-Ar-sx1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mpj-RS-Ckd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SId-XD-M5k" secondAttribute="trailing" constant="100" id="mxh-RJ-YEe"/>
                             <constraint firstItem="SId-XD-M5k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="qAO-u2-jNZ"/>
+                            <constraint firstItem="bLy-cR-zf9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vSd-6s-NdL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wrF-V9-gFQ" secondAttribute="trailing" id="x5B-eF-ZBF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="b8I-XX-7JI"/>
                     <connections>
                         <outlet property="phoneNumberView" destination="kd8-43-Fw5" id="xYf-E8-BNT"/>
+                        <outlet property="picker" destination="bLy-cR-zf9" id="iQH-iu-C3r"/>
                         <outlet property="sendSmsButton" destination="wrF-V9-gFQ" id="Mpg-PL-qzv"/>
                         <outlet property="termOfUseView" destination="CJa-Ar-sx1" id="GN0-Dt-aOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188" y="109"/>
+            <point key="canvasLocation" x="2231.1999999999998" y="107.49625187406298"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="sve-d5-cqv">
+            <objects>
+                <viewController id="Mi0-cY-Zsf" customClass="WelcomeViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BdJ-F1-7R3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 1" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-kL-kMi">
+                                <rect key="frame" x="-50" y="205" width="257" height="313"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="313" id="IRZ-An-oQL"/>
+                                    <constraint firstAttribute="width" constant="257" id="pJg-eR-SqT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fontaine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Q-X7-vzW">
+                                <rect key="frame" x="65.5" y="298" width="244" height="71"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="60"/>
+                                <color key="textColor" name="View"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="49J-Kg-71x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qf4-kL-kMi" firstAttribute="top" secondItem="BdJ-F1-7R3" secondAttribute="top" constant="205" id="7BD-WI-5mb"/>
+                            <constraint firstItem="X2Q-X7-vzW" firstAttribute="centerY" secondItem="BdJ-F1-7R3" secondAttribute="centerY" id="LEe-QL-MpH"/>
+                            <constraint firstItem="X2Q-X7-vzW" firstAttribute="centerX" secondItem="BdJ-F1-7R3" secondAttribute="centerX" id="M3A-9q-sZB"/>
+                            <constraint firstItem="qf4-kL-kMi" firstAttribute="leading" secondItem="49J-Kg-71x" secondAttribute="leading" constant="-50" id="YrI-Qi-pFu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kp3-t7-DMC"/>
+                    <connections>
+                        <outlet property="fontaineLabel" destination="X2Q-X7-vzW" id="aNN-M8-NEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90n-dX-vMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ERX-In-ZQm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Zy-6D-TMt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wC8-VJ-h2V">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mi0-cY-Zsf" kind="relationship" relationship="rootViewController" id="xRv-CS-INF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yss-bP-uSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="107"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Ellipse 1" width="174" height="313"/>
         <image name="bro" width="175" height="173"/>
         <namedColor name="Primary">
             <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="View">
+            <color red="0.023529411764705882" green="0.48627450980392156" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

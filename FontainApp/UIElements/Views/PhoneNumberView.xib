@@ -54,6 +54,9 @@
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="vector"/>
+                                    <connections>
+                                        <action selector="selectCountryButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="OdJ-E1-PBj"/>
+                                    </connections>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-yF-4ae">
                                     <rect key="frame" x="105" y="0.0" width="236" height="38"/>
@@ -117,13 +120,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="contentView" destination="pfR-4i-nS7" id="37h-nP-YFk"/>
+                <outlet property="contentView2" destination="msH-9s-tfZ" id="Ehv-hv-Fx1"/>
                 <outlet property="errorTextLabel" destination="fgV-re-WAS" id="sGE-uR-zIc"/>
                 <outlet property="flagImageView" destination="I0M-sf-k39" id="abS-Qg-WAD"/>
                 <outlet property="phoneNumberTextField" destination="tOC-yF-4ae" id="O2n-qj-1Ps"/>
                 <outlet property="phoneRegionLabel" destination="OpU-ug-RS9" id="CA6-tv-7de"/>
                 <outlet property="selectPhoneRegionButton" destination="XFR-91-2mq" id="Mck-Tk-jcd"/>
             </connections>
-            <point key="canvasLocation" x="363" y="-32"/>
+            <point key="canvasLocation" x="362.59541984732823" y="-32.04225352112676"/>
         </view>
     </objects>
     <resources>
