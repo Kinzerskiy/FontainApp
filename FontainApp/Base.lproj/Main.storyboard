@@ -3,24 +3,101 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ABeeZee-Regular.ttf">
+            <string>ABeeZee-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd8-43-Fw5" customClass="PhoneNumberView" customModule="FontainApp">
+                                <rect key="frame" x="30" y="353.5" width="315" height="82"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="6dy-cg-uCQ"/>
+                                    <constraint firstAttribute="height" constant="82" id="AKE-fK-JUK"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgb-pV-erf">
+                                <rect key="frame" x="109" y="75" width="156" height="26.5"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bro" translatesAutoresizingMaskIntoConstraints="NO" id="SId-XD-M5k">
+                                <rect key="frame" x="100" y="121.5" width="175" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Ab0-Wl-ui8"/>
+                                    <constraint firstAttribute="height" constant="172" id="tPE-GB-jwl"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Ar-sx1" customClass="TermOfUseView" customModule="FontainApp">
+                                <rect key="frame" x="16" y="450.5" width="343" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="tyB-qB-mih"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrF-V9-gFQ">
+                                <rect key="frame" x="16" y="616" width="343" height="51"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Vs4-vI-ZOG"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send SMS">
+                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wrF-V9-gFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2II-TF-E1q"/>
+                            <constraint firstItem="Vgb-pV-erf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="6rd-RG-hq7"/>
+                            <constraint firstItem="kd8-43-Fw5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7uj-rE-Vyf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wrF-V9-gFQ" secondAttribute="bottom" id="EaS-K7-VLF"/>
+                            <constraint firstItem="wrF-V9-gFQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="L70-pq-wJ3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CJa-Ar-sx1" secondAttribute="trailing" id="Mzz-qN-tAA"/>
+                            <constraint firstItem="Vgb-pV-erf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="U8X-lY-NAq"/>
+                            <constraint firstItem="CJa-Ar-sx1" firstAttribute="top" secondItem="kd8-43-Fw5" secondAttribute="bottom" constant="15" id="cZs-Th-reM"/>
+                            <constraint firstItem="kd8-43-Fw5" firstAttribute="top" secondItem="SId-XD-M5k" secondAttribute="bottom" constant="60" id="d2Q-iE-ryc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vgb-pV-erf" secondAttribute="trailing" constant="110" id="daz-n2-kd3"/>
+                            <constraint firstItem="SId-XD-M5k" firstAttribute="top" secondItem="Vgb-pV-erf" secondAttribute="bottom" constant="20" id="eCV-0R-KBK"/>
+                            <constraint firstItem="wrF-V9-gFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jX5-hg-A7U"/>
+                            <constraint firstItem="CJa-Ar-sx1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mpj-RS-Ckd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SId-XD-M5k" secondAttribute="trailing" constant="100" id="mxh-RJ-YEe"/>
+                            <constraint firstItem="SId-XD-M5k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="qAO-u2-jNZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wrF-V9-gFQ" secondAttribute="trailing" id="x5B-eF-ZBF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="phoneNumberView" destination="kd8-43-Fw5" id="xYf-E8-BNT"/>
+                        <outlet property="sendSmsButton" destination="wrF-V9-gFQ" id="Mpg-PL-qzv"/>
+                        <outlet property="termOfUseView" destination="CJa-Ar-sx1" id="GN0-Dt-aOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-188" y="109"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bro" width="175" height="173"/>
+        <namedColor name="Primary">
+            <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

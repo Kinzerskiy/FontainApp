@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289F779B3044489A9A97E331 /* Pods_FontainApp.framework */; };
+		8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542D29EAC48D003CE78E /* LogInViewController.swift */; };
+		8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */; };
 		8E714CB229E6B08000B3BBF1 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */; };
 		8E714CB529E6B8B200B3BBF1 /* SmsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CB429E6B8B200B3BBF1 /* SmsView.xib */; };
 		8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */; };
@@ -30,9 +33,9 @@
 		8E714CDF29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */; };
 		8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */; };
 		8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */; };
+		8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC99B7229EABC2200EC255C /* UIView+Extension.swift */; };
 		8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */; };
 		8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */; };
-		8EC9E8EF29E09D28009CB6D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EE29E09D28009CB6D3 /* ViewController.swift */; };
 		8EC9E8F229E09D28009CB6D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E8F029E09D28009CB6D3 /* Main.storyboard */; };
 		8EC9E8F429E09D2F009CB6D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E8F329E09D2F009CB6D3 /* Assets.xcassets */; };
 		8EC9E8F729E09D2F009CB6D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E8F529E09D2F009CB6D3 /* LaunchScreen.storyboard */; };
@@ -43,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		161D613FEE59361229AA03DF /* Pods-FontainApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.debug.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.debug.xcconfig"; sourceTree = "<group>"; };
+		289F779B3044489A9A97E331 /* Pods_FontainApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontainApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.release.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.release.xcconfig"; sourceTree = "<group>"; };
+		8E61542D29EAC48D003CE78E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		8E714CB429E6B8B200B3BBF1 /* SmsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmsView.xib; sourceTree = "<group>"; };
 		8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsView.swift; sourceTree = "<group>"; };
@@ -66,10 +74,10 @@
 		8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviosOrderTableViewCell.xib; sourceTree = "<group>"; };
 		8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrderDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
+		8EC99B7229EABC2200EC255C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8EC9E8E729E09D28009CB6D3 /* FontainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8EC9E8EE29E09D28009CB6D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8EC9E8F129E09D28009CB6D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8EC9E8F329E09D2F009CB6D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EC9E8F629E09D2F009CB6D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,25 +101,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07294C2FA4D983F89BAEBF52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				161D613FEE59361229AA03DF /* Pods-FontainApp.debug.xcconfig */,
+				3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E61542A29EAC437003CE78E /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				8E61542B29EAC44C003CE78E /* Authorization */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		8E61542B29EAC44C003CE78E /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				8E61542C29EAC468003CE78E /* LogIn */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		8E61542C29EAC468003CE78E /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				8E61542D29EAC48D003CE78E /* LogInViewController.swift */,
+				8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
 		8E714CB329E6B85700B3BBF1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */,
 				8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */,
+				8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */,
+				8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */,
 				8E714CB429E6B8B200B3BBF1 /* SmsView.xib */,
 				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
 				8E714CB829E6BBA700B3BBF1 /* CardView.xib */,
 				8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */,
 				8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */,
 				8E714CC229E6C2A400B3BBF1 /* TotalView.swift */,
-				8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */,
-				8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */,
 				8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */,
 				8E714CCA29E6C9F100B3BBF1 /* ResendCodeView.swift */,
 				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
@@ -130,13 +173,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8EC9E8DE29E09D28009CB6D3 = {
+		8EC99B7029EABBDA00EC255C /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
 				8E714CB329E6B85700B3BBF1 /* Views */,
 				8EC9E90729E0B12E009CB6D3 /* UIButtons */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		8EC99B7129EABC0200EC255C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8EC99B7229EABC2200EC255C /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EC9E8DE29E09D28009CB6D3 = {
+			isa = PBXGroup;
+			children = (
 				8EC9E8E929E09D28009CB6D3 /* FontainApp */,
 				8EC9E8E829E09D28009CB6D3 /* Products */,
+				07294C2FA4D983F89BAEBF52 /* Pods */,
+				FD9DE5299DE71FF3DCAF288D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,9 +211,11 @@
 		8EC9E8E929E09D28009CB6D3 /* FontainApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E61542A29EAC437003CE78E /* Flows */,
+				8EC99B7129EABC0200EC255C /* Extensions */,
+				8EC99B7029EABBDA00EC255C /* UIElements */,
 				8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */,
 				8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */,
-				8EC9E8EE29E09D28009CB6D3 /* ViewController.swift */,
 				8EC9E8F029E09D28009CB6D3 /* Main.storyboard */,
 				8EC9E8F329E09D2F009CB6D3 /* Assets.xcassets */,
 				8EC9E8F529E09D2F009CB6D3 /* LaunchScreen.storyboard */,
@@ -188,6 +250,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FD9DE5299DE71FF3DCAF288D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				289F779B3044489A9A97E331 /* Pods_FontainApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8EC9E8FB29E09D2F009CB6D3 /* Build configuration list for PBXNativeTarget "FontainApp" */;
 			buildPhases = (
+				2908DFDF0CB5D6D45F1361A1 /* [CP] Check Pods Manifest.lock */,
 				8EC9E8E329E09D28009CB6D3 /* Sources */,
 				8EC9E8E429E09D28009CB6D3 /* Frameworks */,
 				8EC9E8E529E09D28009CB6D3 /* Resources */,
+				ABD0D63E829D3460D14C6225 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +340,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2908DFDF0CB5D6D45F1361A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FontainApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABD0D63E829D3460D14C6225 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8EC9E8E329E09D28009CB6D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,13 +389,15 @@
 			files = (
 				8E714CB229E6B08000B3BBF1 /* PhoneNumberView.swift in Sources */,
 				8E714CDE29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift in Sources */,
+				8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */,
 				8E714CC729E6C73900B3BBF1 /* TermOfUseView.swift in Sources */,
 				8E714CD629E6D41C00B3BBF1 /* ProductCollectionViewCell.swift in Sources */,
 				8E714CC329E6C2A400B3BBF1 /* TotalView.swift in Sources */,
-				8EC9E8EF29E09D28009CB6D3 /* ViewController.swift in Sources */,
 				8E714CDA29E6D81400B3BBF1 /* BasketProductTableViewCell.swift in Sources */,
+				8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */,
 				8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */,
 				8E714CBB29E6BE2400B3BBF1 /* CodeView.swift in Sources */,
+				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
 				8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */,
@@ -430,6 +546,7 @@
 		};
 		8EC9E8FC29E09D2F009CB6D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 161D613FEE59361229AA03DF /* Pods-FontainApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +575,7 @@
 		};
 		8EC9E8FD29E09D2F009CB6D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
