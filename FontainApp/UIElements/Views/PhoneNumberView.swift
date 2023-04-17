@@ -18,7 +18,7 @@ class PhoneNumberView: UIView {
     @IBOutlet weak var errorTextLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
-//    let phoneNumberRegion = LogInViewController()
+    var phoneCompletion: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +46,6 @@ class PhoneNumberView: UIView {
     }
     
     @IBAction func selectCountryButtonAction(_ sender: Any) {
-//        phoneNumberRegion.picker.isHidden = false
+        phoneCompletion?()
     }
 }

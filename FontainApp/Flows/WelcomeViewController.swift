@@ -14,21 +14,30 @@ class WelcomeViewController: UIViewController {
     var viewModel = WelcomeViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
-        prepareUI()
-        
-        var charIndex = 0.0
-        let titleText = "Fontaine"
-        let titleCount = Double(titleText.count)
-        for letter in titleText {
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { [charIndex] (timer) in
-                self.fontaineLabel.text?.append(letter)
-                if charIndex == titleCount - 1 {
-                    self.performSegue(withIdentifier: "welcomeSegue", sender: self)
+        DispatchQueue.main.async {
+            self.prepareUI()
+            
+            var charIndex = 0.0
+            let titleText = "Fontaine  "
+            var currentText = ""
+            
+            let group = DispatchGroup()
+            
+            for letter in titleText {
+                group.enter()
+                Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { [weak self] (timer) in
+                    currentText.append(letter)
+                    self?.fontaineLabel.text = currentText
+                    group.leave()
                 }
+                charIndex += 1
             }
-            charIndex += 1
+            group.notify(queue: .main) {
+                self.performSegue(withIdentifier: "welcomeSegue", sender: self)
+            }
         }
     }
+
     
     func prepareUI() {
         let font = UIFont(name: "ABeeZee Regular", size: 60.0)
