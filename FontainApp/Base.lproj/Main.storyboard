@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="height" constant="172" id="tPE-GB-jwl"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Ar-sx1" customClass="TermOfUseView" customModule="FontainApp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Ar-sx1">
                                 <rect key="frame" x="0.0" y="494.5" width="375" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -123,7 +123,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fontaine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Q-X7-vzW">
-                                <rect key="frame" x="65.5" y="298" width="244" height="71"/>
+                                <rect key="frame" x="66" y="298" width="243.5" height="71"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="60"/>
                                 <color key="textColor" name="View"/>
                                 <nil key="highlightedColor"/>

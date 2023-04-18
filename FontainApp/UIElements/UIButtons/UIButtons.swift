@@ -11,19 +11,19 @@ import UIKit
 extension UIButton {
     
     func activeStyle() {
-        layer.cornerRadius = 12
+        layer.cornerRadius = frame.height / 2
         backgroundColor = UIColor.init(named: "Secondary")
         setTitleColor(UIColor.white, for: .normal)
     }
     
     func unactiveStyle() {
-        layer.cornerRadius = 12
+        layer.cornerRadius = frame.height / 2
         backgroundColor = .lightGray
         setTitleColor(UIColor.white, for: .normal)
     }
     
     func transperentRed() {
-        layer.cornerRadius = 12
+        layer.cornerRadius = frame.height / 2
         
         backgroundColor = .white
         

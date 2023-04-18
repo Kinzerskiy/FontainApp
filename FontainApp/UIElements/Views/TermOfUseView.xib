@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="421" height="106"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-35-cfQ">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Property 1=empty" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-35-cfQ">
                     <rect key="frame" x="30" y="15" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="22" id="QZr-TT-mvA"/>
@@ -51,6 +51,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Property 1=empty" width="22" height="22"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

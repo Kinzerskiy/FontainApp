@@ -8,10 +8,10 @@
 import UIKit
 import CountryPicker
 
-class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldDelegate {
+class LogInViewController: UIViewController, CountryPickerDelegate {
     
     @IBOutlet weak var phoneNumberView: UIView!
-    @IBOutlet weak var termOfUseView: TermOfUseView!
+    @IBOutlet weak var termOfUseView: UIView!
     @IBOutlet weak var sendSmsButton: UIButton!
     @IBOutlet weak var picker: CountryPicker!
     
@@ -19,26 +19,12 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
     
     var viewModel = LogInViewModel()
     
-    var phoneNumber = PhoneNumberView.loadFromNib()!
-    let termOfUse = TermOfUseView.loadFromNib()!
+    var phoneNumber: PhoneNumberView?
+    var termOfUse: TermOfUseView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        phoneNumber.phoneCompletion = {
-            self.picker.isHidden = false
-            self.termOfUse.isHidden = true
-            self.sendSmsButton.isHidden = true
-        }
-        
-        
-        termOfUseView.imageViewTappedCompletion = {
-            
-        }
-        
-        self.phoneNumber.phoneNumberTextField.delegate = self
         self.prepareView()
-        
     }
     
     func prepareView() {
@@ -53,37 +39,34 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         picker.theme = theme
         picker.countryPickerDelegate = self
         picker.showPhoneNumbers = true
-        picker.setCountry(phoneNumber.phoneNumberTextField.text ?? "")
+        picker.setCountry(phoneNumber?.phoneNumberTextField.text ?? "")
         
-        phoneNumber.frame = phoneNumberView.bounds
-        phoneNumberView.addSubview(phoneNumber)
+        phoneNumber = PhoneNumberView.setup(in: phoneNumberView)
+        termOfUseView = TermOfUseView.setup(in: termOfUseView)
         
-        termOfUse.frame = termOfUseView.bounds
-        termOfUseView.addSubview(termOfUse)
+        phoneNumber?.phoneCompletion = {
+            self.picker.isHidden = false
+            self.termOfUse?.isHidden = true
+            self.sendSmsButton.isHidden = true
+        }
         
-        sendSmsButton.layer.cornerRadius = 30
+        sendSmsButton.activeStyle()
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == phoneNumber.phoneNumberTextField {
-            
-            return false
-        }
-        return true
-    }
+    
     
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
         DispatchQueue.main.async {
-            self.phoneNumber.setCountryCodeAndFlagImage(code: phoneCode, flag: flag)
+            self.phoneNumber?.setCountryCodeAndFlagImage(code: phoneCode, flag: flag)
             self.picker.isHidden = true
-            self.termOfUse.isHidden = false
+            self.termOfUse?.isHidden = false
             self.sendSmsButton.isHidden = false
         }
     }
     
     @IBAction func loginDidTap(_ sender: Any) {
-        viewModel.login(phoneNumber: "") {
-            
+        let phoneNumber = (selectedCountryCode ?? "+380") + (phoneNumber?.getPhoneNumber() ?? "")
+        viewModel.login(phoneNumber: phoneNumber) {
         }
     }
 }
