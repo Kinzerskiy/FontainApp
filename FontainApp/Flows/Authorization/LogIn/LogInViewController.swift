@@ -15,12 +15,12 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var sendSmsButton: UIButton!
     @IBOutlet weak var picker: CountryPicker!
     
+    
     var selectedCountryCode: String?
-    
     var viewModel = LogInViewModel()
-    
     var phoneNumber: PhoneNumberView?
     var termOfUse: TermOfUseView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,12 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     
     func prepareView() {
         navigationItem.setHidesBackButton(true, animated: true)
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         picker.isHidden = true
         
         let locale = Locale.current
@@ -53,6 +59,21 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         sendSmsButton.activeStyle()
     }
     
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? CGRect {
+//            let keyboardHeight = keyboardFrame.height
+//            let bottonSpace = self.view.frame.height - (sendSmsButton.frame.origin.y + sendSmsButton.frame.height)
+            self.view.frame.origin.y = view.frame.origin.y - 100
+    }
+    
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
     
     
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {

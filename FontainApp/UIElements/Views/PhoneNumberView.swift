@@ -26,9 +26,6 @@ class PhoneNumberView: UIView {
         errorTextLabel?.isHidden = true
         contentView?.layer.cornerRadius = 5
         contentView2?.layer.cornerRadius = 5
-        
-        
-        
     }
     
     static func setup(in view: UIView) -> PhoneNumberView {
@@ -42,8 +39,6 @@ class PhoneNumberView: UIView {
             phoneRegionLabel.text = code
             flagImageView.image = flag
         }
-    
-    
     
     func getPhoneNumber() -> String {
         return phoneNumberTextField.text ?? ""
