@@ -50,6 +50,8 @@
 		8EC9E92929E0CDF4009CB6D3 /* ABeeZee-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E92729E0CDF3009CB6D3 /* ABeeZee-Italic.ttf */; };
 		8EC9E92A29E0CDF4009CB6D3 /* ABeeZee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E92829E0CDF4009CB6D3 /* ABeeZee-Regular.ttf */; };
 		8EC9E94029E6A30A009CB6D3 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */; };
+		8ED31E6A29F960D500D30DE4 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED31E6929F960D500D30DE4 /* SMSViewController.swift */; };
+		8ED31E6E29F9612B00D30DE4 /* SMSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED31E6D29F9612B00D30DE4 /* SMSViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		8EC9E92729E0CDF3009CB6D3 /* ABeeZee-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Italic.ttf"; sourceTree = "<group>"; };
 		8EC9E92829E0CDF4009CB6D3 /* ABeeZee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABeeZee-Regular.ttf"; sourceTree = "<group>"; };
 		8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
+		8ED31E6929F960D500D30DE4 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
+		8ED31E6D29F9612B00D30DE4 /* SMSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 			children = (
 				8E61542D29EAC48D003CE78E /* LogInViewController.swift */,
 				8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */,
+				8ED31E6929F960D500D30DE4 /* SMSViewController.swift */,
+				8ED31E6D29F9612B00D30DE4 /* SMSViewModel.swift */,
 				8E6D6A8629EC31C500589697 /* WelcomeViewController.swift */,
 				8E6D6A8929EC351C00589697 /* WelcomeViewModel.swift */,
 			);
@@ -418,6 +424,7 @@
 			files = (
 				8E6D6A8F29EC388300589697 /* OrderManager.swift in Sources */,
 				8E6D6A9529EC38E000589697 /* ProductManager.swift in Sources */,
+				8ED31E6E29F9612B00D30DE4 /* SMSViewModel.swift in Sources */,
 				8E714CB229E6B08000B3BBF1 /* PhoneNumberView.swift in Sources */,
 				8E6D6A8A29EC351C00589697 /* WelcomeViewModel.swift in Sources */,
 				8E714CDE29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift in Sources */,
@@ -440,6 +447,7 @@
 				8E714CCF29E6CB5600B3BBF1 /* ItemAddedToCardView.swift in Sources */,
 				8EC9E91129E0B1A1009CB6D3 /* UIButtons.swift in Sources */,
 				8E714CCB29E6C9F100B3BBF1 /* ResendCodeView.swift in Sources */,
+				8ED31E6A29F960D500D30DE4 /* SMSViewController.swift in Sources */,
 				8E6D6A8729EC31C500589697 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

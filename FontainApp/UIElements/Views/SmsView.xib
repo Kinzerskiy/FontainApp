@@ -14,14 +14,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmsView" customModule="FontainApp">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
             <connections>
                 <outlet property="codeTextField" destination="h4e-72-KkN" id="xb7-rw-8Qu"/>
                 <outlet property="errorLabel" destination="6aL-yK-UND" id="yXG-Pq-Ynn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SmsView" customModule="FontainApp">
             <rect key="frame" x="0.0" y="0.0" width="393" height="121"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -70,7 +70,7 @@
                 <constraint firstItem="zSR-dK-fZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dn2-ai-ZEn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-34" y="-166"/>
+            <point key="canvasLocation" x="-34.351145038167935" y="-166.5492957746479"/>
         </view>
     </objects>
     <resources>

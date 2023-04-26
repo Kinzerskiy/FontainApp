@@ -12,7 +12,7 @@ extension UIButton {
     
     func activeStyle() {
         layer.cornerRadius = frame.height / 2
-        backgroundColor = UIColor.init(named: "Secondary")
+        backgroundColor = UIColor.init(named: "Primary")
         setTitleColor(UIColor.white, for: .normal)
     }
     

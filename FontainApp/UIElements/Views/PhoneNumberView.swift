@@ -35,6 +35,7 @@ class PhoneNumberView: UIView {
         return phoneNumberView
         }
     
+    
     func setCountryCodeAndFlagImage(code: String, flag: UIImage) {
             phoneRegionLabel.text = code
             flagImageView.image = flag
@@ -43,6 +44,7 @@ class PhoneNumberView: UIView {
     func getPhoneNumber() -> String {
         return phoneNumberTextField.text ?? ""
     }
+    
     
     @IBAction func selectCountryButtonAction(_ sender: Any) {
         phoneCompletion?()

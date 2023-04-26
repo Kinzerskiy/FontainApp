@@ -59,10 +59,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Send SMS">
-                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jo-iy-BH9"/>
+                                    <segue destination="J6f-s3-AEw" kind="show" id="GqW-dB-bqp"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-cR-zf9" customClass="CountryPicker" customModule="CountryPicker">
@@ -106,6 +107,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2231.1999999999998" y="107.49625187406298"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aJ9-ZU-6Rh">
+            <objects>
+                <viewController id="J6f-s3-AEw" customClass="SMSViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xSd-qE-rcW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bro" translatesAutoresizingMaskIntoConstraints="NO" id="iW9-Sn-Ijg">
+                                <rect key="frame" x="100" y="165.5" width="175" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="RUE-2l-sMG"/>
+                                    <constraint firstAttribute="width" constant="175" id="tRJ-cn-1Of"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-ho-YvI" customClass="SmsView" customModule="FontainApp">
+                                <rect key="frame" x="30" y="397.5" width="315" height="63"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="1U1-xk-78k"/>
+                                    <constraint firstAttribute="width" constant="315" id="UYZ-kG-LGw"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O1z-fx-fYe">
+                                <rect key="frame" x="30" y="488.5" width="187" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t you receive any code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-AK-cGc">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="17"/>
+                                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z0i-mb-APG">
+                                        <rect key="frame" x="0.0" y="19" width="167.5" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend the code in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dve-8S-mP3">
+                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:51" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAW-IR-XgD">
+                                                <rect key="frame" x="129.5" y="0.0" width="38" height="17"/>
+                                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-qm-a9N">
+                                <rect key="frame" x="30" y="568" width="315" height="51"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="oMd-En-xAE"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="J6f-s3-AEw" eventType="touchUpInside" id="P4J-y0-tBn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-th-mwd">
+                                <rect key="frame" x="110" y="119" width="156" height="26.5"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r3M-aI-O2S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="Pwg-th-mwd" secondAttribute="trailing" constant="109" id="3fI-hh-Wfz"/>
+                            <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="ht1-qm-a9N" secondAttribute="trailing" constant="30" id="93o-ak-Ktq"/>
+                            <constraint firstItem="O1z-fx-fYe" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="Eza-lL-kN2"/>
+                            <constraint firstItem="ht1-qm-a9N" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="Kat-uk-Jab"/>
+                            <constraint firstItem="Pwg-th-mwd" firstAttribute="top" secondItem="r3M-aI-O2S" secondAttribute="top" constant="55" id="N1U-F2-rvf"/>
+                            <constraint firstItem="O1z-fx-fYe" firstAttribute="top" secondItem="LFI-ho-YvI" secondAttribute="bottom" constant="28" id="R2v-n7-6la"/>
+                            <constraint firstItem="iW9-Sn-Ijg" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="100" id="Swd-HY-tYF"/>
+                            <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="LFI-ho-YvI" secondAttribute="trailing" constant="30" id="T6e-6v-wqO"/>
+                            <constraint firstItem="r3M-aI-O2S" firstAttribute="bottom" secondItem="ht1-qm-a9N" secondAttribute="bottom" constant="48" id="cHO-xs-lnk"/>
+                            <constraint firstItem="iW9-Sn-Ijg" firstAttribute="top" secondItem="Pwg-th-mwd" secondAttribute="bottom" constant="20" id="qbO-Dc-VbW"/>
+                            <constraint firstItem="LFI-ho-YvI" firstAttribute="top" secondItem="iW9-Sn-Ijg" secondAttribute="bottom" constant="60" id="t1B-Ws-k4m"/>
+                            <constraint firstItem="Pwg-th-mwd" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="110" id="t9K-gv-Kgj"/>
+                            <constraint firstItem="LFI-ho-YvI" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="vbK-YR-8F8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wti-Yi-2ou"/>
+                    <connections>
+                        <outlet property="codeView" destination="LFI-ho-YvI" id="ehh-Ld-hgq"/>
+                        <outlet property="nextButton" destination="ht1-qm-a9N" id="QiI-eE-HQg"/>
+                        <outlet property="timerLabel" destination="DAW-IR-XgD" id="CEz-Ey-L5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kj0-TM-Fax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2991" y="107"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="sve-d5-cqv">

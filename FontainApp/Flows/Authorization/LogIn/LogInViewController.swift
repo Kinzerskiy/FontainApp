@@ -8,7 +8,7 @@
 import UIKit
 import CountryPicker
 
-class LogInViewController: UIViewController, CountryPickerDelegate {
+class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var phoneNumberView: UIView!
     @IBOutlet weak var termOfUseView: UIView!
@@ -25,6 +25,10 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        
+        
+        phoneNumber?.phoneNumberTextField.delegate = self
+        phoneNumber?.phoneNumberTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func prepareView() {
@@ -52,12 +56,34 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         
         phoneNumber?.phoneCompletion = {
             self.picker.isHidden = false
-            self.termOfUse?.isHidden = true
+            self.termOfUseView.isHidden = true
             self.sendSmsButton.isHidden = true
         }
         
-        sendSmsButton.activeStyle()
+        sendSmsButton.unactiveStyle()
     }
+    
+    //TODO: Add functionality with different countries codes
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let maxLength = 9
+        let currentString = (phoneNumber?.phoneNumberTextField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+
+        return newString.count <= maxLength
+    }
+    
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+            guard let text = phoneNumber?.phoneNumberTextField.text else { return }
+        
+            if text.count == 9 {
+                sendSmsButton.activeStyle()
+            } else {
+                sendSmsButton.unactiveStyle()
+                phoneNumber?.errorTextLabel.isHidden = false
+            }
+        }
     
     
     @objc private func hideKeyboard() {
@@ -65,9 +91,6 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardFrame: CGRect = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? CGRect {
-//            let keyboardHeight = keyboardFrame.height
-//            let bottonSpace = self.view.frame.height - (sendSmsButton.frame.origin.y + sendSmsButton.frame.height)
             self.view.frame.origin.y = view.frame.origin.y - 100
     }
     
@@ -80,14 +103,15 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         DispatchQueue.main.async {
             self.phoneNumber?.setCountryCodeAndFlagImage(code: phoneCode, flag: flag)
             self.picker.isHidden = true
-            self.termOfUse?.isHidden = false
+            self.termOfUseView.isHidden = false
             self.sendSmsButton.isHidden = false
         }
     }
     
     @IBAction func loginDidTap(_ sender: Any) {
-        let phoneNumber = (selectedCountryCode ?? "+380") + (phoneNumber?.getPhoneNumber() ?? "")
-        viewModel.login(phoneNumber: phoneNumber) {
+        let activePhoneNumber = (selectedCountryCode ?? "+380") + (phoneNumber?.getPhoneNumber() ?? "")
+        viewModel.login(phoneNumber: activePhoneNumber) {
+           
         }
     }
 }

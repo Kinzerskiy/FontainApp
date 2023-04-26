@@ -12,7 +12,6 @@ class TermOfUseView: UIView {
     @IBOutlet weak var termOfUseLabel: UILabel!
     @IBOutlet weak var termOfUseAcceptImage: UIImageView!
     
-    
     var isSelected: Bool = false
     
     var imageViewTappedCompletion: (() -> Void)?
@@ -32,9 +31,9 @@ class TermOfUseView: UIView {
     func prepareView() {
         let attributedString = NSMutableAttributedString(string: "I have read and agree to the ")
         
-        attributedString.append(NSAttributedString(string: "Terms of use", attributes: [.foregroundColor: UIColor(named: "Primary")]))
+        attributedString.append(NSAttributedString(string: "Terms of use", attributes: [.foregroundColor: UIColor(named: "Primary") ?? .white]))
         
-        attributedString.append(NSAttributedString(string: " of Water Delivery"))
+        attributedString.append(NSAttributedString(string: " of Fontaine App"))
         termOfUseLabel?.attributedText = attributedString
         
         let textTapped = UITapGestureRecognizer(target: self, action: #selector(openUrl))
