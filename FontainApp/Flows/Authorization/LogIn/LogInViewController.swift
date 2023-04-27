@@ -21,6 +21,8 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
     var phoneNumber: PhoneNumberView?
     var termOfUse: TermOfUseView?
     
+    var activePhoneNumber: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,21 +71,21 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         let maxLength = 9
         let currentString = (phoneNumber?.phoneNumberTextField.text ?? "") as NSString
         let newString = currentString.replacingCharacters(in: range, with: string)
-
+        
         return newString.count <= maxLength
     }
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-            guard let text = phoneNumber?.phoneNumberTextField.text else { return }
+        guard let text = phoneNumber?.phoneNumberTextField.text else { return }
         
-            if text.count == 9 {
-                sendSmsButton.activeStyle()
-            } else {
-                sendSmsButton.unactiveStyle()
-                phoneNumber?.errorTextLabel.isHidden = false
-            }
+        if text.count == 9 {
+            sendSmsButton.activeStyle()
+        } else {
+            sendSmsButton.unactiveStyle()
+            phoneNumber?.errorTextLabel.isHidden = false
         }
+    }
     
     
     @objc private func hideKeyboard() {
@@ -91,7 +93,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-            self.view.frame.origin.y = view.frame.origin.y - 100
+        self.view.frame.origin.y = view.frame.origin.y - 100
     }
     
     @objc private func keyboardWillHide() {
@@ -109,9 +111,11 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
     }
     
     @IBAction func loginDidTap(_ sender: Any) {
+        
         let activePhoneNumber = (selectedCountryCode ?? "+380") + (phoneNumber?.getPhoneNumber() ?? "")
-        viewModel.login(phoneNumber: activePhoneNumber) {
-           
+                viewModel.login(phoneNumber: activePhoneNumber) { verificationID in
+            guard let verificationID = verificationID else { return }
+            self.performSegue(withIdentifier: "validCode", sender: verificationID)
         }
     }
 }

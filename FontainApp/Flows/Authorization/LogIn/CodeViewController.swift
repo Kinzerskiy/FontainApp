@@ -1,5 +1,5 @@
 //
-//  SMSViewController.swift
+//  CodeViewController.swift
 //  FontainApp
 //
 //  Created by Mac Pro on 26.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SMSViewController: UIViewController {
+class CodeViewController: UIViewController {
     
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -17,15 +17,18 @@ class SMSViewController: UIViewController {
     
     var smsView: SmsView?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prepareView()
     }
     
+    
+    func prepareView() {
+        nextButton.unactiveStyle()
+        smsView = SmsView.setup(in: codeView)
+    }
     
     @IBAction func nextButtonAction(_ sender: Any) {
         
     }
-    
 }

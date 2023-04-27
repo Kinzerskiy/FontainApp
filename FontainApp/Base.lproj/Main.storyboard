@@ -63,7 +63,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jo-iy-BH9"/>
-                                    <segue destination="J6f-s3-AEw" kind="show" id="GqW-dB-bqp"/>
+                                    <segue destination="J6f-s3-AEw" kind="show" identifier="validCode" id="GqW-dB-bqp"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-cR-zf9" customClass="CountryPicker" customModule="CountryPicker">
@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="2231.1999999999998" y="107.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--Code View Controller-->
         <scene sceneID="aJ9-ZU-6Rh">
             <objects>
-                <viewController id="J6f-s3-AEw" customClass="SMSViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J6f-s3-AEw" customClass="CodeViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xSd-qE-rcW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,15 +124,15 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-ho-YvI" customClass="SmsView" customModule="FontainApp">
-                                <rect key="frame" x="30" y="397.5" width="315" height="63"/>
+                                <rect key="frame" x="30" y="397.5" width="315" height="82"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="1U1-xk-78k"/>
+                                    <constraint firstAttribute="height" constant="82" id="1U1-xk-78k"/>
                                     <constraint firstAttribute="width" constant="315" id="UYZ-kG-LGw"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O1z-fx-fYe">
-                                <rect key="frame" x="30" y="488.5" width="187" height="36"/>
+                                <rect key="frame" x="30" y="507.5" width="187" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t you receive any code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-AK-cGc">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="17"/>
@@ -209,6 +209,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj0-TM-Fax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2991" y="107"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="IG0-Gb-oPJ">
+            <objects>
+                <viewController id="f5L-Yg-gW8" customClass="ProductViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ll6-Ym-fC2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="J7v-nL-L2D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEi-1N-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3778" y="116"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="sve-d5-cqv">

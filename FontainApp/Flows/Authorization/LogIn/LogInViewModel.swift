@@ -11,10 +11,16 @@ import FirebaseAuth
 
 class LogInViewModel {
     
-    
-    func login(phoneNumber: String, completion: @escaping () -> ()) {
+    func login(phoneNumber: String?, completion: @escaping (String?) -> ()) {
         
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!, uiDelegate: nil) { (verificationID, error) in
+            
+            if let verificationID = verificationID {
+                completion(verificationID)
+            } else if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
+            }
+        }
     }
-    
-    
 }
