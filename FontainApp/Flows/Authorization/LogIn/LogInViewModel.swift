@@ -11,9 +11,17 @@ import FirebaseAuth
 
 class LogInViewModel {
     
-    func login(phoneNumber: String?, completion: @escaping (String?) -> ()) {
+    var phoneNumber: String = ""
+    var isPrivacyAccepted: Bool = false
+    
+    func isValidData() -> Bool {
         
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!, uiDelegate: nil) { (verificationID, error) in
+        return phoneNumber.count <= 11 && isPrivacyAccepted
+        }
+    
+    func login(completion: @escaping (String?) -> ()) {
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             
             if let verificationID = verificationID {
                 completion(verificationID)

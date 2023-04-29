@@ -8,7 +8,7 @@
 import UIKit
 import CountryPicker
 
-class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldDelegate {
+class LogInViewController: UIViewController, CountryPickerDelegate {
     
     @IBOutlet weak var phoneNumberView: UIView!
     @IBOutlet weak var termOfUseView: UIView!
@@ -28,9 +28,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         super.viewDidLoad()
         self.prepareView()
         
-        
         phoneNumber?.phoneNumberTextField.delegate = self
-        phoneNumber?.phoneNumberTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func prepareView() {
@@ -45,7 +43,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         
         let locale = Locale.current
         _ = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
-        picker.displayOnlyCountriesWithCodes = ["UA", "SE", "NO", "DE"] //display only
+        picker.displayOnlyCountriesWithCodes = [ "SE", "NO", "DE", "UA"] //display only
         picker.exeptCountriesWithCodes = ["RU"] //exept country
         let theme = CountryViewTheme(countryCodeTextColor: .black, countryNameTextColor: .black, rowBackgroundColor: .white, showFlagsBorder: false)
         picker.theme = theme
@@ -56,6 +54,12 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         phoneNumber = PhoneNumberView.setup(in: phoneNumberView)
         termOfUseView = TermOfUseView.setup(in: termOfUseView)
         
+        //button doesn't update state
+        termOfUse?.privacyAcceptenceCompletion = { [weak self] isSelected in
+            self?.viewModel.isPrivacyAccepted = isSelected
+            self?.updateButtonState()
+        }
+        
         phoneNumber?.phoneCompletion = {
             self.picker.isHidden = false
             self.termOfUseView.isHidden = true
@@ -64,29 +68,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
         
         sendSmsButton.unactiveStyle()
     }
-    
-    //TODO: Add functionality with different countries codes
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let maxLength = 9
-        let currentString = (phoneNumber?.phoneNumberTextField.text ?? "") as NSString
-        let newString = currentString.replacingCharacters(in: range, with: string)
-        
-        return newString.count <= maxLength
-    }
-    
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let text = phoneNumber?.phoneNumberTextField.text else { return }
-        
-        if text.count == 9 {
-            sendSmsButton.activeStyle()
-        } else {
-            sendSmsButton.unactiveStyle()
-            phoneNumber?.errorTextLabel.isHidden = false
-        }
-    }
-    
+
     
     @objc private func hideKeyboard() {
         self.view.endEditing(true)
@@ -111,12 +93,34 @@ class LogInViewController: UIViewController, CountryPickerDelegate, UITextFieldD
     }
     
     @IBAction func loginDidTap(_ sender: Any) {
-        
-        let activePhoneNumber = (selectedCountryCode ?? "+380") + (phoneNumber?.getPhoneNumber() ?? "")
-                viewModel.login(phoneNumber: activePhoneNumber) { verificationID in
+        viewModel.login { verificationID in
             guard let verificationID = verificationID else { return }
             self.performSegue(withIdentifier: "validCode", sender: verificationID)
         }
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let codeViewController = segue.destination as? CodeViewController,
+              let verificationID = sender as? String
+                else { return }
+        codeViewController.viewModel = .init(verificationID: verificationID)
+    }
+    
+    func updateButtonState() {
+        if viewModel.isValidData() {
+            sendSmsButton.activeStyle()
+        } else {
+            sendSmsButton.unactiveStyle()
+        }
+    }
+}
+
+extension LogInViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        viewModel.phoneNumber = phoneNumber?.getPhoneNumber() ?? ""
+        updateButtonState()
     }
 }
 

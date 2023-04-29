@@ -13,8 +13,7 @@ class TermOfUseView: UIView {
     @IBOutlet weak var termOfUseAcceptImage: UIImageView!
     
     var isSelected: Bool = false
-    
-    var imageViewTappedCompletion: (() -> Void)?
+    var privacyAcceptenceCompletion: ((Bool) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,5 +53,6 @@ class TermOfUseView: UIView {
     @objc func check() {
         isSelected.toggle()
         termOfUseAcceptImage.image = isSelected ? UIImage(named: "Property 1=filled") : UIImage(named: "Property 1=empty")
+        privacyAcceptenceCompletion?(isSelected)
     }
 }

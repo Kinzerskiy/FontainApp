@@ -26,6 +26,15 @@ class PhoneNumberView: UIView {
         errorTextLabel?.isHidden = true
         contentView?.layer.cornerRadius = 5
         contentView2?.layer.cornerRadius = 5
+        
+        phoneNumberTextField?.addTarget(self, action: #selector(textFieldEdidtingDidChange(_ :)), for: UIControl.Event.editingChanged)
+
+    }
+    
+    @objc func textFieldEdidtingDidChange(_ textField :UITextField) {
+        let attributedString = NSMutableAttributedString(string: textField.text!)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attributedString.length))
+        textField.attributedText = attributedString
     }
     
     static func setup(in view: UIView) -> PhoneNumberView {

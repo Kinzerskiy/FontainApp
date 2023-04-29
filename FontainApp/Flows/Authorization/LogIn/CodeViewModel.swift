@@ -6,11 +6,15 @@
 //
 
 import Foundation
-import FirebaseAuth
+import Firebase
 
 class CodeViewModel {
     
-    var verificationID: String!
+    var verificationID: String
+    
+    init(verificationID: String) {
+        self.verificationID = verificationID
+    }
     
     func authUserWithCode(code: String, completion: @escaping () -> ()) {
         let credential = PhoneAuthProvider.provider().credential(
@@ -35,7 +39,7 @@ class CodeViewModel {
                     } else {
                         let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
                         userManager.saveUserFields(user: user) { [weak self] in
-//                            self?.performSegue(withIdentifier: "", sender: nil)
+                            completion()
                         }
                     }
                 }

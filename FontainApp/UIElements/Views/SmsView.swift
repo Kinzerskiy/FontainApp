@@ -8,30 +8,34 @@
 import UIKit
 
 class SmsView: UIView {
-
+    
     @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        smsViewInit()
-        prepareView()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        errorLabel?.isHidden = true
+        codeTextField?.layer.cornerRadius = 5
+        
+        codeTextField?.textContentType = .oneTimeCode
+        codeTextField?.keyboardType = .numberPad
+        
+        codeTextField?.addTarget(self, action: #selector(textFieldEdidtingDidChange(_ :)), for: UIControl.Event.editingChanged)
+        
+        
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    static func setup(in view: UIView) -> SmsView {
+        let smsView = SmsView.loadFromNib()!
+        smsView.frame = view.bounds
+        view.addSubview(smsView)
+        return smsView
     }
     
-    func smsViewInit() {
-        let viewFromXib = Bundle.main.loadNibNamed("SmsView", owner: self, options: nil)![0] as! UIView
-        viewFromXib.frame = self.bounds
-        addSubview(viewFromXib)
-        viewFromXib.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    @objc func textFieldEdidtingDidChange(_ textField :UITextField) {
+        let attributedString = NSMutableAttributedString(string: textField.text!)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(20.0), range: NSRange(location: 0, length: attributedString.length))
+        textField.attributedText = attributedString
     }
-
-    func prepareView() {
-        errorLabel.isHidden = true
-        codeTextField.layer.cornerRadius = 5
-    }
-    
 }

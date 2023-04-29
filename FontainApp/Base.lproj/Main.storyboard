@@ -132,16 +132,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O1z-fx-fYe">
-                                <rect key="frame" x="30" y="507.5" width="187" height="36"/>
+                                <rect key="frame" x="30" y="507.5" width="187" height="35.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn’t you receive any code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-AK-cGc">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
                                         <color key="textColor" name="Primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z0i-mb-APG">
-                                        <rect key="frame" x="0.0" y="19" width="167.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="18.5" width="167.5" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend the code in " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dve-8S-mP3">
                                                 <rect key="frame" x="0.0" y="0.0" width="128.5" height="17"/>
@@ -176,23 +176,40 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-th-mwd">
                                 <rect key="frame" x="110" y="119" width="156" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26.5" id="Lxa-g0-bdi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-6m-7Um">
+                                <rect key="frame" x="147" y="519" width="103" height="31"/>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="resend code">
+                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resendDidTap:" destination="J6f-s3-AEw" eventType="touchUpInside" id="Zff-bD-pPJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r3M-aI-O2S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="Pwg-th-mwd" secondAttribute="trailing" constant="109" id="3fI-hh-Wfz"/>
                             <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="ht1-qm-a9N" secondAttribute="trailing" constant="30" id="93o-ak-Ktq"/>
+                            <constraint firstItem="ht1-qm-a9N" firstAttribute="top" secondItem="8VZ-6m-7Um" secondAttribute="bottom" constant="18" id="E2f-i0-df5"/>
                             <constraint firstItem="O1z-fx-fYe" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="Eza-lL-kN2"/>
+                            <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="8VZ-6m-7Um" secondAttribute="trailing" constant="125" id="Jxp-UG-yDf"/>
                             <constraint firstItem="ht1-qm-a9N" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="Kat-uk-Jab"/>
                             <constraint firstItem="Pwg-th-mwd" firstAttribute="top" secondItem="r3M-aI-O2S" secondAttribute="top" constant="55" id="N1U-F2-rvf"/>
                             <constraint firstItem="O1z-fx-fYe" firstAttribute="top" secondItem="LFI-ho-YvI" secondAttribute="bottom" constant="28" id="R2v-n7-6la"/>
                             <constraint firstItem="iW9-Sn-Ijg" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="100" id="Swd-HY-tYF"/>
                             <constraint firstItem="r3M-aI-O2S" firstAttribute="trailing" secondItem="LFI-ho-YvI" secondAttribute="trailing" constant="30" id="T6e-6v-wqO"/>
                             <constraint firstItem="r3M-aI-O2S" firstAttribute="bottom" secondItem="ht1-qm-a9N" secondAttribute="bottom" constant="48" id="cHO-xs-lnk"/>
+                            <constraint firstItem="8VZ-6m-7Um" firstAttribute="centerY" secondItem="dve-8S-mP3" secondAttribute="centerY" id="qXa-4E-8nm"/>
                             <constraint firstItem="iW9-Sn-Ijg" firstAttribute="top" secondItem="Pwg-th-mwd" secondAttribute="bottom" constant="20" id="qbO-Dc-VbW"/>
                             <constraint firstItem="LFI-ho-YvI" firstAttribute="top" secondItem="iW9-Sn-Ijg" secondAttribute="bottom" constant="60" id="t1B-Ws-k4m"/>
                             <constraint firstItem="Pwg-th-mwd" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="110" id="t9K-gv-Kgj"/>
@@ -203,6 +220,7 @@
                     <connections>
                         <outlet property="codeView" destination="LFI-ho-YvI" id="ehh-Ld-hgq"/>
                         <outlet property="nextButton" destination="ht1-qm-a9N" id="QiI-eE-HQg"/>
+                        <outlet property="resendButton" destination="8VZ-6m-7Um" id="06h-H6-AHa"/>
                         <outlet property="timerLabel" destination="DAW-IR-XgD" id="CEz-Ey-L5W"/>
                     </connections>
                 </viewController>
