@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CodeViewController: UIViewController {
     
@@ -52,14 +53,32 @@ class CodeViewController: UIViewController {
     }
     
     
-    
     @IBAction func nextButtonAction(_ sender: Any) {
         guard let code = smsView?.codeTextField.text else { return }
         
         viewModel?.authUserWithCode(code: code, completion: {
-            //perfornSegue to product list
+            
+            let userManager = UserManager()
+            guard let currentUser = Auth.auth().currentUser else { return }
+            
+            userManager.checkIfUserExist(userId: currentUser.uid) { isExist in
+                if isExist {
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+                    let navigationController = UINavigationController(rootViewController: viewController)
+                    
+                    UIApplication.shared.windows.first?.rootViewController = navigationController
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                } else {
+                    let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
+                    userManager.saveUserFields(user: user) { [weak self] in
+                        self?.performSegue(withIdentifier: "fromCodeToProfileFields", sender: nil)
+                    }
+                }
+            }
         })
     }
+    
     
     func startTimer() {
         var countdown = 4
@@ -70,13 +89,18 @@ class CodeViewController: UIViewController {
                 timer.invalidate()
                 self.timerLabel.isHidden = true
                 self.resendButton.isHidden = false
-                // button resend should be shown
             }
         }
     }
     
+    
+    
+    
     @IBAction func resendDidTap(_ sender: Any) {
-       
+        //how Firebase send sms code?
+        let logIn = LogInViewModel()
+        logIn.login { verificationID in guard let verificationID = verificationID else { return }
+        }
         
         resendButton.isHidden = true
         timerLabel.isHidden = false

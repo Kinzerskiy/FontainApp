@@ -12,28 +12,30 @@ class ItemAddedToCardView: UIView {
     
     @IBOutlet weak var addToCardView: UIView!
     @IBOutlet weak var viewButton: UIButton!
-    @IBOutlet weak var addItemLabel: UILabel!
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        totalViewInit()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         prepareView()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    static func setup(in view: UIView) -> ItemAddedToCardView {
+        let itemAddedToCardView = ItemAddedToCardView.loadFromNib()!
+        itemAddedToCardView.frame = view.bounds
+        view.addSubview(itemAddedToCardView)
+        return itemAddedToCardView
     }
     
-    func totalViewInit() {
-        let viewFromXib = Bundle.main.loadNibNamed("ItemAddedToCardView", owner: self, options: nil)![0] as! UIView
-        viewFromXib.frame = self.bounds
-        addSubview(viewFromXib)
-        viewFromXib.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-
     func prepareView() {
-        addItemLabel.isHidden = true
+        addToCardView.layer.cornerRadius = frame.height / 2
     }
-
+    
+    @IBAction func imageBuyAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func viewBuyAction(_ sender: Any) {
+        
+    }
+    
+    
 }

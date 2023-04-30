@@ -9,14 +9,6 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-struct User: Codable {
-    let uuid: String
-    let phoneNumber: String?
-    let fullName: String?
-    let address: String?
-    let imageUrl: String?
-}
-
 class UserManager {
     
     let db = Firestore.firestore()

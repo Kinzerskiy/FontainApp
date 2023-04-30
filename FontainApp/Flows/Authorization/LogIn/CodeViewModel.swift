@@ -21,32 +21,14 @@ class CodeViewModel {
             withVerificationID: verificationID,
             verificationCode: code)
         
-        Auth.auth().signIn(with: credential) { [weak self] _, error in
+        Auth.auth().signIn(with: credential) { _, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "error")
             } else {
-                let userManager = UserManager()
-                guard let currentUser = Auth.auth().currentUser else { return }
-                
-                userManager.checkIfUserExist(userId: currentUser.uid) { isExist in
-                    if isExist {
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
-                        let navigationController = UINavigationController(rootViewController: viewController)
-                        
-                        UIApplication.shared.windows.first?.rootViewController = navigationController
-                        UIApplication.shared.windows.first?.makeKeyAndVisible()
-                    } else {
-                        let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
-                        userManager.saveUserFields(user: user) { [weak self] in
-                            completion()
-                        }
-                    }
-                }
-                
+                guard Auth.auth().currentUser != nil else { return }
+                completion()
             }
         }
-        
     }
 }
 

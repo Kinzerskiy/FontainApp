@@ -24,7 +24,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
         prepareUI()
     }
     
-    func fill () {
+    func fill (with model: Product) {
+        productNameLabel.text = model.name
+        productMeasureLabel.text = model.measure
+        productCostLabel.text = "€" + String(model.price)
+        productImageLabel.image = UIImage(named: model.imageName)
         
     }
     
@@ -35,6 +39,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func buyButtonPressed(_ sender: Any) {
+        
         buyComplition?()
     }
     
