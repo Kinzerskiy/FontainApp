@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd8-43-Fw5" customClass="PhoneNumberView" customModule="FontainApp">
-                                <rect key="frame" x="30" y="397.5" width="315" height="82"/>
+                                <rect key="frame" x="30" y="397" width="315" height="82"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="6dy-cg-uCQ"/>
@@ -32,20 +32,20 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgb-pV-erf">
-                                <rect key="frame" x="109" y="119" width="156" height="26.5"/>
+                                <rect key="frame" x="109" y="119" width="156" height="26"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bro" translatesAutoresizingMaskIntoConstraints="NO" id="SId-XD-M5k">
-                                <rect key="frame" x="100" y="165.5" width="175" height="172"/>
+                                <rect key="frame" x="100" y="165" width="175" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="Ab0-Wl-ui8"/>
                                     <constraint firstAttribute="height" constant="172" id="tPE-GB-jwl"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJa-Ar-sx1">
-                                <rect key="frame" x="0.0" y="494.5" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="494" width="375" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="tyB-qB-mih"/>
@@ -64,7 +64,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jo-iy-BH9"/>
-                                    <segue destination="J6f-s3-AEw" kind="show" identifier="validCode" id="GqW-dB-bqp"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLy-cR-zf9" customClass="CountryPicker" customModule="CountryPicker">
@@ -103,6 +102,7 @@
                         <outlet property="picker" destination="bLy-cR-zf9" id="iQH-iu-C3r"/>
                         <outlet property="sendSmsButton" destination="wrF-V9-gFQ" id="Mpg-PL-qzv"/>
                         <outlet property="termOfUseView" destination="CJa-Ar-sx1" id="GN0-Dt-aOf"/>
+                        <segue destination="J6f-s3-AEw" kind="show" identifier="validCode" id="I9X-F1-FJ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,11 +166,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="oMd-En-xAE"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next">
-                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="24"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="J6f-s3-AEw" eventType="touchUpInside" id="P4J-y0-tBn"/>
                                 </connections>
@@ -184,7 +183,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-6m-7Um">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-6m-7Um">
                                 <rect key="frame" x="147" y="519" width="103" height="31"/>
                                 <color key="tintColor" name="Primary"/>
                                 <state key="normal" title="Button"/>
@@ -215,6 +214,7 @@
                             <constraint firstItem="LFI-ho-YvI" firstAttribute="top" secondItem="iW9-Sn-Ijg" secondAttribute="bottom" constant="60" id="t1B-Ws-k4m"/>
                             <constraint firstItem="Pwg-th-mwd" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="110" id="t9K-gv-Kgj"/>
                             <constraint firstItem="LFI-ho-YvI" firstAttribute="leading" secondItem="r3M-aI-O2S" secondAttribute="leading" constant="30" id="vbK-YR-8F8"/>
+                            <constraint firstItem="8VZ-6m-7Um" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r3M-aI-O2S" secondAttribute="leading" symbolic="YES" id="zEC-Vf-XEc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wti-Yi-2ou"/>
@@ -223,7 +223,6 @@
                         <outlet property="nextButton" destination="ht1-qm-a9N" id="QiI-eE-HQg"/>
                         <outlet property="resendButton" destination="8VZ-6m-7Um" id="06h-H6-AHa"/>
                         <outlet property="timerLabel" destination="DAW-IR-XgD" id="CEz-Ey-L5W"/>
-                        <segue destination="Y3a-AF-cib" kind="show" identifier="fromCodeToProfileFields" id="etI-UL-Hgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj0-TM-Fax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -276,7 +275,6 @@
                         <outlet property="addProductView" destination="1uv-NF-e75" id="d7T-Zd-d35"/>
                         <outlet property="productCollectionView" destination="ZGf-sK-OIK" id="Z1e-db-3FC"/>
                         <outlet property="productItem" destination="8lY-2j-fKa" id="6qu-ow-UiE"/>
-                        <outlet property="productPopUpView" destination="8lY-2j-fKa" id="Shg-kc-3Nn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEi-1N-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -365,9 +363,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="12V-Zk-VY3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YHk-Je-0pR" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" id="YHk-Je-0pR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yiS-pQ-tx1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -381,9 +380,6 @@
             <point key="canvasLocation" x="2990" y="-904"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="etI-UL-Hgt"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Ellipse 1" width="174" height="313"/>
         <image name="bro" width="175" height="173"/>

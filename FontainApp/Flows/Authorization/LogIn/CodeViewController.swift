@@ -29,6 +29,7 @@ class CodeViewController: UIViewController {
     func prepareView() {
         
         smsView = SmsView.setup(in: codeView)
+        
         resendButton.isHidden = true
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
@@ -64,7 +65,7 @@ class CodeViewController: UIViewController {
             userManager.checkIfUserExist(userId: currentUser.uid) { isExist in
                 if isExist {
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
                     let navigationController = UINavigationController(rootViewController: viewController)
                     
                     UIApplication.shared.windows.first?.rootViewController = navigationController
@@ -72,7 +73,12 @@ class CodeViewController: UIViewController {
                 } else {
                     let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
                     userManager.saveUserFields(user: user) { [weak self] in
-                        self?.performSegue(withIdentifier: "fromCodeToProfileFields", sender: nil)
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+                        let navigationController = UINavigationController(rootViewController: viewController)
+                        
+                        UIApplication.shared.windows.first?.rootViewController = navigationController
+                        UIApplication.shared.windows.first?.makeKeyAndVisible()
                     }
                 }
             }

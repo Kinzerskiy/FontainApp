@@ -52,14 +52,12 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         picker.setCountry(phoneNumber?.phoneNumberTextField.text ?? "")
         
         phoneNumber = PhoneNumberView.setup(in: phoneNumberView)
-        termOfUseView = TermOfUseView.setup(in: termOfUseView)
-        
-        //button doesn't update state
-        termOfUse?.privacyAcceptenceCompletion = { [weak self] isSelected in
+        termOfUseView = TermOfUseView.setup(in: termOfUseView, privacyAcceptenceCompletion:
+                                                { [weak self] isSelected in
             self?.viewModel.isPrivacyAccepted = isSelected
             self?.updateButtonState()
-        }
-        
+        })
+       
         phoneNumber?.phoneCompletion = {
             self.picker.isHidden = false
             self.termOfUseView.isHidden = true

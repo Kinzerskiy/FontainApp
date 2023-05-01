@@ -20,8 +20,9 @@ class TermOfUseView: UIView {
         prepareView()
     }
     
-    static func setup(in view: UIView) -> TermOfUseView {
+    static func setup(in view: UIView, privacyAcceptenceCompletion: @escaping ((Bool) -> Void)) -> TermOfUseView {
         let termOfUseView = TermOfUseView.loadFromNib()!
+        termOfUseView.privacyAcceptenceCompletion = privacyAcceptenceCompletion
         termOfUseView.frame = view.bounds
         view.addSubview(termOfUseView)
         return termOfUseView
@@ -53,6 +54,6 @@ class TermOfUseView: UIView {
     @objc func check() {
         isSelected.toggle()
         termOfUseAcceptImage.image = isSelected ? UIImage(named: "Property 1=filled") : UIImage(named: "Property 1=empty")
-        privacyAcceptenceCompletion?(isSelected)
+        privacyAcceptenceCompletion?(self.isSelected)
     }
 }

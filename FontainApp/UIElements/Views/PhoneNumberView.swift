@@ -51,7 +51,7 @@ class PhoneNumberView: UIView {
         }
     
     func getPhoneNumber() -> String {
-        return phoneNumberTextField.text ?? ""
+        return (phoneRegionLabel.text ?? "") + (phoneNumberTextField.text ?? "")
     }
     
     

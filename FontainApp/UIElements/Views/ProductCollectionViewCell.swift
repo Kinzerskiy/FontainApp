@@ -37,9 +37,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         buyView.clipsToBounds = true
     }
     
-    
     @IBAction func buyButtonPressed(_ sender: Any) {
-        
         buyComplition?()
     }
     
