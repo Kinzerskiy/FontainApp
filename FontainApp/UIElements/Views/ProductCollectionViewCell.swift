@@ -8,9 +8,8 @@
 import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var firsView: UIView!
-    @IBOutlet weak var secondView: UIView!
+    
+    @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productMeasureLabel: UILabel!
     @IBOutlet weak var productCostLabel: UILabel!
@@ -26,21 +25,52 @@ class ProductCollectionViewCell: UICollectionViewCell {
         prepareUI()
     }
     
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupConstraints()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setupConstraints()
+//    }
+    
+//    private func setupConstraints() {
+//        contentView.addSubview(firstView)
+//        firstView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        // Create constraints
+//        NSLayoutConstraint.activate([
+//            firstView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+//            firstView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+//            firstView.topAnchor.constraint(equalTo: contentView.topAnchor),
+//            firstView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+//        ])
+//    }
+//
+//
+   override  func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        let newSize = CGSize(width: 170, height: 170)
+        let updatedLayoutAttributes = layoutAttributes
+        updatedLayoutAttributes.size = newSize
+        return updatedLayoutAttributes
+    }
+    
+    
     func fill(with model: Product) {
         
         guard let imageUrl = model.productImageUrl, let source = URL.init(string: imageUrl) else { return }
-
+        
         productImageLabel.kf.setImage(with: source)
-            productNameLabel.text = model.name
-            productMeasureLabel.text = model.measure
-            productCostLabel.text = "€" + String(model.price)
-            productImageLabel.image = UIImage(named: model.productImageUrl ?? "")
+        productNameLabel.text = model.name
+        productMeasureLabel.text = model.measure
+        productCostLabel.text = "€" + String(model.price)
+        productImageLabel.image = UIImage(named: model.productImageUrl ?? "")
     }
     
     func prepareUI() {
         
-        firsView.layer.cornerRadius = 12
-        secondView.layer.cornerRadius = 12
+        firstView.layer.cornerRadius = 12
         
         buyButton.layer.cornerRadius = buyButton.frame.size.width / 2
         buyButton.clipsToBounds = true

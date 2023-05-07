@@ -49,6 +49,7 @@
 		8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */; };
 		8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E771AF729F9F8020087654E /* ProductViewController.swift */; };
 		8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */; };
+		8E848F582A07F4AA0034E265 /* EmptyBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E848F572A07F4AA0034E265 /* EmptyBasketViewController.swift */; };
 		8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC99B7229EABC2200EC255C /* UIView+Extension.swift */; };
 		8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */; };
 		8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */; };
@@ -108,6 +109,7 @@
 		8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
 		8E771AF729F9F8020087654E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E848F572A07F4AA0034E265 /* EmptyBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBasketViewController.swift; sourceTree = "<group>"; };
 		8EC99B7229EABC2200EC255C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8EC9E8E729E09D28009CB6D3 /* FontainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			children = (
 				8E771AF729F9F8020087654E /* ProductViewController.swift */,
 				8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */,
+				8E848F572A07F4AA0034E265 /* EmptyBasketViewController.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				8E714CDA29E6D81400B3BBF1 /* BasketProductTableViewCell.swift in Sources */,
 				8E6D6A9129EC38B000589697 /* FileManager.swift in Sources */,
 				8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */,
+				8E848F582A07F4AA0034E265 /* EmptyBasketViewController.swift in Sources */,
 				8E6D6A8D29EC386E00589697 /* UserManager.swift in Sources */,
 				8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */,
 				8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */,

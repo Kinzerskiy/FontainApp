@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,12 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="addToCardView" destination="d3C-PQ-oXE" id="QBa-vA-yTA"/>
-                <outlet property="viewButton" destination="Zxs-nU-VTd" id="OoI-Hr-Pfa"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ItemAddedToCardView" customModule="FontainApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
@@ -31,38 +27,29 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3C-PQ-oXE">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-HA-xBu">
-                            <rect key="frame" x="20" y="20" width="353" height="24"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="DIZ-HA-xBu">
+                            <rect key="frame" x="17" y="17" width="359" height="35"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-en-NAi">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Property 1=disabled (2)" translatesAutoresizingMaskIntoConstraints="NO" id="n25-Ur-ivm">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="24" id="ize-IE-KWT"/>
-                                        <constraint firstAttribute="height" constant="24" id="vCa-fV-rG3"/>
+                                        <constraint firstAttribute="width" constant="24" id="DED-ID-yaH"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="Property 1=disabled (2)"/>
-                                    <connections>
-                                        <action selector="imageBuyAction:" destination="-1" eventType="touchUpInside" id="qkg-Iy-4GH"/>
-                                    </connections>
-                                </button>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item added to cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-eX-2Wq">
-                                    <rect key="frame" x="99.333333333333329" y="0.0" width="141.66666666666669" height="24"/>
+                                    <rect key="frame" x="102.33333333333333" y="0.0" width="141.66666666666669" height="35"/>
                                     <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxs-nU-VTd">
-                                    <rect key="frame" x="316" y="0.0" width="37" height="24"/>
+                                    <rect key="frame" x="322" y="0.0" width="37" height="35"/>
                                     <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="View">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
-                                    <connections>
-                                        <action selector="viewBuyAction:" destination="-1" eventType="touchUpInside" id="sht-79-onQ"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="tintColor" name="View"/>
@@ -70,21 +57,26 @@
                     </subviews>
                     <color key="backgroundColor" name="View"/>
                     <constraints>
-                        <constraint firstItem="DIZ-HA-xBu" firstAttribute="leading" secondItem="d3C-PQ-oXE" secondAttribute="leading" constant="20" id="LoE-0L-hQP"/>
-                        <constraint firstItem="DIZ-HA-xBu" firstAttribute="top" secondItem="d3C-PQ-oXE" secondAttribute="top" constant="20" id="gf9-n4-nJT"/>
-                        <constraint firstAttribute="trailing" secondItem="DIZ-HA-xBu" secondAttribute="trailing" constant="20" id="tih-2M-2w4"/>
+                        <constraint firstItem="DIZ-HA-xBu" firstAttribute="top" secondItem="d3C-PQ-oXE" secondAttribute="top" constant="17" id="4i0-8r-qCe"/>
+                        <constraint firstItem="DIZ-HA-xBu" firstAttribute="leading" secondItem="d3C-PQ-oXE" secondAttribute="leading" constant="17" id="4nN-iP-5uf"/>
+                        <constraint firstAttribute="trailing" secondItem="DIZ-HA-xBu" secondAttribute="trailing" constant="17" id="dQO-DH-u5T"/>
+                        <constraint firstAttribute="bottom" secondItem="DIZ-HA-xBu" secondAttribute="bottom" constant="17" id="pTa-MS-8Fs"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="d3C-PQ-oXE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1Bv-XE-wXY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d3C-PQ-oXE" secondAttribute="trailing" id="Yxa-f7-aql"/>
-                <constraint firstItem="d3C-PQ-oXE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cAx-wR-oxa"/>
-                <constraint firstAttribute="bottom" secondItem="d3C-PQ-oXE" secondAttribute="bottom" id="uYn-FV-sZD"/>
+                <constraint firstAttribute="bottom" secondItem="d3C-PQ-oXE" secondAttribute="bottom" id="8dr-Ii-OaO"/>
+                <constraint firstItem="d3C-PQ-oXE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IbX-Qa-EQZ"/>
+                <constraint firstItem="d3C-PQ-oXE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MG1-cR-dPy"/>
+                <constraint firstItem="d3C-PQ-oXE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rkS-wF-mfG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addToCardView" destination="d3C-PQ-oXE" id="9f3-Xw-0b7"/>
+                <outlet property="viewButton" destination="Zxs-nU-VTd" id="Onj-VL-stj"/>
+            </connections>
             <point key="canvasLocation" x="139.69465648854961" y="-255.98591549295776"/>
         </view>
     </objects>

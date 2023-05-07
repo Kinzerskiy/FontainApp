@@ -26,7 +26,7 @@ class ItemAddedToCardView: UIView {
     }
     
     func prepareView() {
-        addToCardView?.layer.cornerRadius = frame.height / 2
+        addToCardView?.layer.cornerRadius = 12
     }
     
     @IBAction func imageBuyAction(_ sender: Any) {

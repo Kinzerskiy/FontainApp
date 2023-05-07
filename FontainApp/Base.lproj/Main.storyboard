@@ -229,6 +229,21 @@
             </objects>
             <point key="canvasLocation" x="2991" y="107"/>
         </scene>
+        <!--Empty Basket View Controller-->
+        <scene sceneID="T0c-zZ-Zpa">
+            <objects>
+                <viewController id="RF9-Ih-nXi" customClass="EmptyBasketViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rur-dy-K2r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="p2Q-Fn-1eB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itw-W9-Wo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4433" y="867"/>
+        </scene>
         <!--Product View Controller-->
         <scene sceneID="IG0-Gb-oPJ">
             <objects>
