@@ -12,13 +12,13 @@ class ProductManager {
     
     var models: [Product] = []
     
-    func getProducts(completion: @escaping () -> Void) {
+    func getProducts(completion: @escaping (Error?) -> Void) {
         let db = Firestore.firestore()
         let docRef = db.collection("Product")
         
         docRef.getDocuments { [weak self] data, error in
             if let error = error {
-                print(error)
+                completion(error)
             }
             guard let data = data else { return }
             self?.models.removeAll()
@@ -27,14 +27,14 @@ class ProductManager {
                 let productData = document.data()
                 if let price = productData["price"] as? Double,
                    let name = productData["name"] as? String,
-                   let imageName = productData["imageName"] as? String,
+                   let productImageUrl = productData["productImageUrl"] as? String,
                    let measure = productData["measure"] as? String {
                     let uuid = document.documentID
-                    let product = Product(uuid: uuid, imageName: imageName, name: name, measure: measure, price: price)
+                    let product = Product(uuid: uuid, productImageUrl: productImageUrl, name: name, measure: measure, price: price)
                     self?.models.append(product)
                 }
             }
-            completion()
+            completion(nil)
         }
     }
 }

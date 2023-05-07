@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
     
@@ -33,8 +34,21 @@ class WelcomeViewController: UIViewController {
                 charIndex += 1
             }
             group.notify(queue: .main) {
-                self.performSegue(withIdentifier: "welcomeSegue", sender: self)
+                self.checkUser()
             }
+        }
+    }
+    
+    func checkUser() {
+        if let user = Auth.auth().currentUser {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            
+            UIApplication.shared.windows.first?.rootViewController = navigationController
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        } else {
+            self.performSegue(withIdentifier: "welcomeSegue", sender: self)
         }
     }
 

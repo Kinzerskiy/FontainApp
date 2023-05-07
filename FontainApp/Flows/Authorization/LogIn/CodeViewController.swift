@@ -18,6 +18,9 @@ class CodeViewController: UIViewController {
     var smsView: SmsView?
     var viewModel: CodeViewModel?
     
+    var phoneNumber: String?
+    var currentVerificationID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startTimer()
@@ -72,7 +75,7 @@ class CodeViewController: UIViewController {
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                 } else {
                     let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
-                    userManager.saveUserFields(user: user) { [weak self] in
+                    userManager.saveUserFields(user: user) {
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
                         let navigationController = UINavigationController(rootViewController: viewController)
@@ -88,7 +91,7 @@ class CodeViewController: UIViewController {
     
     func startTimer() {
         var countdown = 4
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             countdown -= 1
             self.timerLabel.text = "0:\(countdown)"
             if countdown == 0 {
@@ -99,14 +102,13 @@ class CodeViewController: UIViewController {
         }
     }
     
-    
-    
-    
     @IBAction func resendDidTap(_ sender: Any) {
-        //how Firebase send sms code?
-        let logIn = LogInViewModel()
-        logIn.login { verificationID in guard let verificationID = verificationID else { return }
-        }
+        guard let phoneNumber = phoneNumber else { return }
+            viewModel?.resendCode(to: phoneNumber) { error in
+                if error != nil {
+                   print("code not send")
+                }
+            }
         
         resendButton.isHidden = true
         timerLabel.isHidden = false

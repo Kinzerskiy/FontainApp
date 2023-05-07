@@ -24,9 +24,7 @@ extension UIButton {
     
     func transperentRed() {
         layer.cornerRadius = frame.height / 2
-        
         backgroundColor = .white
-        
         setTitleColor(UIColor.red, for: .normal)
         layer.borderWidth = 1
         layer.borderColor = UIColor.red.cgColor

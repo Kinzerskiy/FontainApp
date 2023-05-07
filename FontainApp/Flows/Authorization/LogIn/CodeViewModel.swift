@@ -26,10 +26,19 @@ class CodeViewModel {
                 print(error?.localizedDescription ?? "error")
             } else {
                 guard Auth.auth().currentUser != nil else { return }
-                completion()
+            }
+        }
+        completion()
+    }
+    
+    func resendCode(to phoneNumber: String, completion: @escaping (Error?) -> Void) {
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
+            if let error = error {
+                completion(error)
+            } else {
+                self.verificationID = verificationID ?? ""
+                completion(nil)
             }
         }
     }
 }
-
-

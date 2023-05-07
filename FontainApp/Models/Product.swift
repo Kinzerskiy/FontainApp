@@ -9,7 +9,7 @@ import Foundation
 
 struct Product: Codable {
     let uuid: String
-    let imageName: String
+    let productImageUrl: String?
     let name: String
     let measure: String
     let price: Double

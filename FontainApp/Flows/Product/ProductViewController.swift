@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductViewController: UIViewController {
 
@@ -14,15 +15,28 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var addProductView: UIView!
     
     var productPopUp: ItemAddedToCardView?
-    let productManager = ProductManager()
+    var viewModel = ProductViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+       
         prepareCollectionView()
+        getData()
+    }
+    
+    func getData() {
+        viewModel.getData { [weak self] error in
+            if let error = error {
+                print(error)
+            } else {
+                self?.productCollectionView.reloadData()
+            }
+        }
     }
     
     func prepareCollectionView() {
+        
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
         
@@ -30,7 +44,7 @@ class ProductViewController: UIViewController {
     }
     
     func prepareUI() {
-        addProductView.isHidden = true
+        addProductView?.isHidden = true
         self.navigationItem.setHidesBackButton(true, animated: true)
         
     }
@@ -44,14 +58,14 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productManager.models.count
+        viewModel.productManager.models.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
         
-        let product = productManager.models[indexPath.row]
+        let product = viewModel.getProduct(by: indexPath.row)
         cell.fill(with: product)
         
         cell.buyComplition = {
@@ -60,4 +74,8 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         return cell
     }
+    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+            .init(width: 200, height: 200)
+        }
 }

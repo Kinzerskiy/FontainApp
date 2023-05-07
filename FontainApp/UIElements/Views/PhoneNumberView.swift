@@ -50,8 +50,10 @@ class PhoneNumberView: UIView {
             flagImageView.image = flag
         }
     
-    func getPhoneNumber() -> String {
-        return (phoneRegionLabel.text ?? "") + (phoneNumberTextField.text ?? "")
+    func getPhoneNumber(completion: @escaping (String) -> Void) {
+        let phoneNumber = (phoneRegionLabel.text ?? "") + (phoneNumberTextField.text ?? "")
+        completion(phoneNumber)
+       
     }
     
     

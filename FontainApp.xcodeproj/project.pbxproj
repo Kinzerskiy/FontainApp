@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289F779B3044489A9A97E331 /* Pods_FontainApp.framework */; };
+		8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */; };
 		8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184029FD8A5400DE2B74 /* Product.swift */; };
 		8E5D184329FD8A7700DE2B74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184229FD8A7700DE2B74 /* User.swift */; };
 		8E5D184529FD8A8900DE2B74 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184429FD8A8900DE2B74 /* Order.swift */; };
 		8E5D184729FD8AA100DE2B74 /* BasketProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184629FD8AA100DE2B74 /* BasketProduct.swift */; };
-		8E5D184929FD8BCA00DE2B74 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184829FD8BCA00DE2B74 /* ProductViewModel.swift */; };
 		8E5D184C29FD8E2B00DE2B74 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184B29FD8E2B00DE2B74 /* ProfileViewController.swift */; };
 		8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */; };
 		8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542D29EAC48D003CE78E /* LogInViewController.swift */; };
@@ -67,11 +67,11 @@
 		161D613FEE59361229AA03DF /* Pods-FontainApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.debug.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.debug.xcconfig"; sourceTree = "<group>"; };
 		289F779B3044489A9A97E331 /* Pods_FontainApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontainApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.release.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.release.xcconfig"; sourceTree = "<group>"; };
+		8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		8E5D184029FD8A5400DE2B74 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8E5D184229FD8A7700DE2B74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E5D184429FD8A8900DE2B74 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		8E5D184629FD8AA100DE2B74 /* BasketProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProduct.swift; sourceTree = "<group>"; };
-		8E5D184829FD8BCA00DE2B74 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		8E5D184B29FD8E2B00DE2B74 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModels.swift; sourceTree = "<group>"; };
 		8E61542D29EAC48D003CE78E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -183,10 +183,10 @@
 		8E61542A29EAC437003CE78E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				8E5D184D29FEEE4C00DE2B74 /* Order */,
+				8E61542B29EAC44C003CE78E /* Authorization */,
 				8E5D184A29FD8E0D00DE2B74 /* User */,
 				8E771AF629F9F7BF0087654E /* Product */,
-				8E61542B29EAC44C003CE78E /* Authorization */,
+				8E5D184D29FEEE4C00DE2B74 /* Order */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				8E771AF729F9F8020087654E /* ProductViewController.swift */,
-				8E5D184829FD8BCA00DE2B74 /* ProductViewModel.swift */,
+				8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -496,10 +496,10 @@
 				8E714CD629E6D41C00B3BBF1 /* ProductCollectionViewCell.swift in Sources */,
 				8E714CC329E6C2A400B3BBF1 /* TotalView.swift in Sources */,
 				8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */,
+				8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */,
 				8E714CDA29E6D81400B3BBF1 /* BasketProductTableViewCell.swift in Sources */,
 				8E6D6A9129EC38B000589697 /* FileManager.swift in Sources */,
 				8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */,
-				8E5D184929FD8BCA00DE2B74 /* ProductViewModel.swift in Sources */,
 				8E6D6A8D29EC386E00589697 /* UserManager.swift in Sources */,
 				8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */,
 				8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */,

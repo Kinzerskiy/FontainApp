@@ -9,6 +9,8 @@ import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var firsView: UIView!
+    @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productMeasureLabel: UILabel!
     @IBOutlet weak var productCostLabel: UILabel!
@@ -24,15 +26,25 @@ class ProductCollectionViewCell: UICollectionViewCell {
         prepareUI()
     }
     
-    func fill (with model: Product) {
-        productNameLabel.text = model.name
-        productMeasureLabel.text = model.measure
-        productCostLabel.text = "€" + String(model.price)
-        productImageLabel.image = UIImage(named: model.imageName)
+    func fill(with model: Product) {
         
+        guard let imageUrl = model.productImageUrl, let source = URL.init(string: imageUrl) else { return }
+
+        productImageLabel.kf.setImage(with: source)
+            productNameLabel.text = model.name
+            productMeasureLabel.text = model.measure
+            productCostLabel.text = "€" + String(model.price)
+            productImageLabel.image = UIImage(named: model.productImageUrl ?? "")
     }
     
     func prepareUI() {
+        
+        firsView.layer.cornerRadius = 12
+        secondView.layer.cornerRadius = 12
+        
+        buyButton.layer.cornerRadius = buyButton.frame.size.width / 2
+        buyButton.clipsToBounds = true
+        
         buyView.layer.cornerRadius = buyView.frame.size.width / 2
         buyView.clipsToBounds = true
     }

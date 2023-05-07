@@ -14,18 +14,29 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let content = UNMutableNotificationContent()
+        content.title = "«Water Delivery» Would Like to Send You Notifications"
+        content.body = "Notifications may include alerts, sounds and icon badges. They can be configured in Settings."
+        let request = UNNotificationRequest(identifier: "notificationPermission", content: content, trigger: nil)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if let error = error {
+                print("Error requesting authorization: \(error.localizedDescription)")
+            } else {
+                if granted {
+                    center.add(request) { (error) in
+                        if let error = error {
+                            print("Error adding notification request: \(error.localizedDescription)")
+                        } else {
+                            print("Notification request added successfully")
+                        }
+                    }
+                } else {
+                    let alert = UIAlertController(title: "Notifications Disabled", message: "You can enable notifications in Settings.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

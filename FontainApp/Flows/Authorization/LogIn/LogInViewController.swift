@@ -15,14 +15,10 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var sendSmsButton: UIButton!
     @IBOutlet weak var picker: CountryPicker!
     
-    
     var selectedCountryCode: String?
     var viewModel = LogInViewModel()
     var phoneNumber: PhoneNumberView?
     var termOfUse: TermOfUseView?
-    
-    var activePhoneNumber: String?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +29,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
     
     func prepareView() {
         navigationItem.setHidesBackButton(true, animated: true)
+        sendSmsButton.unactiveStyle()
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
@@ -52,6 +49,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         picker.setCountry(phoneNumber?.phoneNumberTextField.text ?? "")
         
         phoneNumber = PhoneNumberView.setup(in: phoneNumberView)
+        
         termOfUseView = TermOfUseView.setup(in: termOfUseView, privacyAcceptenceCompletion:
                                                 { [weak self] isSelected in
             self?.viewModel.isPrivacyAccepted = isSelected
@@ -63,8 +61,6 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
             self.termOfUseView.isHidden = true
             self.sendSmsButton.isHidden = true
         }
-        
-        sendSmsButton.unactiveStyle()
     }
 
     
@@ -97,13 +93,11 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         }
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let codeViewController = segue.destination as? CodeViewController,
-              let verificationID = sender as? String
-                else { return }
-        codeViewController.viewModel = .init(verificationID: verificationID)
+        if let codeViewController = segue.destination as? CodeViewController {
+            codeViewController.viewModel = .init(verificationID: sender as! String)
+            codeViewController.phoneNumber = viewModel.phoneNumber
+        }
     }
     
     func updateButtonState() {
@@ -117,33 +111,9 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
 
 extension LogInViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        viewModel.phoneNumber = phoneNumber?.getPhoneNumber() ?? ""
-        updateButtonState()
+        phoneNumber?.getPhoneNumber { phoneNumber in
+            self.viewModel.phoneNumber = phoneNumber
+            self.updateButtonState()
+        }
     }
 }
-
-
-//            let content = UNMutableNotificationContent()
-//            content.title = "«Water Delivery» Would Like to Send You Notifications"
-//            content.body = "Notifications may include alerts, sounds and icon badges. They can be configured in Settings."
-//            let request = UNNotificationRequest(identifier: "notificationPermission", content: content, trigger: nil)
-//            let center = UNUserNotificationCenter.current()
-//            center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-//                if let error = error {
-//                    print("Error requesting authorization: \(error.localizedDescription)")
-//                } else {
-//                    if granted {
-//                        center.add(request) { (error) in
-//                            if let error = error {
-//                                print("Error adding notification request: \(error.localizedDescription)")
-//                            } else {
-//                                print("Notification request added successfully")
-//                            }
-//                        }
-//                    } else {
-//                        let alert = UIAlertController(title: "Notifications Disabled", message: "You can enable notifications in Settings.", preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                        self.present(alert, animated: true, completion: nil)
-//                    }
-//                }
-//            }
