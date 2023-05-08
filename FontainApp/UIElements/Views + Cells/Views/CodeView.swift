@@ -18,8 +18,6 @@ class CodeView: UIView {
         super.init(frame: frame)
         cardViewInit()
         prepareView()
-        
-        
     }
     
     required init?(coder: NSCoder) {

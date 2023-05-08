@@ -9,15 +9,31 @@ import UIKit
 
 class BasketViewController: UIViewController {
 
-    var order: Order?
+    @IBOutlet weak var toShopButton: UIButton!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyImage: UIImageView!
     
+    @IBOutlet weak var basketTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    
+    @IBAction func basketAction(_ sender: Any) {
+        
+    }
+    
 }
+
+
+
+
+
+
+
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     

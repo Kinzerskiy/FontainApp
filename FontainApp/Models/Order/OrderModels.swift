@@ -19,7 +19,7 @@ struct OrderCreateModel {
    var isContactDelivey: Bool = false
    var isNotCalling : Bool = false
    var totalPrice: Double { BasketManager.shared.getPrice() }
-   var deliveryCoast: Double = 50.0
+   
    var paymentMethod: PaymentMethod = .cash
    }
 
@@ -51,36 +51,35 @@ class DateCellViewModel {
 }
 
 class TextFieldCellViewModel {
-    var name: String = ""
-    var value: String = ""
+    var address: String = ""
     var completion: ((String) -> Void)
     
-    init(name: String, value: String, completion: @escaping (String) -> Void) {
-        self.name = name
-        self.value = value
+    init(address: String, completion: @escaping (String) -> Void) {
+        self.address = address
         self.completion = completion
     }
 }
 
 class SwitcherCellViewModel {
-    var switcherName: String = ""
-    var isOn: Bool = false
-    var completion: ((Bool) -> Void)?
+    var contactlessIsOn: Bool = false
+    var callIsOn: Bool = false
     
-    init(switcherName: String, isOn: Bool, completion: @escaping (Bool) -> Void) {
-        self.switcherName = switcherName
-        self.isOn = isOn
-        self.completion = completion
+    var contactlessSwitchCompletion: ((Bool) -> Void)?
+    var callSwitchCompletion: ((Bool) -> Void)?
+    
+    init(contactlessIsOn: Bool, callIsOn: Bool, completion: @escaping (Bool) -> Void) {
+        self.contactlessIsOn = contactlessIsOn
+        self.callIsOn = callIsOn
+        self.contactlessSwitchCompletion = completion
+        self.callSwitchCompletion = completion
     }
 }
 
 class OrederTotalViewModel {
     var total: Double = 0.0
-    var deliveryCoast = 0.0
     
-    init(total: Double, deliveryCoast: Double = 0.0) {
+    init(total: Double) {
         self.total = total
-        self.deliveryCoast = deliveryCoast
     }
 }
 

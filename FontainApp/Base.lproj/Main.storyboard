@@ -306,11 +306,71 @@
                     <view key="view" contentMode="scaleToFill" id="RJa-a4-bk8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhe-uc-lbJ">
+                                <rect key="frame" x="20" y="31" width="335" height="24"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amico 1" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-1B-PaS">
+                                <rect key="frame" x="59" y="125" width="258" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="Rdx-4W-rux"/>
+                                    <constraint firstAttribute="height" constant="220" id="rpM-GS-0Yu"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Cart is empty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxO-N4-rvo">
+                                <rect key="frame" x="20" y="415" width="335" height="29"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ycC-ao-WuA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJB-Rb-pwK">
+                                <rect key="frame" x="30" y="585" width="315" height="33"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="To shop!!!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="basketAction:" destination="eiU-DI-lNB" eventType="touchUpInside" id="orc-ns-LUv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZJg-21-pCa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HxO-N4-rvo" firstAttribute="top" secondItem="TeW-1B-PaS" secondAttribute="bottom" constant="70" id="D1o-Br-0JV"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="trailing" secondItem="ycC-ao-WuA" secondAttribute="trailing" id="ECN-1f-aa9"/>
+                            <constraint firstItem="Lhe-uc-lbJ" firstAttribute="top" secondItem="ZJg-21-pCa" secondAttribute="top" constant="11" id="Hit-3G-p6h"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="trailing" secondItem="TJB-Rb-pwK" secondAttribute="trailing" constant="30" id="OIQ-pH-g08"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="trailing" secondItem="HxO-N4-rvo" secondAttribute="trailing" constant="20" id="PaL-WX-dcY"/>
+                            <constraint firstItem="HxO-N4-rvo" firstAttribute="leading" secondItem="ZJg-21-pCa" secondAttribute="leading" constant="20" id="PiL-1d-yzw"/>
+                            <constraint firstItem="ycC-ao-WuA" firstAttribute="top" secondItem="ZJg-21-pCa" secondAttribute="top" id="QF1-bY-jkr"/>
+                            <constraint firstItem="TeW-1B-PaS" firstAttribute="top" secondItem="Lhe-uc-lbJ" secondAttribute="bottom" constant="70" id="fan-aW-MY3"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="trailing" secondItem="Lhe-uc-lbJ" secondAttribute="trailing" constant="20" id="fg7-H1-Tky"/>
+                            <constraint firstItem="Lhe-uc-lbJ" firstAttribute="leading" secondItem="ZJg-21-pCa" secondAttribute="leading" constant="20" id="gVh-mk-M2V"/>
+                            <constraint firstItem="ycC-ao-WuA" firstAttribute="leading" secondItem="ZJg-21-pCa" secondAttribute="leading" id="haf-Vh-t37"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="bottom" secondItem="ycC-ao-WuA" secondAttribute="bottom" id="oNs-J6-9cs"/>
+                            <constraint firstItem="ZJg-21-pCa" firstAttribute="bottom" secondItem="TJB-Rb-pwK" secondAttribute="bottom" id="qca-1M-SCV"/>
+                            <constraint firstItem="TeW-1B-PaS" firstAttribute="leading" secondItem="ZJg-21-pCa" secondAttribute="leading" constant="59" id="sSy-db-xSJ"/>
+                            <constraint firstItem="TJB-Rb-pwK" firstAttribute="leading" secondItem="ZJg-21-pCa" secondAttribute="leading" constant="30" id="tsf-51-eB7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Property 1=active (1)" id="nqy-z2-lXY"/>
                     <navigationItem key="navigationItem" id="Af5-Db-HuT"/>
+                    <connections>
+                        <outlet property="basketTableView" destination="ycC-ao-WuA" id="b4h-Ob-8pA"/>
+                        <outlet property="emptyImage" destination="TeW-1B-PaS" id="dkI-Df-VNY"/>
+                        <outlet property="emptyLabel" destination="HxO-N4-rvo" id="fr1-hZ-AvB"/>
+                        <outlet property="toShopButton" destination="TJB-Rb-pwK" id="fJZ-x9-ALn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9F0-X4-pAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,6 +461,7 @@
         <image name="Property 122=active" width="20" height="22"/>
         <image name="Property 1=active" width="23" height="23"/>
         <image name="Property 1=active (1)" width="24" height="23"/>
+        <image name="amico 1" width="258" height="220"/>
         <image name="bro" width="175" height="173"/>
         <namedColor name="Primary">
             <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

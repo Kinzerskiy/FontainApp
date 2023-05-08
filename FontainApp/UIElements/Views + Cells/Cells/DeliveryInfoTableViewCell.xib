@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arimo-Regular.ttf">
+            <string>Arimo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="DeliveryInfoTableViewCell" customModule="FontainApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call me 30 min before delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-c6-Ffb">
+                        <rect key="frame" x="30" y="26" width="190" height="16"/>
+                        <fontDescription key="fontDescription" name="Arimo-Regular" family="Arimo" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contactless delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-mp-6Fe">
+                        <rect key="frame" x="30" y="71" width="126" height="16"/>
+                        <fontDescription key="fontDescription" name="Arimo-Regular" family="Arimo" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGf-qq-e9l">
+                        <rect key="frame" x="296" y="21" width="53" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="51" id="p14-Ib-pya"/>
+                        </constraints>
+                        <color key="onTintColor" name="Secondary"/>
+                    </switch>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BrG-lC-U0q">
+                        <rect key="frame" x="298" y="63" width="51" height="31"/>
+                        <color key="onTintColor" name="Secondary"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TKF-mp-6Fe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="3iW-yO-rjG"/>
+                    <constraint firstAttribute="trailing" secondItem="yGf-qq-e9l" secondAttribute="trailing" constant="30" id="M78-qr-VWf"/>
+                    <constraint firstItem="BrG-lC-U0q" firstAttribute="top" secondItem="yGf-qq-e9l" secondAttribute="bottom" constant="11" id="P7p-SI-Gcv"/>
+                    <constraint firstAttribute="trailing" secondItem="BrG-lC-U0q" secondAttribute="trailing" constant="30" id="hft-E3-qeo"/>
+                    <constraint firstItem="TKF-mp-6Fe" firstAttribute="top" secondItem="eGk-c6-Ffb" secondAttribute="bottom" constant="29" id="twD-bd-d9d"/>
+                    <constraint firstItem="yGf-qq-e9l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="u8g-AT-yai"/>
+                    <constraint firstItem="eGk-c6-Ffb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="vFp-Ze-yu1"/>
+                    <constraint firstItem="eGk-c6-Ffb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="yUz-Ef-4aw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="callSwitch" destination="yGf-qq-e9l" id="MoU-VK-Ph0"/>
+                <outlet property="contactlessSwitch" destination="BrG-lC-U0q" id="4Vj-Mm-L9C"/>
+            </connections>
+            <point key="canvasLocation" x="182.44274809160305" y="44.718309859154935"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Secondary">
+            <color red="0.71399998664855957" green="0.93699997663497925" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

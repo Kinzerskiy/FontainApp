@@ -28,8 +28,7 @@
 		8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */; };
 		8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CB829E6BBA700B3BBF1 /* CardView.xib */; };
 		8E714CBB29E6BE2400B3BBF1 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */; };
-		8E714CC129E6C0CC00B3BBF1 /* TotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */; };
-		8E714CC329E6C2A400B3BBF1 /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CC229E6C2A400B3BBF1 /* TotalView.swift */; };
+		8E714CC129E6C0CC00B3BBF1 /* TotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC029E6C0CC00B3BBF1 /* TotalTableViewCell.xib */; };
 		8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */; };
 		8E714CC729E6C73900B3BBF1 /* TermOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */; };
 		8E714CC929E6C9EA00B3BBF1 /* ResendCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */; };
@@ -50,6 +49,11 @@
 		8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D7452A09319C002B9217 /* TotalProductTableViewCell.swift */; };
 		8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E73D7462A09319C002B9217 /* TotalProductTableViewCell.xib */; };
 		8E73D74A2A093C5F002B9217 /* BasketProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D7492A093C5F002B9217 /* BasketProduct.swift */; };
+		8E73D74C2A094511002B9217 /* TotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D74B2A094511002B9217 /* TotalTableViewCell.swift */; };
+		8E73D7502A09471A002B9217 /* DeliveryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D74E2A09471A002B9217 /* DeliveryInfoTableViewCell.swift */; };
+		8E73D7512A09471A002B9217 /* DeliveryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E73D74F2A09471A002B9217 /* DeliveryInfoTableViewCell.xib */; };
+		8E73D7542A094C71002B9217 /* DeliveryAdressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D7522A094C71002B9217 /* DeliveryAdressTableViewCell.swift */; };
+		8E73D7552A094C71002B9217 /* DeliveryAdressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E73D7532A094C71002B9217 /* DeliveryAdressTableViewCell.xib */; };
 		8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E771AF729F9F8020087654E /* ProductViewController.swift */; };
 		8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */; };
 		8E848F582A07F4AA0034E265 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E848F572A07F4AA0034E265 /* BasketViewController.swift */; };
@@ -91,8 +95,7 @@
 		8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsView.swift; sourceTree = "<group>"; };
 		8E714CB829E6BBA700B3BBF1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
-		8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalView.xib; sourceTree = "<group>"; };
-		8E714CC229E6C2A400B3BBF1 /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
+		8E714CC029E6C0CC00B3BBF1 /* TotalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalTableViewCell.xib; sourceTree = "<group>"; };
 		8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermOfUseView.xib; sourceTree = "<group>"; };
 		8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUseView.swift; sourceTree = "<group>"; };
 		8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResendCodeView.xib; sourceTree = "<group>"; };
@@ -113,6 +116,11 @@
 		8E73D7452A09319C002B9217 /* TotalProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalProductTableViewCell.swift; sourceTree = "<group>"; };
 		8E73D7462A09319C002B9217 /* TotalProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalProductTableViewCell.xib; sourceTree = "<group>"; };
 		8E73D7492A093C5F002B9217 /* BasketProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProduct.swift; sourceTree = "<group>"; };
+		8E73D74B2A094511002B9217 /* TotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTableViewCell.swift; sourceTree = "<group>"; };
+		8E73D74E2A09471A002B9217 /* DeliveryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8E73D74F2A09471A002B9217 /* DeliveryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryInfoTableViewCell.xib; sourceTree = "<group>"; };
+		8E73D7522A094C71002B9217 /* DeliveryAdressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAdressTableViewCell.swift; sourceTree = "<group>"; };
+		8E73D7532A094C71002B9217 /* DeliveryAdressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryAdressTableViewCell.xib; sourceTree = "<group>"; };
 		8E771AF729F9F8020087654E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E848F572A07F4AA0034E265 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -232,28 +240,13 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		8E714CB329E6B85700B3BBF1 /* Views */ = {
+		8E714CB329E6B85700B3BBF1 /* Views + Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */,
-				8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */,
-				8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */,
-				8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */,
-				8E714CB429E6B8B200B3BBF1 /* SmsView.xib */,
-				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
-				8E714CB829E6BBA700B3BBF1 /* CardView.xib */,
-				8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */,
-				8E714CC029E6C0CC00B3BBF1 /* TotalView.xib */,
-				8E714CC229E6C2A400B3BBF1 /* TotalView.swift */,
-				8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */,
-				8E714CCA29E6C9F100B3BBF1 /* ResendCodeView.swift */,
-				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
-				8E714CCE29E6CB5600B3BBF1 /* ItemAddedToCardView.swift */,
-				8E714CD029E6D05300B3BBF1 /* StoreInfoView.xib */,
-				8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */,
+				8E73D74D2A0946D3002B9217 /* Views */,
 				8E73D7432A0930E2002B9217 /* Cells */,
 			);
-			path = Views;
+			path = "Views + Cells";
 			sourceTree = "<group>";
 		};
 		8E73D7432A0930E2002B9217 /* Cells */ = {
@@ -269,8 +262,35 @@
 				8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */,
 				8E73D7462A09319C002B9217 /* TotalProductTableViewCell.xib */,
 				8E73D7452A09319C002B9217 /* TotalProductTableViewCell.swift */,
+				8E714CC029E6C0CC00B3BBF1 /* TotalTableViewCell.xib */,
+				8E73D74B2A094511002B9217 /* TotalTableViewCell.swift */,
+				8E73D74F2A09471A002B9217 /* DeliveryInfoTableViewCell.xib */,
+				8E73D74E2A09471A002B9217 /* DeliveryInfoTableViewCell.swift */,
+				8E73D7532A094C71002B9217 /* DeliveryAdressTableViewCell.xib */,
+				8E73D7522A094C71002B9217 /* DeliveryAdressTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8E73D74D2A0946D3002B9217 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */,
+				8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */,
+				8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */,
+				8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */,
+				8E714CB429E6B8B200B3BBF1 /* SmsView.xib */,
+				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
+				8E714CB829E6BBA700B3BBF1 /* CardView.xib */,
+				8E714CBA29E6BE2400B3BBF1 /* CodeView.swift */,
+				8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */,
+				8E714CCA29E6C9F100B3BBF1 /* ResendCodeView.swift */,
+				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
+				8E714CCE29E6CB5600B3BBF1 /* ItemAddedToCardView.swift */,
+				8E714CD029E6D05300B3BBF1 /* StoreInfoView.xib */,
+				8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8E771AF629F9F7BF0087654E /* Product */ = {
@@ -287,7 +307,7 @@
 		8EC99B7029EABBDA00EC255C /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				8E714CB329E6B85700B3BBF1 /* Views */,
+				8E714CB329E6B85700B3BBF1 /* Views + Cells */,
 				8EC9E90729E0B12E009CB6D3 /* UIButtons */,
 			);
 			path = UIElements;
@@ -441,13 +461,15 @@
 				8EC9E92A29E0CDF4009CB6D3 /* ABeeZee-Regular.ttf in Resources */,
 				8E714CDF29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib in Resources */,
 				8E714CD129E6D05300B3BBF1 /* StoreInfoView.xib in Resources */,
+				8E73D7512A09471A002B9217 /* DeliveryInfoTableViewCell.xib in Resources */,
 				8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */,
 				8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */,
 				8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */,
 				8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */,
-				8E714CC129E6C0CC00B3BBF1 /* TotalView.xib in Resources */,
+				8E714CC129E6C0CC00B3BBF1 /* TotalTableViewCell.xib in Resources */,
 				8EC9E92929E0CDF4009CB6D3 /* ABeeZee-Italic.ttf in Resources */,
 				8E714CC929E6C9EA00B3BBF1 /* ResendCodeView.xib in Resources */,
+				8E73D7552A094C71002B9217 /* DeliveryAdressTableViewCell.xib in Resources */,
 				8E714CDB29E6D81400B3BBF1 /* BasketProductTableViewCell.xib in Resources */,
 				8EC9E8F229E09D28009CB6D3 /* Main.storyboard in Resources */,
 				8E714CCD29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib in Resources */,
@@ -510,13 +532,14 @@
 				8E6D6A8A29EC351C00589697 /* WelcomeViewModel.swift in Sources */,
 				8E714CDE29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift in Sources */,
 				8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */,
+				8E73D7542A094C71002B9217 /* DeliveryAdressTableViewCell.swift in Sources */,
 				8E714CC729E6C73900B3BBF1 /* TermOfUseView.swift in Sources */,
 				8E5D184329FD8A7700DE2B74 /* User.swift in Sources */,
 				8E5D184529FD8A8900DE2B74 /* Order.swift in Sources */,
 				8E714CD629E6D41C00B3BBF1 /* ProductCollectionViewCell.swift in Sources */,
-				8E714CC329E6C2A400B3BBF1 /* TotalView.swift in Sources */,
 				8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */,
 				8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */,
+				8E73D74C2A094511002B9217 /* TotalTableViewCell.swift in Sources */,
 				8E73D74A2A093C5F002B9217 /* BasketProduct.swift in Sources */,
 				8E714CDA29E6D81400B3BBF1 /* BasketProductTableViewCell.swift in Sources */,
 				8E6D6A9129EC38B000589697 /* FileManager.swift in Sources */,
@@ -531,6 +554,7 @@
 				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
 				8E5D184C29FD8E2B00DE2B74 /* ProfileViewController.swift in Sources */,
+				8E73D7502A09471A002B9217 /* DeliveryInfoTableViewCell.swift in Sources */,
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
 				8E73D7422A092FFC002B9217 /* BasketViewModel.swift in Sources */,
 				8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */,
