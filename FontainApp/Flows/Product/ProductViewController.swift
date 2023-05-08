@@ -55,12 +55,16 @@ class ProductViewController: UIViewController {
 extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: 12, left: 10, bottom: 0, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
-            let cellWidth = (collectionView.bounds.width - 20) / 2
+            let cellWidth = collectionView.frame.width / 2 - 20
             let cellHeight = cellWidth
             return CGSize(width: cellWidth, height: cellHeight)
         }
@@ -69,9 +73,6 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         viewModel.productManager.models.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -84,6 +85,7 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.buyComplition = {
             BasketManager.shared.add(product: product)
         }
+        
         return cell
     }
     

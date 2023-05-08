@@ -24,37 +24,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         prepareUI()
     }
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setupConstraints()
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        setupConstraints()
-//    }
-    
-//    private func setupConstraints() {
-//        contentView.addSubview(firstView)
-//        firstView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        // Create constraints
-//        NSLayoutConstraint.activate([
-//            firstView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            firstView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            firstView.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            firstView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//        ])
-//    }
-//
-//
-   override  func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        let newSize = CGSize(width: 170, height: 170)
-        let updatedLayoutAttributes = layoutAttributes
-        updatedLayoutAttributes.size = newSize
-        return updatedLayoutAttributes
-    }
+  
     
     
     func fill(with model: Product) {

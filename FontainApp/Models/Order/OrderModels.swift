@@ -21,7 +21,6 @@ struct OrderCreateModel {
    var totalPrice: Double { BasketManager.shared.getPrice() }
    var deliveryCoast: Double = 50.0
    var paymentMethod: PaymentMethod = .cash
-    
    }
 
 enum DeliveryRow {

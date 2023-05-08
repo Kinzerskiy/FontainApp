@@ -39,6 +39,9 @@ class BasketProductTableViewCell: UITableViewCell {
         
         plusView.layer.cornerRadius = plusView.frame.size.width / 2
         plusView.clipsToBounds = true
+        
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.blue.cgColor
     }
     
     @IBAction func lessPresed(_ sender: Any) {

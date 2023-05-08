@@ -34,7 +34,9 @@ class WelcomeViewController: UIViewController {
                 charIndex += 1
             }
             group.notify(queue: .main) {
-                self.checkUser()
+                DispatchQueue.main.async {
+                    self.checkUser()
+                }
             }
         }
     }
@@ -42,9 +44,9 @@ class WelcomeViewController: UIViewController {
     func checkUser() {
         if let user = Auth.auth().currentUser {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "test") as! UITabBarController
             let navigationController = UINavigationController(rootViewController: viewController)
-            
+
             UIApplication.shared.windows.first?.rootViewController = navigationController
             UIApplication.shared.windows.first?.makeKeyAndVisible()
         } else {

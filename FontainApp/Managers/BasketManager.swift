@@ -19,7 +19,7 @@ class BasketManager {
         let index = order.products.firstIndex { basketProduct in
             basketProduct.product.uuid == product.uuid
         }
-        if let  index = index {
+        if let index = index {
             order.products[index].count += 1
         } else {
             order.products.append(.init(product: product, count: 1))
@@ -31,7 +31,6 @@ class BasketManager {
     }
     
     func getProduct(by index: Int) -> BasketProduct {
-      
         order.products[index]
     }
     
