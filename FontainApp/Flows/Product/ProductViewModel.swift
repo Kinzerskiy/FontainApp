@@ -9,6 +9,7 @@ import Foundation
 
 class ProductViewModel {
     var productManager = ProductManager()
+   
     
     func getData(completion: @escaping (Error?) -> Void) {
         productManager.getProducts(completion: completion)
@@ -17,5 +18,7 @@ class ProductViewModel {
     func getProduct(by index: Int) -> Product  {
         return productManager.models[index]
     }
+    
+    
     
 }

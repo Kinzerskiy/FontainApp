@@ -8,7 +8,6 @@
 import Foundation
 
 struct OrderCreateModel {
-    
    var orderId = String(Int.random(in: 1...1000000))
    var userId: String?
    var products: [BasketProduct] = []
@@ -27,8 +26,8 @@ enum DeliveryRow {
 
 enum DeliverySection {
     case products([DeliveryRow])
-    case textFields([DeliveryRow])
-    case switchers([SwitcherCellViewModel])
+    case textFields(DeliveryRow)
+    case switchers(SwitcherCellViewModel)
     case orderTotal(OrederTotalViewModel)
 }
 

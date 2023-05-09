@@ -84,6 +84,7 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.buyComplition = {
             BasketManager.shared.add(product: product)
+            
         }
         return cell
     }

@@ -28,16 +28,16 @@ class BasketViewModel {
         })
         
         let addressTextFieldViewModelRow = DeliveryRow.textField(addressTextFieldViewModel)
-        dataSource.append(.textFields([addressTextFieldViewModelRow]))
+        dataSource.append(.textFields(addressTextFieldViewModelRow))
         
         let dontCallSwitcherViewModel = SwitcherCellViewModel(contactlessIsOn: BasketManager.shared.order.isContacless, callIsOn: BasketManager.shared.order.isNotCalling) { [weak self] isOn in
-            guard let self = self else { return }
-            BasketManager.shared.order.isNotCalling = isOn
-            BasketManager.shared.order.isContacless = isOn
-            self.updateDataSource(completion: completion)
-        }
+                   guard let self = self else { return }
+                   BasketManager.shared.order.isNotCalling = isOn
+                   BasketManager.shared.order.isContacless = isOn
+                   self.updateDataSource(completion: completion)
+               }
         
-        dataSource.append(.switchers([dontCallSwitcherViewModel]))
+               dataSource.append(.switchers(dontCallSwitcherViewModel))
         
         let orderTotal = OrederTotalViewModel(total: BasketManager.shared.order.totalPrice)
         dataSource.append(.orderTotal(orderTotal))

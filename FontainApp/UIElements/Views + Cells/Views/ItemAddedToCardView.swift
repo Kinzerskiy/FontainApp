@@ -29,12 +29,10 @@ class ItemAddedToCardView: UIView {
         addToCardView?.layer.cornerRadius = 12
     }
     
-    @IBAction func imageBuyAction(_ sender: Any) {
-        
-    }
+  
     
     @IBAction func viewBuyAction(_ sender: Any) {
-        
+      
     }
     
     

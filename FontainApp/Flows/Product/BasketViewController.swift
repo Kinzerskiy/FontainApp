@@ -8,13 +8,11 @@
 import UIKit
 
 class BasketViewController: UIViewController {
-
+    
     @IBOutlet weak var toShopButton: UIButton!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var basketTableView: UITableView!
-    
-    
     
     var productInBasket: [BasketProduct] = []
     var dataSource: [DeliverySection] = []
@@ -23,7 +21,15 @@ class BasketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        prepareUI()
+        updateDataSource()
+    }
+    
+    func updateDataSource() {
+        basketViewModel.updateDataSource { [weak self] in
+            self?.dataSource = self?.basketViewModel.dataSource ?? []
+            self?.basketTableView.reloadData()
+        }
     }
     
     func prepareUI() {
@@ -50,13 +56,13 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
         switch dataSource[section] {
         case .products(let products): return products.count
-        case .switchers(let switchers): return switchers.count
-        case .textFields(let textFields): return textFields.count
-        default: return 1
+        case .switchers(_): return 1
+        case .textFields(_): return 1
+        default: return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,7 +75,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             let productRow = products[indexPath.row]
             switch productRow {
             case .product(let product):
-                let cell = basketTableView.dequeueReusableCell(withIdentifier: "TotalProductTableViewCell", for: indexPath) as! TotalProductTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TotalProductTableViewCell", for: indexPath) as! TotalProductTableViewCell
                 cell.fill(with: product)
                 cell.selectionStyle = .none
                 
@@ -92,7 +98,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         case .textFields(let textFields):
-            let textFieldRow = textFields[indexPath.row]
+            let textFieldRow = textFields
             switch textFieldRow {
             case .textField(let textField):
                 
@@ -104,31 +110,19 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             default: return UITableViewCell()
             }
             
+        case .switchers(let switcher):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryInfoTableViewCell", for: indexPath) as! DeliveryInfoTableViewCell
+            cell.fill(with: switcher)
             
-            //            TODO: FIX
-            
-        case .switchers(let switchers):
-            
-            let switcherRow = switchers[indexPath.row]
-            switch switcherRow {
-            case (let switcherViewModel):
-                
-                let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryInfoTableViewCell", for: indexPath) as! DeliveryInfoTableViewCell
-                cell.fill(with: switcherViewModel)
-                
-                self.basketViewModel.updateDataSource(completion: {
-                    tableView.reloadData()
-                })
-                return cell
-            }
+            return cell
             
         case .orderTotal(let orderTotal):
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "TotalTableViewCell", for: indexPath) as! TotalTableViewCell
             cell.fill(with: orderTotal)
             return cell
         }
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch dataSource[indexPath.section] {

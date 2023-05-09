@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="uY5-ab-Dkz" customClass="TotalTableViewCell" customModule="FontainApp" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalTableViewCell" rowHeight="58" id="uY5-ab-Dkz" customClass="TotalTableViewCell" customModule="FontainApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="469" height="58"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uY5-ab-Dkz" id="FEw-lE-HWW">
@@ -22,16 +22,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="271" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Jr-Afp">
-                        <rect key="frame" x="30" y="15.000000000000002" width="409" height="18.666666666666671"/>
+                        <rect key="frame" x="30" y="15" width="409" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-e2-hOV">
-                                <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="18.666666666666668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="18"/>
                                 <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€1,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grf-0z-InI">
-                                <rect key="frame" x="368.66666666666669" y="0.0" width="40.333333333333314" height="18.666666666666668"/>
+                                <rect key="frame" x="368.66666666666669" y="0.0" width="40.333333333333314" height="18"/>
                                 <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

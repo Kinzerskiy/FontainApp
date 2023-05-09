@@ -50,6 +50,9 @@
                                     <state key="normal" title="View">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="viewBuyAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="s64-vK-t39"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="tintColor" name="View"/>
