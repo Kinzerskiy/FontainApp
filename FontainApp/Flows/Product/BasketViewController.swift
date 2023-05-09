@@ -12,28 +12,35 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var toShopButton: UIButton!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyImage: UIImageView!
-    
     @IBOutlet weak var basketTableView: UITableView!
     
+    
+    
+    var productInBasket: [BasketProduct] = []
+    var dataSource: [DeliverySection] = []
+    
+    var basketViewModel = BasketViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    func prepareUI() {
+        basketTableView.delegate = self
+        basketTableView.dataSource = self
+        
+        basketTableView.register(.init(nibName: "TotalProductTableViewCell", bundle: nil), forCellReuseIdentifier: "TotalProductTableViewCell")
+        basketTableView.register(.init(nibName: "TotalTableViewCell", bundle: nil), forCellReuseIdentifier: "TotalTableViewCell")
+        basketTableView.register(.init(nibName: "DeliveryInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "DeliveryInfoTableViewCell")
+        basketTableView.register(.init(nibName: "DeliveryAdressTableViewCell", bundle: nil), forCellReuseIdentifier: "DeliveryAdressTableViewCell")
+    }
     
     @IBAction func basketAction(_ sender: Any) {
         
     }
     
 }
-
-
-
-
-
-
-
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -62,18 +69,22 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             let productRow = products[indexPath.row]
             switch productRow {
             case .product(let product):
-                let cell = tableView.dequeueReusableCell(withIdentifier: "BasketTableViewCell", for: indexPath) as! BasketTableViewCell
+                let cell = basketTableView.dequeueReusableCell(withIdentifier: "TotalProductTableViewCell", for: indexPath) as! TotalProductTableViewCell
                 cell.fill(with: product)
                 cell.selectionStyle = .none
                 
                 cell.addCompletion = { [weak self] in
                     BasketManager.shared.plusProduct(by: indexPath.row)
-                    self?.updateDataSource()
+                    self?.basketViewModel.updateDataSource(completion: {
+                        tableView.reloadData()
+                    })
                 }
                 
                 cell.removeCompletion = { [weak self] in
                     BasketManager.shared.minusProduct(by: indexPath.row)
-                    self?.updateDataSource()
+                    self?.basketViewModel.updateDataSource(completion: {
+                        tableView.reloadData()
+                    })
                 }
                 return cell
                 
@@ -85,7 +96,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             switch textFieldRow {
             case .textField(let textField):
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TextFieldTableViewCell", for: indexPath) as! TextFieldTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryAdressTableViewCell", for: indexPath) as! DeliveryAdressTableViewCell
                 cell.fill(with: textField)
                 
                 return cell
@@ -93,40 +104,29 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             default: return UITableViewCell()
             }
             
+            
+            //            TODO: FIX
+            
         case .switchers(let switchers):
             
             let switcherRow = switchers[indexPath.row]
             switch switcherRow {
             case (let switcherViewModel):
                 
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SwitcherTableViewCell", for: indexPath) as! SwitcherTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryInfoTableViewCell", for: indexPath) as! DeliveryInfoTableViewCell
                 cell.fill(with: switcherViewModel)
                 
+                self.basketViewModel.updateDataSource(completion: {
+                    tableView.reloadData()
+                })
                 return cell
-                
             }
             
         case .orderTotal(let orderTotal):
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTotalTableViewCell", for: indexPath) as! OrderTotalTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalTableViewCell", for: indexPath) as! TotalTableViewCell
             cell.fill(with: orderTotal)
             return cell
-            
-        case .date(let date):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DateTableViewCell", for: indexPath) as! DateTableViewCell
-            cell.fill(with: date)
-            return cell
-            
-            
-        case .paymentMethod(let paymentMethod):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentMethodTableViewCell", for: indexPath) as! PaymentMethodTableViewCell
-            cell.fill(with: paymentMethod)
-            return cell
-            
-        case .privacy(let privacyText): return UITableViewCell()
-            
         }
     }
     
@@ -135,10 +135,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         case .products: return 150
         case .switchers: return 50
         case .textFields: return 70
-        case .date: return 70
         case .orderTotal: return 120
-        case .paymentMethod: return 70
-        case .privacy: return 50
         }
     }
 }

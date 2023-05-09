@@ -13,41 +13,23 @@ struct OrderCreateModel {
    var userId: String?
    var products: [BasketProduct] = []
    var address: String = ""
-   var comment: String = ""
-   var deliveryTime: Date = Date()
-    var orderCreatedDate: Date = Date()
    var isContactDelivey: Bool = false
-   var isNotCalling : Bool = false
+   var isNotCalling: Bool = false
+   var isContacless: Bool = false
    var totalPrice: Double { BasketManager.shared.getPrice() }
-   
-   var paymentMethod: PaymentMethod = .cash
    }
 
 enum DeliveryRow {
     case product(BasketProduct)
     case textField(TextFieldCellViewModel)
     case switcher(SwitcherCellViewModel)
-    case date(DateCellViewModel)
 }
 
 enum DeliverySection {
     case products([DeliveryRow])
     case textFields([DeliveryRow])
     case switchers([SwitcherCellViewModel])
-    case date(DateCellViewModel)
     case orderTotal(OrederTotalViewModel)
-    case paymentMethod(PaymentCellViewModel)
-    case privacy(String)
-}
-
-class DateCellViewModel {
-    var date: Date = Date()
-    var dateCompletion: ((Date) -> Void)?
-    
-    init(date: Date, dateCompletion: @escaping (Date) -> Void) {
-        self.date = date
-        self.dateCompletion = dateCompletion
-    }
 }
 
 class TextFieldCellViewModel {
@@ -81,18 +63,4 @@ class OrederTotalViewModel {
     init(total: Double) {
         self.total = total
     }
-}
-
-class PaymentCellViewModel {
-    var value: PaymentMethod
-    var completion: ((PaymentMethod) -> Void)?
-    
-    init(value: PaymentMethod, completion: @escaping ((PaymentMethod) -> Void)) {
-        self.value = value
-        self.completion = completion
-    }
-}
-
-enum PaymentMethod: Int {
-    case card, cash
 }
