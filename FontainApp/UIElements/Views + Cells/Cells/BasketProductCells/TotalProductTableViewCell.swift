@@ -49,12 +49,6 @@ class TotalProductTableViewCell: UITableViewCell {
         self.layer.borderColor = UIColor(named: "Primary")?.cgColor
     }
     
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     
     

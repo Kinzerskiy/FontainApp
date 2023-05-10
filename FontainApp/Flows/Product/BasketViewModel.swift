@@ -8,38 +8,44 @@
 import Foundation
 
 class BasketViewModel {
-    
-    var basketModel = OrderCreateModel()
+    var basketManager = BasketManager.shared
     var dataSource: [DeliverySection] = []
     
-    func updateDataSource(completion: @escaping () -> Void) {
+    
+    func isHaveProducts() -> Bool {
+        basketManager.order.products.count > 0
+    }
+    
+    
+    func updateDataSource() {
         dataSource.removeAll()
         
-        let productRows = BasketManager.shared.order.products.map { basketProduct in
+        let productRows = basketManager.order.products.map { basketProduct in
             DeliveryRow.product(basketProduct)
         }
         
         dataSource.append(.products(productRows))
         
-        let addressTextFieldViewModel = TextFieldCellViewModel.init(address: BasketManager.shared.order.address, completion: { [weak self] address in
-            guard let self = self else { return }
-            BasketManager.shared.order.address = address
-            self.updateDataSource(completion: completion)
-        })
+        let addressTextFieldViewModel = TextFieldCellViewModel(address: basketManager.order.address) { [weak self] address in
+            self?.basketManager.order.address = address
+            
+        }
         
         let addressTextFieldViewModelRow = DeliveryRow.textField(addressTextFieldViewModel)
         dataSource.append(.textFields(addressTextFieldViewModelRow))
         
-        let dontCallSwitcherViewModel = SwitcherCellViewModel(contactlessIsOn: BasketManager.shared.order.isContacless, callIsOn: BasketManager.shared.order.isNotCalling) { [weak self] isOn in
-                   guard let self = self else { return }
-                   BasketManager.shared.order.isNotCalling = isOn
-                   BasketManager.shared.order.isContacless = isOn
-                   self.updateDataSource(completion: completion)
-               }
+        let dontCallSwitcherViewModel = SwitcherCellViewModel(
+            contactlessIsOn: basketManager.order.isContacless,
+            callIsOn: basketManager.order.isNotCalling
+        ) { [weak self] isOn in
+            self?.basketManager.order.isNotCalling = isOn
+            self?.basketManager.order.isContacless = isOn
+            
+        }
         
-               dataSource.append(.switchers(dontCallSwitcherViewModel))
+        dataSource.append(.switchers(dontCallSwitcherViewModel))
         
-        let orderTotal = OrederTotalViewModel(total: BasketManager.shared.order.totalPrice)
+        let orderTotal = OrederTotalViewModel(total: basketManager.order.totalPrice)
         dataSource.append(.orderTotal(orderTotal))
     }
 }

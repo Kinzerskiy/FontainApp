@@ -34,6 +34,4 @@ class ItemAddedToCardView: UIView {
     @IBAction func viewBuyAction(_ sender: Any) {
       
     }
-    
-    
 }

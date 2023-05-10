@@ -256,16 +256,24 @@
                                     <constraint firstAttribute="height" constant="53" id="WNL-P0-VUX"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rl-Vl-Ul8">
+                                <rect key="frame" x="20" y="522" width="335" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J7v-nL-L2D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4rl-Vl-Ul8" firstAttribute="leading" secondItem="J7v-nL-L2D" secondAttribute="leading" constant="20" id="0Ck-jF-XB3"/>
                             <constraint firstItem="1uv-NF-e75" firstAttribute="top" secondItem="ZGf-sK-OIK" secondAttribute="bottom" id="8Vx-Gq-2rE"/>
                             <constraint firstItem="1uv-NF-e75" firstAttribute="top" secondItem="J7v-nL-L2D" secondAttribute="bottom" constant="-53" id="BUt-NS-fKU"/>
+                            <constraint firstItem="1uv-NF-e75" firstAttribute="top" secondItem="4rl-Vl-Ul8" secondAttribute="bottom" constant="8" symbolic="YES" id="CTe-do-2eq"/>
                             <constraint firstItem="ZGf-sK-OIK" firstAttribute="leading" secondItem="J7v-nL-L2D" secondAttribute="leading" id="Gam-g1-m3W"/>
                             <constraint firstItem="1uv-NF-e75" firstAttribute="leading" secondItem="J7v-nL-L2D" secondAttribute="leading" constant="20" id="JWy-0R-glo"/>
                             <constraint firstItem="ZGf-sK-OIK" firstAttribute="trailing" secondItem="J7v-nL-L2D" secondAttribute="trailing" id="MhV-AM-a9r"/>
                             <constraint firstItem="ZGf-sK-OIK" firstAttribute="top" secondItem="J7v-nL-L2D" secondAttribute="top" id="ltT-f5-hjy"/>
+                            <constraint firstItem="J7v-nL-L2D" firstAttribute="trailing" secondItem="4rl-Vl-Ul8" secondAttribute="trailing" constant="20" id="pt3-Au-CCG"/>
                             <constraint firstAttribute="bottomMargin" secondItem="1uv-NF-e75" secondAttribute="bottom" id="v3W-zW-MLr"/>
                         </constraints>
                     </view>

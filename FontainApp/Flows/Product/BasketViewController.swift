@@ -13,8 +13,7 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var basketTableView: UITableView!
-    
-    var productInBasket: [BasketProduct] = []
+   
     var dataSource: [DeliverySection] = []
     
     var basketViewModel = BasketViewModel()
@@ -22,14 +21,21 @@ class BasketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateDataSource()
     }
     
     func updateDataSource() {
-        basketViewModel.updateDataSource { [weak self] in
-            self?.dataSource = self?.basketViewModel.dataSource ?? []
-            self?.basketTableView.reloadData()
-        }
+        basketViewModel.updateDataSource()
+        dataSource = basketViewModel.dataSource
+        
+        basketTableView.isHidden = !basketViewModel.isHaveProducts()
+        emptyImage.isHidden = basketViewModel.isHaveProducts()
+        emptyLabel.isHidden = basketViewModel.isHaveProducts()
+        basketTableView.reloadData()
     }
     
     func prepareUI() {
@@ -56,12 +62,11 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
         switch dataSource[section] {
         case .products(let products): return products.count
         case .switchers(_): return 1
         case .textFields(_): return 1
-        default: return 0
+        case .orderTotal(_): return 1
         }
     }
     
@@ -81,16 +86,14 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 cell.addCompletion = { [weak self] in
                     BasketManager.shared.plusProduct(by: indexPath.row)
-                    self?.basketViewModel.updateDataSource(completion: {
-                        tableView.reloadData()
-                    })
+                    self?.updateDataSource()
+                    self?.basketTableView.reloadData()
                 }
                 
                 cell.removeCompletion = { [weak self] in
                     BasketManager.shared.minusProduct(by: indexPath.row)
-                    self?.basketViewModel.updateDataSource(completion: {
-                        tableView.reloadData()
-                    })
+                    self?.updateDataSource()
+                    self?.basketTableView.reloadData()
                 }
                 return cell
                 
@@ -127,8 +130,8 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch dataSource[indexPath.section] {
         case .products: return 150
-        case .switchers: return 50
-        case .textFields: return 70
+        case .switchers: return 150
+        case .textFields: return 100
         case .orderTotal: return 120
         }
     }

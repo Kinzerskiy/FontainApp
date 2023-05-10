@@ -10,7 +10,6 @@ import Foundation
 class BasketManager {
     
     static let shared = BasketManager()
-    
     var order: OrderCreateModel = OrderCreateModel()
     
     private init() {}
@@ -41,10 +40,11 @@ class BasketManager {
     
     
     func minusProduct(by index: Int) {
-        
-        order.products[index].count -= 1
-        if order.products[index].count <= 0 {
+      
+        if order.products[index].count == 1 {
             order.products.remove(at: index)
+        } else {
+            order.products[index].count -= 1
         }
     }
     
