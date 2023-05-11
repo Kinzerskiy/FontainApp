@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ABeeZee-Regular.ttf">
+            <string>ABeeZee-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CreateProfileView" customModule="FontainApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="717"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69j-d6-uEI">
+                    <rect key="frame" x="23.666666666666671" y="4" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="Mzj-t4-pfe"/>
+                        <constraint firstAttribute="width" constant="75" id="NlA-e9-g7e"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <string key="title">Add 
+photo</string>
+                    </state>
+                    <buttonConfiguration key="configuration" style="gray">
+                        <string key="title">Add 
+photo</string>
+                        <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-hC-iHU">
+                    <rect key="frame" x="342" y="41" width="21" height="22"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="icon-edit"/>
+                    <connections>
+                        <action selector="editProfileButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="F88-2U-lyT"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QSZ-Qr-7Sf">
+                    <rect key="frame" x="30" y="159" width="333" height="524"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-Ax-rSI">
+                            <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="16.666666666666668"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D42-zy-932">
+                            <rect key="frame" x="0.0" y="36.666666666666657" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNU-sW-mXI">
+                            <rect key="frame" x="0.0" y="90.666666666666657" width="96" height="16.666666666666671"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-If-lLM">
+                            <rect key="frame" x="0.0" y="127.33333333333331" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-qZ-204">
+                            <rect key="frame" x="0.0" y="181.33333333333331" width="51.666666666666664" height="16.666666666666657"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8m5-bC-XG8">
+                            <rect key="frame" x="0.0" y="218" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z04-Aq-7b9">
+                            <rect key="frame" x="0.0" y="272" width="24.666666666666668" height="16.666666666666686"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bF4-yf-pxF">
+                            <rect key="frame" x="0.0" y="308.66666666666669" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street, house number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVk-bs-QRd">
+                            <rect key="frame" x="0.0" y="362.66666666666663" width="142.66666666666666" height="16.666666666666686"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9E2-HW-nVS">
+                            <rect key="frame" x="0.0" y="399.33333333333337" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZIP-Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-F4-Rxq">
+                            <rect key="frame" x="0.0" y="453.33333333333337" width="61" height="16.666666666666686"/>
+                            <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                            <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bg-m0-U1F">
+                            <rect key="frame" x="0.0" y="490" width="333" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="8m5-bC-XG8" secondAttribute="trailing" id="2hY-Ib-3fH"/>
+                        <constraint firstAttribute="trailing" secondItem="9bg-m0-U1F" secondAttribute="trailing" id="aLN-7U-HYk"/>
+                        <constraint firstAttribute="trailing" secondItem="D42-zy-932" secondAttribute="trailing" id="cga-WL-fgA"/>
+                        <constraint firstAttribute="trailing" secondItem="9E2-HW-nVS" secondAttribute="trailing" id="eba-QO-xg4"/>
+                        <constraint firstAttribute="trailing" secondItem="eMb-If-lLM" secondAttribute="trailing" id="iK8-fJ-NLo"/>
+                        <constraint firstAttribute="trailing" secondItem="bF4-yf-pxF" secondAttribute="trailing" id="qvT-Ho-K8T"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="69j-d6-uEI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="23.666666666666671" id="3Kg-oH-mrK"/>
+                <constraint firstItem="69j-d6-uEI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="E2K-ER-6b2"/>
+                <constraint firstItem="DoA-hC-iHU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="41" id="Jif-1y-BvF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QSZ-Qr-7Sf" secondAttribute="trailing" constant="30" id="Uy6-Hw-8vU"/>
+                <constraint firstItem="QSZ-Qr-7Sf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="XTz-K9-yTW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QSZ-Qr-7Sf" secondAttribute="bottom" id="cx2-9d-XNf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DoA-hC-iHU" secondAttribute="trailing" constant="30" id="xzv-Hq-hjf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addPhotoButton" destination="69j-d6-uEI" id="0rn-gQ-v2d"/>
+                <outlet property="cityTextField" destination="bF4-yf-pxF" id="cyx-oU-p5i"/>
+                <outlet property="countryTextField" destination="8m5-bC-XG8" id="KTi-jL-u9S"/>
+                <outlet property="fullNameTextField" destination="D42-zy-932" id="RI4-dL-pSY"/>
+                <outlet property="phoneNumberTextField" destination="eMb-If-lLM" id="Jdl-Mv-LIo"/>
+                <outlet property="streetHouseNumberTextField" destination="9E2-HW-nVS" id="SdX-ZI-cG9"/>
+                <outlet property="zipCodeTextField" destination="9bg-m0-U1F" id="uBD-Xg-I1i"/>
+            </connections>
+            <point key="canvasLocation" x="75.572519083969468" y="-97.535211267605632"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-edit" width="21" height="21"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

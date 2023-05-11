@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Zy-6D-TMt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y3a-AF-cib">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -28,7 +28,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd8-43-Fw5" customClass="PhoneNumberView" customModule="FontainApp">
                                 <rect key="frame" x="30" y="397" width="315" height="82"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="6dy-cg-uCQ"/>
                                     <constraint firstAttribute="height" constant="82" id="AKE-fK-JUK"/>
@@ -128,7 +128,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-ho-YvI" customClass="SmsView" customModule="FontainApp">
                                 <rect key="frame" x="30" y="397.5" width="315" height="82"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="1U1-xk-78k"/>
                                     <constraint firstAttribute="width" constant="315" id="UYZ-kG-LGw"/>
@@ -393,13 +393,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSx-OA-L6o">
-                                <rect key="frame" x="30" y="31" width="313" height="24"/>
+                                <rect key="frame" x="30" y="31" width="315" height="24"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eha-Vc-a02">
-                                <rect key="frame" x="30" y="616" width="313" height="51"/>
+                                <rect key="frame" x="30" y="616" width="315" height="51"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="tRR-Gu-3g8"/>
@@ -414,24 +414,24 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mx7-Ru-hvY">
-                                <rect key="frame" x="0.0" y="75" width="373" height="234"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="234"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="234" id="d77-Od-Ola"/>
                                     <constraint firstAttribute="width" constant="315" id="fgP-hP-k60"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="230" translatesAutoresizingMaskIntoConstraints="NO" id="2Xt-mh-QtE">
-                                <rect key="frame" x="30" y="585" width="313" height="18"/>
+                                <rect key="frame" x="30" y="585" width="315" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maR-ju-MS8">
-                                        <rect key="frame" x="0.0" y="0.0" width="42.5" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€1,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HU-BP-e6D">
-                                        <rect key="frame" x="272.5" y="0.0" width="40.5" height="18"/>
+                                        <rect key="frame" x="274.5" y="0.0" width="40.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -466,20 +466,56 @@
             </objects>
             <point key="canvasLocation" x="6135" y="1039"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Create Profile View Controller-->
         <scene sceneID="2lK-j4-3KD">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="Y3a-AF-cib" customClass="ProfileViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateProfileViewController" id="Y3a-AF-cib" customClass="CreateProfileViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4cI-1n-2Ol">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Profile!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-n6-WA2">
+                                <rect key="frame" x="20" y="31" width="335" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJg-x5-rUK">
+                                <rect key="frame" x="30" y="629" width="315" height="38"/>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save!!">
+                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveFieldsAction:" destination="Y3a-AF-cib" eventType="touchUpInside" id="2Lo-nV-cZd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXf-MH-JIv" customClass="CreateProfileView" customModule="FontainApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="51" width="375" height="578"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="D5r-be-dvl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yJg-x5-rUK" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" constant="30" id="Bpm-9L-r7V"/>
+                            <constraint firstItem="tXf-MH-JIv" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" id="EsU-tJ-pf9"/>
+                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="yJg-x5-rUK" secondAttribute="trailing" constant="30" id="FOX-wC-xn8"/>
+                            <constraint firstItem="tXf-MH-JIv" firstAttribute="top" secondItem="pi4-n6-WA2" secondAttribute="bottom" id="Nnm-SO-bx3"/>
+                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="pi4-n6-WA2" secondAttribute="trailing" constant="20" id="bqY-YT-pQa"/>
+                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="tXf-MH-JIv" secondAttribute="trailing" id="gcx-Zi-jLT"/>
+                            <constraint firstItem="pi4-n6-WA2" firstAttribute="top" secondItem="D5r-be-dvl" secondAttribute="top" constant="11" id="kyZ-tA-seg"/>
+                            <constraint firstItem="yJg-x5-rUK" firstAttribute="top" secondItem="tXf-MH-JIv" secondAttribute="bottom" id="pqa-ZO-gDE"/>
+                            <constraint firstItem="pi4-n6-WA2" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" constant="20" id="sEe-fl-f7r"/>
+                            <constraint firstItem="D5r-be-dvl" firstAttribute="bottom" secondItem="yJg-x5-rUK" secondAttribute="bottom" id="shN-Le-Mif"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" selectedImage="Property 122=active" id="FqU-J9-KCY"/>
                     <navigationItem key="navigationItem" id="CIg-c0-YaU"/>
                     <connections>
-                        <outlet property="profileItem" destination="FqU-J9-KCY" id="hwt-Bh-CW2"/>
+                        <outlet property="createProfileButton" destination="yJg-x5-rUK" id="CPh-zv-rwg"/>
+                        <outlet property="createProfileView" destination="tXf-MH-JIv" id="wHO-fF-HOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3t-A7-nvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -559,11 +595,11 @@
         <namedColor name="View">
             <color red="0.023529411764705882" green="0.48627450980392156" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
