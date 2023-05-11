@@ -8,7 +8,6 @@
 import Foundation
 
 struct Order: Codable {
-
     var orderId: String
     var userId: String?
     var products: [BasketProduct]?

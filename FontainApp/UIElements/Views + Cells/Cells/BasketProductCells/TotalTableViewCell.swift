@@ -17,7 +17,8 @@ class TotalTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func fill(with model: OrederTotalViewModel) {
-        priceLabel.text = String(model.total)
+    func fill(with model: OrderTotalViewModel) {
+            priceLabel.text = "€" + String(model.total)
     }
+
 }

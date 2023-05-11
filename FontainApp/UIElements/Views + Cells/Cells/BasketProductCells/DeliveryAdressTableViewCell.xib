@@ -22,14 +22,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2H-te-ESp">
-                        <rect key="frame" x="30" y="18" width="327" height="16.666666666666671"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2H-te-ESp">
+                        <rect key="frame" x="30" y="18" width="327" height="22"/>
                         <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyZ-T2-dO8">
-                        <rect key="frame" x="30" y="41.666666666666664" width="317" height="33.999999999999993"/>
+                        <rect key="frame" x="30" y="47" width="317" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="cch-9t-PyT"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -39,6 +42,7 @@
                     <constraint firstItem="DyZ-T2-dO8" firstAttribute="top" secondItem="b2H-te-ESp" secondAttribute="bottom" constant="7" id="C1T-hO-2O0"/>
                     <constraint firstItem="b2H-te-ESp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="JsF-oh-EDW"/>
                     <constraint firstAttribute="trailing" secondItem="b2H-te-ESp" secondAttribute="trailing" constant="20" id="ZyW-HH-nfS"/>
+                    <constraint firstAttribute="bottom" secondItem="DyZ-T2-dO8" secondAttribute="bottom" id="jhC-DX-h64"/>
                     <constraint firstItem="b2H-te-ESp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="kk9-Ka-hfb"/>
                     <constraint firstItem="DyZ-T2-dO8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="qt5-rW-Byt"/>
                 </constraints>

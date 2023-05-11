@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BasketViewController: UIViewController {
     
@@ -13,7 +14,8 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var basketTableView: UITableView!
-   
+    @IBOutlet weak var cartLabel: UILabel!
+    
     var dataSource: [DeliverySection] = []
     
     var basketViewModel = BasketViewModel()
@@ -35,21 +37,57 @@ class BasketViewController: UIViewController {
         basketTableView.isHidden = !basketViewModel.isHaveProducts()
         emptyImage.isHidden = basketViewModel.isHaveProducts()
         emptyLabel.isHidden = basketViewModel.isHaveProducts()
+       
+        if basketViewModel.isHaveProducts() {
+                toShopButton.setTitle("Checkout", for: .normal)
+            } else {
+                toShopButton.setTitle("To shop", for: .normal)
+            }
+        
         basketTableView.reloadData()
     }
     
     func prepareUI() {
+        basketTableView.separatorStyle = .none
         basketTableView.delegate = self
         basketTableView.dataSource = self
+        
+        toShopButton.layer.cornerRadius = 12
         
         basketTableView.register(.init(nibName: "TotalProductTableViewCell", bundle: nil), forCellReuseIdentifier: "TotalProductTableViewCell")
         basketTableView.register(.init(nibName: "TotalTableViewCell", bundle: nil), forCellReuseIdentifier: "TotalTableViewCell")
         basketTableView.register(.init(nibName: "DeliveryInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "DeliveryInfoTableViewCell")
         basketTableView.register(.init(nibName: "DeliveryAdressTableViewCell", bundle: nil), forCellReuseIdentifier: "DeliveryAdressTableViewCell")
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y = view.frame.origin.y - 100
+    }
+    
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
     }
     
     @IBAction func basketAction(_ sender: Any) {
-        
+        if toShopButton.titleLabel?.text == "Checkout" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
+//            vc.order = order
+            self.navigationController?.pushViewController(vc, animated: true)
+           } else {
+               if let tabBarController = self.tabBarController {
+                           tabBarController.selectedIndex = 0
+                       }
+           }
     }
     
 }
@@ -64,9 +102,9 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch dataSource[section] {
         case .products(let products): return products.count
-        case .switchers(_): return 1
-        case .textFields(_): return 1
         case .orderTotal(_): return 1
+        case .textField(_): return 1
+        case .switchers(_): return 1
         }
     }
     
@@ -82,7 +120,8 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             case .product(let product):
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TotalProductTableViewCell", for: indexPath) as! TotalProductTableViewCell
                 cell.fill(with: product)
-                cell.selectionStyle = .none
+         
+                
                 
                 cell.addCompletion = { [weak self] in
                     BasketManager.shared.plusProduct(by: indexPath.row)
@@ -100,28 +139,20 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
             default: return UITableViewCell()
             }
             
-        case .textFields(let textFields):
-            let textFieldRow = textFields
-            switch textFieldRow {
-            case .textField(let textField):
-                
-                let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryAdressTableViewCell", for: indexPath) as! DeliveryAdressTableViewCell
-                cell.fill(with: textField)
-                
-                return cell
-                
-            default: return UITableViewCell()
-            }
+        case .orderTotal(let orderTotal):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalTableViewCell", for: indexPath) as! TotalTableViewCell
+            cell.fill(with: orderTotal)
+            return cell
+            
+        case .textField(let textField):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryAdressTableViewCell", for: indexPath) as! DeliveryAdressTableViewCell
+            cell.fill(with: textField)
+            return cell
             
         case .switchers(let switcher):
             let cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryInfoTableViewCell", for: indexPath) as! DeliveryInfoTableViewCell
             cell.fill(with: switcher)
             
-            return cell
-            
-        case .orderTotal(let orderTotal):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalTableViewCell", for: indexPath) as! TotalTableViewCell
-            cell.fill(with: orderTotal)
             return cell
         }
     }
@@ -130,9 +161,9 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch dataSource[indexPath.section] {
         case .products: return 150
-        case .switchers: return 150
-        case .textFields: return 100
-        case .orderTotal: return 120
+        case .orderTotal: return 48
+        case .textField: return 80
+        case .switchers: return 121
         }
     }
 }

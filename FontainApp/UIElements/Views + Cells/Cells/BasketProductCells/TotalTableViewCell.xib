@@ -14,24 +14,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalTableViewCell" rowHeight="58" id="uY5-ab-Dkz" customClass="TotalTableViewCell" customModule="FontainApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="469" height="58"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalTableViewCell" rowHeight="72" id="uY5-ab-Dkz" customClass="TotalTableViewCell" customModule="FontainApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="469" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uY5-ab-Dkz" id="FEw-lE-HWW">
-                <rect key="frame" x="0.0" y="0.0" width="469" height="58"/>
+                <rect key="frame" x="0.0" y="0.0" width="469" height="72"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="271" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Jr-Afp">
-                        <rect key="frame" x="30" y="15" width="409" height="18"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Jr-Afp">
+                        <rect key="frame" x="30" y="28" width="409" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-e2-hOV">
-                                <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="137.66666666666666" height="44"/>
                                 <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€1,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grf-0z-InI">
-                                <rect key="frame" x="368.66666666666669" y="0.0" width="40.333333333333314" height="18"/>
+                                <rect key="frame" x="368.66666666666669" y="0.0" width="40.333333333333314" height="44"/>
                                 <fontDescription key="fontDescription" name="Arimo-Bold" family="Arimo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,14 +41,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="LA9-Jr-Afp" secondAttribute="trailing" constant="30" id="YvO-j1-Wfi"/>
+                    <constraint firstAttribute="bottom" secondItem="LA9-Jr-Afp" secondAttribute="bottom" id="bBv-RA-6nD"/>
                     <constraint firstItem="LA9-Jr-Afp" firstAttribute="leading" secondItem="FEw-lE-HWW" secondAttribute="leading" constant="30" id="c0z-4L-DP2"/>
-                    <constraint firstItem="LA9-Jr-Afp" firstAttribute="top" secondItem="FEw-lE-HWW" secondAttribute="top" constant="15" id="fxG-r0-mW9"/>
+                    <constraint firstItem="LA9-Jr-Afp" firstAttribute="top" secondItem="FEw-lE-HWW" secondAttribute="top" constant="28" id="fxG-r0-mW9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="priceLabel" destination="grf-0z-InI" id="tDi-vZ-iVi"/>
             </connections>
-            <point key="canvasLocation" x="133.58778625954199" y="29.577464788732396"/>
+            <point key="canvasLocation" x="133.58778625954199" y="34.507042253521128"/>
         </tableViewCell>
     </objects>
 </document>

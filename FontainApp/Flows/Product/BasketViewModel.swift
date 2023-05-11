@@ -8,6 +8,7 @@
 import Foundation
 
 class BasketViewModel {
+    
     var basketManager = BasketManager.shared
     var dataSource: [DeliverySection] = []
     
@@ -18,21 +19,21 @@ class BasketViewModel {
     
     
     func updateDataSource() {
+        
         dataSource.removeAll()
         
         let productRows = basketManager.order.products.map { basketProduct in
             DeliveryRow.product(basketProduct)
         }
-        
         dataSource.append(.products(productRows))
+        
+        let orderTotal = OrderTotalViewModel(total: basketManager.order.totalPrice)
+        dataSource.append(.orderTotal(orderTotal))
         
         let addressTextFieldViewModel = TextFieldCellViewModel(address: basketManager.order.address) { [weak self] address in
             self?.basketManager.order.address = address
-            
         }
-        
-        let addressTextFieldViewModelRow = DeliveryRow.textField(addressTextFieldViewModel)
-        dataSource.append(.textFields(addressTextFieldViewModelRow))
+        dataSource.append(.textField(addressTextFieldViewModel))
         
         let dontCallSwitcherViewModel = SwitcherCellViewModel(
             contactlessIsOn: basketManager.order.isContacless,
@@ -42,10 +43,6 @@ class BasketViewModel {
             self?.basketManager.order.isContacless = isOn
             
         }
-        
         dataSource.append(.switchers(dontCallSwitcherViewModel))
-        
-        let orderTotal = OrederTotalViewModel(total: basketManager.order.totalPrice)
-        dataSource.append(.orderTotal(orderTotal))
     }
 }

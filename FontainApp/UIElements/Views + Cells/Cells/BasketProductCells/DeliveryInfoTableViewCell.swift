@@ -18,7 +18,7 @@ class DeliveryInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        selectionStyle = .none
     }
     
     func fill(with model: SwitcherCellViewModel) {

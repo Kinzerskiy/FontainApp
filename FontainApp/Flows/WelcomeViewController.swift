@@ -42,7 +42,7 @@ class WelcomeViewController: UIViewController {
     }
     
     func checkUser() {
-        if let user = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "test") as! UITabBarController
             let navigationController = UINavigationController(rootViewController: viewController)

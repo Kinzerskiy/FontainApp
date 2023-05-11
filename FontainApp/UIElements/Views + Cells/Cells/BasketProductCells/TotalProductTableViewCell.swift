@@ -13,6 +13,7 @@ class TotalProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productMeasureLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
+    @IBOutlet weak var firstView: UIView!
     
     @IBOutlet weak var plusView: UIView!
     @IBOutlet weak var minusView: UIView!
@@ -26,30 +27,36 @@ class TotalProductTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareView()
+        selectionStyle = .none
     }
     
     func fill(with model: BasketProduct) {
-        productImage.image = UIImage(named: model.product.productImageUrl ?? "")
+        
+        guard let imageUrl = model.product.productImageUrl, let source = URL.init(string: imageUrl) else { return }
+        
+        productImage.kf.setImage(with: source)
         productNameLabel.text = model.product.name
         productMeasureLabel.text = model.product.measure
-        productPriceLabel.text = String(model.count)
+        productPriceLabel.text = "€" + String(model.product.price)
+        
     }
     
     func prepareView() {
         minusView.layer.cornerRadius = minusView.frame.size.width / 2
         minusView.layer.borderWidth = 1
+        minusView.layer.borderColor = UIColor(named: "Primary")?.cgColor
         minusView.clipsToBounds = true
         
         plusView.layer.cornerRadius = plusView.frame.size.width / 2
         plusView.layer.borderWidth = 1
+        plusView.layer.borderColor = UIColor(named: "Primary")?.cgColor
         plusView.clipsToBounds = true
         
         
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor(named: "Primary")?.cgColor
+        firstView.layer.borderWidth = 1
+        firstView.layer.cornerRadius = 12
+        firstView.layer.borderColor = UIColor(named: "Primary")?.cgColor
     }
-    
-    
     
     
     @IBAction func plusButtonAction(_ sender: Any) {

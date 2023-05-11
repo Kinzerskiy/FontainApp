@@ -26,9 +26,9 @@ enum DeliveryRow {
 
 enum DeliverySection {
     case products([DeliveryRow])
-    case textFields(DeliveryRow)
+    case orderTotal(OrderTotalViewModel)
+    case textField(TextFieldCellViewModel)
     case switchers(SwitcherCellViewModel)
-    case orderTotal(OrederTotalViewModel)
 }
 
 class TextFieldCellViewModel {
@@ -56,7 +56,7 @@ class SwitcherCellViewModel {
     }
 }
 
-class OrederTotalViewModel {
+class OrderTotalViewModel {
     var total: Double = 0.0
     
     init(total: Double) {
