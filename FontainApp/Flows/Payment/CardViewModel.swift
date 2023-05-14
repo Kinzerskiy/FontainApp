@@ -11,6 +11,8 @@ import Cloudipsp
 
 class CardViewModel {
     
+
+    
      func payOrder() {
          
 //        guard let card = self.cardInputLayout.confirm() else {
@@ -33,8 +35,6 @@ class CardViewModel {
         
     func saveOrder() {
 //        let orderManager = OrderManager()
-//
-//
 //
 //        orderManager.saveOrder(order: order) { [weak self] in
 //            DispatchQueue.main.async {

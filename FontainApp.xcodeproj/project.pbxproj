@@ -26,8 +26,6 @@
 		8E714CB229E6B08000B3BBF1 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */; };
 		8E714CB529E6B8B200B3BBF1 /* SmsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CB429E6B8B200B3BBF1 /* SmsView.xib */; };
 		8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */; };
-		8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CB829E6BBA700B3BBF1 /* CardView.xib */; };
-		8E714CBB29E6BE2400B3BBF1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CBA29E6BE2400B3BBF1 /* CardView.swift */; };
 		8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */; };
 		8E714CC729E6C73900B3BBF1 /* TermOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */; };
 		8E714CC929E6C9EA00B3BBF1 /* ResendCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */; };
@@ -95,8 +93,6 @@
 		8E714CB129E6B08000B3BBF1 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		8E714CB429E6B8B200B3BBF1 /* SmsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmsView.xib; sourceTree = "<group>"; };
 		8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsView.swift; sourceTree = "<group>"; };
-		8E714CB829E6BBA700B3BBF1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
-		8E714CBA29E6BE2400B3BBF1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8E714CC429E6C72100B3BBF1 /* TermOfUseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermOfUseView.xib; sourceTree = "<group>"; };
 		8E714CC629E6C73900B3BBF1 /* TermOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUseView.swift; sourceTree = "<group>"; };
 		8E714CC829E6C9EA00B3BBF1 /* ResendCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResendCodeView.xib; sourceTree = "<group>"; };
@@ -276,8 +272,6 @@
 				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
 				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
 				8E714CCE29E6CB5600B3BBF1 /* ItemAddedToCardView.swift */,
-				8E714CB829E6BBA700B3BBF1 /* CardView.xib */,
-				8E714CBA29E6BE2400B3BBF1 /* CardView.swift */,
 				8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */,
 				8EC00EEF2A0D5B7F0038B9C8 /* CreateProfileView.swift */,
 				8E714CD029E6D05300B3BBF1 /* StoreInfoView.xib */,
@@ -494,7 +488,6 @@
 				8E714CD129E6D05300B3BBF1 /* StoreInfoView.xib in Resources */,
 				8E73D7512A09471A002B9217 /* DeliveryInfoTableViewCell.xib in Resources */,
 				8EC00EEE2A0D5B600038B9C8 /* CreateProfileView.xib in Resources */,
-				8E714CB929E6BBA700B3BBF1 /* CardView.xib in Resources */,
 				8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */,
 				8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */,
 				8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */,
@@ -581,7 +574,6 @@
 				8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */,
 				8EC00EF02A0D5B7F0038B9C8 /* CreateProfileView.swift in Sources */,
 				8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */,
-				8E714CBB29E6BE2400B3BBF1 /* CardView.swift in Sources */,
 				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
 				8E5D184C29FD8E2B00DE2B74 /* CreateProfileViewController.swift in Sources */,

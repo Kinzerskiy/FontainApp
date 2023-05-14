@@ -44,7 +44,7 @@ class WelcomeViewController: UIViewController {
     func checkUser() {
         if Auth.auth().currentUser != nil {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "test") as! UITabBarController
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
             let navigationController = UINavigationController(rootViewController: viewController)
 
             UIApplication.shared.windows.first?.rootViewController = navigationController

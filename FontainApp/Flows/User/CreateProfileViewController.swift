@@ -23,7 +23,6 @@ class CreateProfileViewController: UIViewController {
     func prepareUI() {
         createProfile = CreateProfileView.setup(in: createProfileView)
         createProfileButton.unactiveStyle()
-        
     }
     
     

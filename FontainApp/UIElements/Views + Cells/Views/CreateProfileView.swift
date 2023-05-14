@@ -19,7 +19,6 @@ class CreateProfileView: UIView {
     @IBOutlet weak var zipCodeTextField: UITextField!
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareView()
