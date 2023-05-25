@@ -79,9 +79,12 @@ class BasketViewController: UIViewController {
     }
     
     @IBAction func basketAction(_ sender: Any) {
+      
         if toShopButton.titleLabel?.text == "Checkout" {
+            let order = Order(orderId: BasketManager.shared.order.orderId, userId: BasketManager.shared.order.userId, products: BasketManager.shared.order.products, address: BasketManager.shared.order.address, orderCreated: Date(), isContactDelivey: BasketManager.shared.order.isContactDelivey, isNotCalling: BasketManager.shared.order.isNotCalling, isContacless: BasketManager.shared.order.isContacless, paymentCompleted: false, total: BasketManager.shared.getPrice())
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "CardViewController") as! CardViewController
-//            vc.order = order
+            vc.order = order
             self.navigationController?.pushViewController(vc, animated: true)
            } else {
                if let tabBarController = self.tabBarController {

@@ -88,8 +88,6 @@ class OrderManager {
                                   userId: userId,
                                   products: products,
                                   address: address,
-                                  comment: comment,
-                                  deliveryTime: deliveryTime,
                                   orderCreated: orderCreated,
                                   isContactDelivey: isContactDelivery,
                                   isNotCalling: isNotCalling,

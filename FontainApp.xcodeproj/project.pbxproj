@@ -53,6 +53,10 @@
 		8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E771AF729F9F8020087654E /* ProductViewController.swift */; };
 		8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */; };
 		8E848F582A07F4AA0034E265 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E848F572A07F4AA0034E265 /* BasketViewController.swift */; };
+		8E8AADD92A1FA38D007BBB6A /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AADD82A1FA38D007BBB6A /* OrderHistoryViewController.swift */; };
+		8E8AADDC2A1FA45C007BBB6A /* OrderHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AADDB2A1FA45C007BBB6A /* OrderHistoryViewModel.swift */; };
+		8E8AADDF2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */; };
+		8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */; };
 		8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EE82A0D47760038B9C8 /* CardViewController.swift */; };
 		8EC00EEB2A0D47B60038B9C8 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */; };
 		8EC00EEE2A0D5B600038B9C8 /* CreateProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */; };
@@ -120,6 +124,10 @@
 		8E771AF729F9F8020087654E /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		8E771AF929F9FB3A0087654E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E848F572A07F4AA0034E265 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		8E8AADD82A1FA38D007BBB6A /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		8E8AADDB2A1FA45C007BBB6A /* OrderHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewModel.swift; sourceTree = "<group>"; };
+		8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		8EC00EE82A0D47760038B9C8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateProfileView.xib; sourceTree = "<group>"; };
@@ -201,6 +209,7 @@
 		8E61542A29EAC437003CE78E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8E8AADDA2A1FA436007BBB6A /* OrderHistory */,
 				8E5D184A29FD8E0D00DE2B74 /* User */,
 				8E771AF629F9F7BF0087654E /* Product */,
 				8EC00EEC2A0D50BF0038B9C8 /* Payment */,
@@ -287,6 +296,8 @@
 				8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */,
 				8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */,
 				8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */,
+				8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */,
+				8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */,
 			);
 			path = PreviousOrderCells;
 			sourceTree = "<group>";
@@ -317,6 +328,15 @@
 				8E73D7412A092FFC002B9217 /* BasketViewModel.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		8E8AADDA2A1FA436007BBB6A /* OrderHistory */ = {
+			isa = PBXGroup;
+			children = (
+				8E8AADD82A1FA38D007BBB6A /* OrderHistoryViewController.swift */,
+				8E8AADDB2A1FA45C007BBB6A /* OrderHistoryViewModel.swift */,
+			);
+			path = OrderHistory;
 			sourceTree = "<group>";
 		};
 		8EC00EEC2A0D50BF0038B9C8 /* Payment */ = {
@@ -482,6 +502,7 @@
 				8EC9E8F429E09D2F009CB6D3 /* Assets.xcassets in Resources */,
 				8E73D7572A0A84F0002B9217 /* TotalTableViewCell.xib in Resources */,
 				8EC9E94029E6A30A009CB6D3 /* PhoneNumberView.xib in Resources */,
+				8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */,
 				8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */,
 				8EC9E92A29E0CDF4009CB6D3 /* ABeeZee-Regular.ttf in Resources */,
 				8E714CDF29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib in Resources */,
@@ -562,6 +583,7 @@
 				8E714CD629E6D41C00B3BBF1 /* ProductCollectionViewCell.swift in Sources */,
 				8E771AF829F9F8020087654E /* ProductViewController.swift in Sources */,
 				8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */,
+				8E8AADDC2A1FA45C007BBB6A /* OrderHistoryViewModel.swift in Sources */,
 				8EC00EEB2A0D47B60038B9C8 /* CardViewModel.swift in Sources */,
 				8E73D74C2A094511002B9217 /* TotalTableViewCell.swift in Sources */,
 				8E73D74A2A093C5F002B9217 /* BasketProduct.swift in Sources */,
@@ -578,6 +600,8 @@
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
 				8E5D184C29FD8E2B00DE2B74 /* CreateProfileViewController.swift in Sources */,
 				8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */,
+				8E8AADD92A1FA38D007BBB6A /* OrderHistoryViewController.swift in Sources */,
+				8E8AADDF2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift in Sources */,
 				8E73D7502A09471A002B9217 /* DeliveryInfoTableViewCell.swift in Sources */,
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
 				8E73D7422A092FFC002B9217 /* BasketViewModel.swift in Sources */,
