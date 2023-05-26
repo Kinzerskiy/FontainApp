@@ -29,7 +29,8 @@ class ProductManager {
                    let name = productData["name"] as? String,
                    let productImageUrl = productData["productImageUrl"] as? String,
                    let measure = productData["measure"] as? String {
-                    let uuid = document.documentID
+                   let uuid = document.documentID
+                    
                     let product = Product(uuid: uuid, productImageUrl: productImageUrl, name: name, measure: measure, price: price)
                     self?.models.append(product)
                 }

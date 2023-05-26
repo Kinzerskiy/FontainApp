@@ -48,8 +48,8 @@ class ProductViewController: UIViewController {
         productItem.isEnabled = true
         self.navigationItem.setHidesBackButton(true, animated: true)
         productPopUp = ItemAddedToCardView.setup(in: addProductView)
+        productPopUp?.isHidden = true
     }
-
 }
 
 extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

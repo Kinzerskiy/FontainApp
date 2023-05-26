@@ -51,6 +51,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buyButtonPressed(_ sender: Any) {
         buyComplition?()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BuyButtonPressedNotification"), object: nil)
     }
     
 }

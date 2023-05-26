@@ -35,10 +35,14 @@ class OrderHistoryCollectionViewCell: UICollectionViewCell {
         let stringDate = dateFormatter.string(from: model.orderCreated)
             orderDate.text = stringDate
             
-            if let products = model.products {
+        if let products = model.products {
                 let productNames = products.compactMap { $0.product.name }
-                orderProductLabel.text = productNames.joined(separator: ", ")
-            }
+                print("productNames: \(productNames)")
+                
+                orderProductLabel.text = productNames.joined(separator: ",")
+                   } else {
+                       print("model.products is nil") // Debug print
+                   }
             
             if let total = model.total {
                 orderTotalLabel.text = String(total)

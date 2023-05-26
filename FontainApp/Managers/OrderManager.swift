@@ -40,46 +40,50 @@ class OrderManager {
     
     func getOrders(completion: @escaping () -> Void) {
         let db = Firestore.firestore()
-//        guard let currentUser = Auth.auth().currentUser  else { return }
         let docRef = db.collection("Orders")
-//            .whereField("userId", isEqualTo: currentUser.uid)
 
-        docRef.getDocuments { data, error in
+        docRef.getDocuments { snapshot, error in
             if let error = error {
                 print(error)
                 return
             }
 
-            guard let data = data else {
+            guard let documents = snapshot?.documents else {
                 print("No data found")
                 return
             }
 
             var orders = [Order]()
 
-            for document in data.documents {
+            for document in documents {
                 let orderData = document.data()
                 let orderId = document.documentID
                 let userId = orderData["userId"] as? String
                 let productsData = orderData["products"] as? [[String: Any]]
                 let address = orderData["address"] as? String
-                
-                
+
                 let isContactDelivery = orderData["isContactDelivery"] as? Bool
                 let isNotCalling = orderData["isNotCalling"] as? Bool
                 let paymentCompleted = orderData["paymentCompleted"] as? Bool
                 let total = orderData["total"] as? Double
-                let orderCreated = orderData["orderCreated"] as! Date
+                let orderCreatedTimestamp = orderData["orderCreated"] as? Timestamp
+                let orderCreated = orderCreatedTimestamp?.dateValue() ?? Date()
 
                 var products = [BasketProduct]()
                 if let productsData = productsData {
                     for productData in productsData {
-                        do {
-                            let product = try Firestore.Decoder().decode(Product.self, from: productData["product"] as Any)
-                            let count = productData["count"] as? Int ?? 0
-                            products.append(BasketProduct(product: product, count: count))
-                        } catch {
-                            print("Error decoding product: \(error)")
+                        if let productDict = productData["product"] as? [String: Any] {
+                            do {
+                                let jsonData = try JSONSerialization.data(withJSONObject: productDict, options: [])
+                                let product = try JSONDecoder().decode(Product.self, from: jsonData)
+                                let count = productData["count"] as? Int ?? 0
+                                let basketProduct = BasketProduct(product: product, count: count)
+                                products.append(basketProduct)
+                            } catch {
+                                print("Error decoding product: \(error)")
+                            }
+                        } else {
+                            print("Invalid product data format: \(productData)")
                         }
                     }
                 }
@@ -91,6 +95,7 @@ class OrderManager {
                                   orderCreated: orderCreated,
                                   isContactDelivey: isContactDelivery,
                                   isNotCalling: isNotCalling,
+                                  isContacless: nil,
                                   paymentCompleted: paymentCompleted,
                                   total: total)
                 orders.append(order)

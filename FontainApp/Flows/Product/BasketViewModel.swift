@@ -41,7 +41,6 @@ class BasketViewModel {
         ) { [weak self] isOn in
             self?.basketManager.order.isNotCalling = isOn
             self?.basketManager.order.isContacless = isOn
-            
         }
         dataSource.append(.switchers(dontCallSwitcherViewModel))
     }
