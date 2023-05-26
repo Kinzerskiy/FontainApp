@@ -63,13 +63,13 @@ class OrderManager {
                 let userId = orderData["userId"] as? String
                 let productsData = orderData["products"] as? [[String: Any]]
                 let address = orderData["address"] as? String
-                let comment = orderData["comment"] as? String
-                let deliveryTime = orderData["deliveryTime"] as? Date ?? Date()
+                
+                
                 let isContactDelivery = orderData["isContactDelivery"] as? Bool
                 let isNotCalling = orderData["isNotCalling"] as? Bool
                 let paymentCompleted = orderData["paymentCompleted"] as? Bool
                 let total = orderData["total"] as? Double
-                let orderCreated = orderData["orderCreated"] as? Date ?? Date()
+                let orderCreated = orderData["orderCreated"] as! Date
 
                 var products = [BasketProduct]()
                 if let productsData = productsData {
@@ -93,10 +93,8 @@ class OrderManager {
                                   isNotCalling: isNotCalling,
                                   paymentCompleted: paymentCompleted,
                                   total: total)
-
                 orders.append(order)
             }
-
             OrderManager.orders = orders
             completion()
         }

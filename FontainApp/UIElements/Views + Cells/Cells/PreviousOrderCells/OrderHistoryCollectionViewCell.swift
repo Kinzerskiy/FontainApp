@@ -9,26 +9,41 @@ import UIKit
 
 class OrderHistoryCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var orderDate: UILabel!
     @IBOutlet weak var orderProductLabel: UILabel!
     @IBOutlet weak var orderTotalLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        prepareUI()
     }
+    
+    
+    func prepareUI() {
+        firstView.layer.borderWidth = 1
+        firstView.layer.cornerRadius = 12
+        firstView.layer.borderColor = UIColor(named: "Primary")?.cgColor
+    }
+    
+    
     
     func fill(with model: Order) {
         
         let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.YYYY, HH:mm"
         let stringDate = dateFormatter.string(from: model.orderCreated)
-        
-        orderDate.text = stringDate
-        guard let products = model.products else { return }
-        let names: [String] = products.map { product in
-            return product.product.name
-        }
-        orderProductLabel.text = names.joined(separator: ",")
-        orderTotalLabel.text = String(model.total ?? 0)
+            orderDate.text = stringDate
+            
+            if let products = model.products {
+                let productNames = products.compactMap { $0.product.name }
+                orderProductLabel.text = productNames.joined(separator: ", ")
+            }
+            
+            if let total = model.total {
+                orderTotalLabel.text = String(total)
+            } else {
+                orderTotalLabel.text = "N/A"
+            }
     }
 }

@@ -15,6 +15,7 @@ class OrderHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -24,11 +25,10 @@ class OrderHistoryViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-
 }
 
 
-extension OrderHistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension OrderHistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.orderManager.getNumberOfOrders()
@@ -39,14 +39,27 @@ extension OrderHistoryViewController: UICollectionViewDelegate, UICollectionView
         
         cell.fill(with: viewModel.orderManager.getOrder(by: indexPath.row))
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOrderCell(_:)))
+        cell.addGestureRecognizer(tapGesture)
+        
         return cell
+    }
+    
+    
+    
+    @objc func didTapOrderCell(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let cell = gestureRecognizer.view as? UICollectionViewCell,
+              let indexPath = collectionView.indexPath(for: cell) else { return }
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        let order = viewModel.orderManager.getOrder(by: indexPath.row)
+        
+        vc.order = order
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width - 40 , height: 100)
     }
-    
-    
-    
 }

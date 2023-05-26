@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289F779B3044489A9A97E331 /* Pods_FontainApp.framework */; };
+		8E2A2C412A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */; };
+		8E2A2C422A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */; };
 		8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */; };
 		8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184029FD8A5400DE2B74 /* Product.swift */; };
 		8E5D184329FD8A7700DE2B74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184229FD8A7700DE2B74 /* User.swift */; };
@@ -36,10 +38,9 @@
 		8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */; };
 		8E714CD629E6D41C00B3BBF1 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CD429E6D41C00B3BBF1 /* ProductCollectionViewCell.swift */; };
 		8E714CD729E6D41C00B3BBF1 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CD529E6D41C00B3BBF1 /* ProductCollectionViewCell.xib */; };
-		8E714CDE29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */; };
-		8E714CDF29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */; };
-		8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */; };
-		8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */; };
+		8E7197F72A20FD7000593D34 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7197F62A20FD7000593D34 /* OrderDetailsViewController.swift */; };
+		8E7197FA2A20FE0100593D34 /* PreviousOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7197F82A20FE0100593D34 /* PreviousOrderTableViewCell.swift */; };
+		8E7197FB2A20FE0100593D34 /* PreviousOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7197F92A20FE0100593D34 /* PreviousOrderTableViewCell.xib */; };
 		8E73D7422A092FFC002B9217 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D7412A092FFC002B9217 /* BasketViewModel.swift */; };
 		8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E73D7452A09319C002B9217 /* TotalProductTableViewCell.swift */; };
 		8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E73D7462A09319C002B9217 /* TotalProductTableViewCell.xib */; };
@@ -79,6 +80,8 @@
 		161D613FEE59361229AA03DF /* Pods-FontainApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.debug.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.debug.xcconfig"; sourceTree = "<group>"; };
 		289F779B3044489A9A97E331 /* Pods_FontainApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontainApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.release.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.release.xcconfig"; sourceTree = "<group>"; };
+		8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		8E5D184029FD8A5400DE2B74 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8E5D184229FD8A7700DE2B74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -107,10 +110,9 @@
 		8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoView.swift; sourceTree = "<group>"; };
 		8E714CD429E6D41C00B3BBF1 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E714CD529E6D41C00B3BBF1 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
-		8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviosOrderTableViewCell.swift; sourceTree = "<group>"; };
-		8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviosOrderTableViewCell.xib; sourceTree = "<group>"; };
-		8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrderDetailTableViewCell.swift; sourceTree = "<group>"; };
-		8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOrderDetailTableViewCell.xib; sourceTree = "<group>"; };
+		8E7197F62A20FD7000593D34 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		8E7197F82A20FE0100593D34 /* PreviousOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrderTableViewCell.swift; sourceTree = "<group>"; };
+		8E7197F92A20FE0100593D34 /* PreviousOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviousOrderTableViewCell.xib; sourceTree = "<group>"; };
 		8E73D7412A092FFC002B9217 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		8E73D7452A09319C002B9217 /* TotalProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalProductTableViewCell.swift; sourceTree = "<group>"; };
 		8E73D7462A09319C002B9217 /* TotalProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalProductTableViewCell.xib; sourceTree = "<group>"; };
@@ -292,12 +294,12 @@
 		8E73D7592A0A86BA002B9217 /* PreviousOrderCells */ = {
 			isa = PBXGroup;
 			children = (
-				8E714CDD29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib */,
-				8E714CDC29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift */,
-				8E714CE129E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib */,
-				8E714CE029E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift */,
-				8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */,
 				8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */,
+				8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */,
+				8E7197F92A20FE0100593D34 /* PreviousOrderTableViewCell.xib */,
+				8E7197F82A20FE0100593D34 /* PreviousOrderTableViewCell.swift */,
+				8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */,
+				8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */,
 			);
 			path = PreviousOrderCells;
 			sourceTree = "<group>";
@@ -335,6 +337,7 @@
 			children = (
 				8E8AADD82A1FA38D007BBB6A /* OrderHistoryViewController.swift */,
 				8E8AADDB2A1FA45C007BBB6A /* OrderHistoryViewModel.swift */,
+				8E7197F62A20FD7000593D34 /* OrderDetailsViewController.swift */,
 			);
 			path = OrderHistory;
 			sourceTree = "<group>";
@@ -501,17 +504,17 @@
 				8E714CD729E6D41C00B3BBF1 /* ProductCollectionViewCell.xib in Resources */,
 				8EC9E8F429E09D2F009CB6D3 /* Assets.xcassets in Resources */,
 				8E73D7572A0A84F0002B9217 /* TotalTableViewCell.xib in Resources */,
+				8E7197FB2A20FE0100593D34 /* PreviousOrderTableViewCell.xib in Resources */,
 				8EC9E94029E6A30A009CB6D3 /* PhoneNumberView.xib in Resources */,
 				8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */,
 				8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */,
 				8EC9E92A29E0CDF4009CB6D3 /* ABeeZee-Regular.ttf in Resources */,
-				8E714CDF29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.xib in Resources */,
 				8E714CD129E6D05300B3BBF1 /* StoreInfoView.xib in Resources */,
 				8E73D7512A09471A002B9217 /* DeliveryInfoTableViewCell.xib in Resources */,
 				8EC00EEE2A0D5B600038B9C8 /* CreateProfileView.xib in Resources */,
 				8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */,
-				8E714CE329E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.xib in Resources */,
 				8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */,
+				8E2A2C422A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib in Resources */,
 				8EC9E92929E0CDF4009CB6D3 /* ABeeZee-Italic.ttf in Resources */,
 				8E714CC929E6C9EA00B3BBF1 /* ResendCodeView.xib in Resources */,
 				8E73D7552A094C71002B9217 /* DeliveryAdressTableViewCell.xib in Resources */,
@@ -572,9 +575,9 @@
 				8E6D6A8F29EC388300589697 /* OrderManager.swift in Sources */,
 				8E6D6A9529EC38E000589697 /* ProductManager.swift in Sources */,
 				8ED31E6E29F9612B00D30DE4 /* CodeViewModel.swift in Sources */,
+				8E7197FA2A20FE0100593D34 /* PreviousOrderTableViewCell.swift in Sources */,
 				8E714CB229E6B08000B3BBF1 /* PhoneNumberView.swift in Sources */,
 				8E6D6A8A29EC351C00589697 /* WelcomeViewModel.swift in Sources */,
-				8E714CDE29E6DE3400B3BBF1 /* PreviosOrderTableViewCell.swift in Sources */,
 				8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */,
 				8E73D7542A094C71002B9217 /* DeliveryAdressTableViewCell.swift in Sources */,
 				8E714CC729E6C73900B3BBF1 /* TermOfUseView.swift in Sources */,
@@ -589,15 +592,16 @@
 				8E73D74A2A093C5F002B9217 /* BasketProduct.swift in Sources */,
 				8E6D6A9129EC38B000589697 /* FileManager.swift in Sources */,
 				8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */,
+				8E2A2C412A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift in Sources */,
 				8E848F582A07F4AA0034E265 /* BasketViewController.swift in Sources */,
 				8E6D6A8D29EC386E00589697 /* UserManager.swift in Sources */,
 				8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */,
 				8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */,
 				8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */,
 				8EC00EF02A0D5B7F0038B9C8 /* CreateProfileView.swift in Sources */,
-				8E714CE229E6E03400B3BBF1 /* PreviousOrderDetailTableViewCell.swift in Sources */,
 				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
+				8E7197F72A20FD7000593D34 /* OrderDetailsViewController.swift in Sources */,
 				8E5D184C29FD8E2B00DE2B74 /* CreateProfileViewController.swift in Sources */,
 				8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */,
 				8E8AADD92A1FA38D007BBB6A /* OrderHistoryViewController.swift in Sources */,
