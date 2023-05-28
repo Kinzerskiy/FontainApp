@@ -10,7 +10,6 @@ import Kingfisher
 
 class ProductViewController: UIViewController {
 
-    @IBOutlet weak var productItem: UITabBarItem!
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var addProductView: UIView!
     
@@ -44,10 +43,10 @@ class ProductViewController: UIViewController {
     }
     
     func prepareUI() {
-        addProductView?.isHidden = false
-        productItem.isEnabled = true
+
         self.navigationItem.setHidesBackButton(true, animated: true)
         productPopUp = ItemAddedToCardView.setup(in: addProductView)
+        
         productPopUp?.isHidden = true
     }
 }
@@ -84,7 +83,7 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.buyComplition = {
             BasketManager.shared.add(product: product)
-            
+            self.productPopUp?.show()
         }
         return cell
     }
