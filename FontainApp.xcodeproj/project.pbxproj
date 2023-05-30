@@ -74,6 +74,7 @@
 		8EC9E94029E6A30A009CB6D3 /* PhoneNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */; };
 		8ED31E6A29F960D500D30DE4 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED31E6929F960D500D30DE4 /* CodeViewController.swift */; };
 		8ED31E6E29F9612B00D30DE4 /* CodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED31E6D29F9612B00D30DE4 /* CodeViewModel.swift */; };
+		8EEF9B262A25EFDC009FA191 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF9B252A25EFDC009FA191 /* GoogleMapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		8EC9E93F29E6A30A009CB6D3 /* PhoneNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberView.xib; sourceTree = "<group>"; };
 		8ED31E6929F960D500D30DE4 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		8ED31E6D29F9612B00D30DE4 /* CodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewModel.swift; sourceTree = "<group>"; };
+		8EEF9B252A25EFDC009FA191 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		8E61542A29EAC437003CE78E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8EEF9B242A25EFBA009FA191 /* Maps */,
 				8E8AADDA2A1FA436007BBB6A /* OrderHistory */,
 				8E5D184A29FD8E0D00DE2B74 /* User */,
 				8E771AF629F9F7BF0087654E /* Product */,
@@ -431,6 +434,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8EEF9B242A25EFBA009FA191 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				8EEF9B252A25EFDC009FA191 /* GoogleMapsViewController.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		FD9DE5299DE71FF3DCAF288D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +462,7 @@
 				8EC9E8E429E09D28009CB6D3 /* Frameworks */,
 				8EC9E8E529E09D28009CB6D3 /* Resources */,
 				ABD0D63E829D3460D14C6225 /* [CP] Embed Pods Frameworks */,
+				42A628000768396A7FFF0188 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,6 +560,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		42A628000768396A7FFF0188 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FontainApp/Pods-FontainApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ABD0D63E829D3460D14C6225 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +643,7 @@
 				8E6D6A9329EC38D000589697 /* BasketManager.swift in Sources */,
 				8E714CCF29E6CB5600B3BBF1 /* ItemAddedToCardView.swift in Sources */,
 				8EC9E91129E0B1A1009CB6D3 /* UIButtons.swift in Sources */,
+				8EEF9B262A25EFDC009FA191 /* GoogleMapsViewController.swift in Sources */,
 				8E714CCB29E6C9F100B3BBF1 /* ResendCodeView.swift in Sources */,
 				8ED31E6A29F960D500D30DE4 /* CodeViewController.swift in Sources */,
 				8E6D6A8729EC31C500589697 /* WelcomeViewController.swift in Sources */,
@@ -767,6 +797,7 @@
 				DEVELOPMENT_TEAM = N2LF8DTSP7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FontainApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -796,6 +827,7 @@
 				DEVELOPMENT_TEAM = N2LF8DTSP7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FontainApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

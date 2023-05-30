@@ -9,26 +9,16 @@ import UIKit
 
 class StoreInfoView: UIView {
 
-    @IBOutlet weak var storeInfoImage: UIImageView!
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        totalViewInit()
-        prepareView()
+    
+    static func setup(in view: UIView) -> StoreInfoView {
+        let storeInfoView = StoreInfoView.loadFromNib()!
+        storeInfoView.frame = view.bounds
+        view.addSubview(storeInfoView)
+        return storeInfoView
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
-    func totalViewInit() {
-        let viewFromXib = Bundle.main.loadNibNamed("StoreInfoView", owner: self, options: nil)![0] as! UIView
-        viewFromXib.frame = self.bounds
-        addSubview(viewFromXib)
-        viewFromXib.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-
     func prepareView() {
-       
+        
     }
 }

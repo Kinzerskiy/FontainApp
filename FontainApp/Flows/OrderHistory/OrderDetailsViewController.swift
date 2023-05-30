@@ -8,16 +8,16 @@
 import UIKit
 
 class OrderDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var order: Order?
     
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        
         navigationItem.setHidesBackButton(true, animated: true)
     }
     
@@ -27,7 +27,7 @@ class OrderDetailsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(.init(nibName: "OrderDetailsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderDetailsHeaderTableViewCell")
-                           
+        
         tableView.register(.init(nibName: "PreviousOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousOrderTableViewCell")
         
         
@@ -44,18 +44,18 @@ class OrderDetailsViewController: UIViewController {
 extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 2 // One section for the header, another for the product cells
+        return 2 // One section for the header, another for the product cells
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            
+            return order?.products?.count ?? 1
         }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if section == 0 {
-                return 1
-            } else {
-
-                return order?.products?.count ?? 1
-            }
-        }
-        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             
@@ -65,7 +65,6 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
             }
             return cell
         } else {
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "PreviousOrderTableViewCell", for: indexPath) as! PreviousOrderTableViewCell
             if let product = order?.products?[indexPath.row].product {
                 cell.fill(with: product)
@@ -73,19 +72,4 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
             return cell
         }
     }
-        
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            if section == 0 {
-                return 300
-            }
-            return 200
-        }
-        
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return UITableView.automaticDimension
-        }
-        
-        func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 150
-        }
-    }
+}

@@ -80,11 +80,11 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     
     @IBAction func onPayPressed(_ sender: Any) {
                 
+        
             guard let merchantIDString = merchantIDTextField.text,
-                    let merchantID = Int(merchantIDString), merchantID > 0 else {
-                debugPrint("Invalid merchant ID")
-                return
-            }
+                    let merchantID = Int(merchantIDString), merchantID > 0
+        else { debugPrint("Invalid merchant ID")
+                return }
             
             guard let description = descriptionTextField.text,
                     !description.isEmpty else {
@@ -92,6 +92,7 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
                 return
             }
         payOrder()
+        saveOrder()
     }
     
     

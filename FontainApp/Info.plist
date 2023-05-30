@@ -11,8 +11,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Arimo</string>
