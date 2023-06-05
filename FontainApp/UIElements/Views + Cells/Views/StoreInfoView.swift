@@ -7,8 +7,14 @@
 
 import UIKit
 
+@IBDesignable
 class StoreInfoView: UIView {
 
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareView()
+    }
     
     static func setup(in view: UIView) -> StoreInfoView {
         let storeInfoView = StoreInfoView.loadFromNib()!

@@ -10,11 +10,14 @@
 		20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289F779B3044489A9A97E331 /* Pods_FontainApp.framework */; };
 		8E2A2C412A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */; };
 		8E2A2C422A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */; };
+		8E34F3BB2A2E574B004FDCCB /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */; };
+		8E34F3BD2A2E5765004FDCCB /* CreateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34F3BC2A2E5765004FDCCB /* CreateProfileViewModel.swift */; };
+		8E34F3C22A2E57CE004FDCCB /* CreateProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34F3C02A2E57CE004FDCCB /* CreateProfileTableViewCell.swift */; };
+		8E34F3C32A2E57CE004FDCCB /* CreateProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E34F3C12A2E57CE004FDCCB /* CreateProfileTableViewCell.xib */; };
 		8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */; };
 		8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184029FD8A5400DE2B74 /* Product.swift */; };
 		8E5D184329FD8A7700DE2B74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184229FD8A7700DE2B74 /* User.swift */; };
 		8E5D184529FD8A8900DE2B74 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184429FD8A8900DE2B74 /* Order.swift */; };
-		8E5D184C29FD8E2B00DE2B74 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184B29FD8E2B00DE2B74 /* CreateProfileViewController.swift */; };
 		8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */; };
 		8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542D29EAC48D003CE78E /* LogInViewController.swift */; };
 		8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */; };
@@ -60,8 +63,6 @@
 		8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */; };
 		8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EE82A0D47760038B9C8 /* CardViewController.swift */; };
 		8EC00EEB2A0D47B60038B9C8 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */; };
-		8EC00EEE2A0D5B600038B9C8 /* CreateProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */; };
-		8EC00EF02A0D5B7F0038B9C8 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EEF2A0D5B7F0038B9C8 /* CreateProfileView.swift */; };
 		8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC99B7229EABC2200EC255C /* UIView+Extension.swift */; };
 		8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */; };
 		8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */; };
@@ -83,11 +84,14 @@
 		3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.release.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.release.xcconfig"; sourceTree = "<group>"; };
 		8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfileViewController.swift; path = "../New Group/CreateProfileViewController.swift"; sourceTree = "<group>"; };
+		8E34F3BC2A2E5765004FDCCB /* CreateProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewModel.swift; sourceTree = "<group>"; };
+		8E34F3C02A2E57CE004FDCCB /* CreateProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewCell.swift; sourceTree = "<group>"; };
+		8E34F3C12A2E57CE004FDCCB /* CreateProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateProfileTableViewCell.xib; sourceTree = "<group>"; };
 		8E5CF2E82A01C03C00B39B3C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		8E5D184029FD8A5400DE2B74 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8E5D184229FD8A7700DE2B74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E5D184429FD8A8900DE2B74 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		8E5D184B29FD8E2B00DE2B74 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModels.swift; sourceTree = "<group>"; };
 		8E61542D29EAC48D003CE78E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
@@ -133,8 +137,6 @@
 		8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		8EC00EE82A0D47760038B9C8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
-		8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateProfileView.xib; sourceTree = "<group>"; };
-		8EC00EEF2A0D5B7F0038B9C8 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		8EC99B7229EABC2200EC255C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8EC9E8E729E09D28009CB6D3 /* FontainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E34F3BE2A2E577E004FDCCB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */,
+				8E34F3BC2A2E5765004FDCCB /* CreateProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8E34F3BF2A2E57A6004FDCCB /* ProfileCells */ = {
+			isa = PBXGroup;
+			children = (
+				8E34F3C02A2E57CE004FDCCB /* CreateProfileTableViewCell.swift */,
+				8E34F3C12A2E57CE004FDCCB /* CreateProfileTableViewCell.xib */,
+			);
+			path = ProfileCells;
+			sourceTree = "<group>";
+		};
 		8E5D183F29FD8A4200DE2B74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +215,6 @@
 		8E5D184A29FD8E0D00DE2B74 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				8E5D184B29FD8E2B00DE2B74 /* CreateProfileViewController.swift */,
 				8E61542B29EAC44C003CE78E /* Authorization */,
 			);
 			path = User;
@@ -225,6 +244,7 @@
 		8E61542B29EAC44C003CE78E /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				8E34F3BE2A2E577E004FDCCB /* Profile */,
 				8E61542C29EAC468003CE78E /* LogIn */,
 			);
 			path = Authorization;
@@ -267,6 +287,7 @@
 		8E73D7432A0930E2002B9217 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8E34F3BF2A2E57A6004FDCCB /* ProfileCells */,
 				8E73D75A2A0A8727002B9217 /* BasketProductCells */,
 				8E73D7592A0A86BA002B9217 /* PreviousOrderCells */,
 			);
@@ -286,8 +307,6 @@
 				8E714CB629E6B9AD00B3BBF1 /* SmsView.swift */,
 				8E714CCC29E6CB4E00B3BBF1 /* ItemAddedToCardView.xib */,
 				8E714CCE29E6CB5600B3BBF1 /* ItemAddedToCardView.swift */,
-				8EC00EED2A0D5B600038B9C8 /* CreateProfileView.xib */,
-				8EC00EEF2A0D5B7F0038B9C8 /* CreateProfileView.swift */,
 				8E714CD029E6D05300B3BBF1 /* StoreInfoView.xib */,
 				8E714CD229E6D05C00B3BBF1 /* StoreInfoView.swift */,
 			);
@@ -519,11 +538,11 @@
 				8E7197FB2A20FE0100593D34 /* PreviousOrderTableViewCell.xib in Resources */,
 				8EC9E94029E6A30A009CB6D3 /* PhoneNumberView.xib in Resources */,
 				8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */,
+				8E34F3C32A2E57CE004FDCCB /* CreateProfileTableViewCell.xib in Resources */,
 				8E714CC529E6C72100B3BBF1 /* TermOfUseView.xib in Resources */,
 				8EC9E92A29E0CDF4009CB6D3 /* ABeeZee-Regular.ttf in Resources */,
 				8E714CD129E6D05300B3BBF1 /* StoreInfoView.xib in Resources */,
 				8E73D7512A09471A002B9217 /* DeliveryInfoTableViewCell.xib in Resources */,
-				8EC00EEE2A0D5B600038B9C8 /* CreateProfileView.xib in Resources */,
 				8E73D7482A09319C002B9217 /* TotalProductTableViewCell.xib in Resources */,
 				8E771AFA29F9FB3A0087654E /* GoogleService-Info.plist in Resources */,
 				8E2A2C422A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib in Resources */,
@@ -627,11 +646,10 @@
 				8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */,
 				8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */,
 				8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */,
-				8EC00EF02A0D5B7F0038B9C8 /* CreateProfileView.swift in Sources */,
 				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
+				8E34F3BB2A2E574B004FDCCB /* CreateProfileViewController.swift in Sources */,
 				8E7197F72A20FD7000593D34 /* OrderDetailsViewController.swift in Sources */,
-				8E5D184C29FD8E2B00DE2B74 /* CreateProfileViewController.swift in Sources */,
 				8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */,
 				8E8AADD92A1FA38D007BBB6A /* OrderHistoryViewController.swift in Sources */,
 				8E8AADDF2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift in Sources */,
@@ -639,7 +657,9 @@
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
 				8E73D7422A092FFC002B9217 /* BasketViewModel.swift in Sources */,
 				8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */,
+				8E34F3C22A2E57CE004FDCCB /* CreateProfileTableViewCell.swift in Sources */,
 				8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */,
+				8E34F3BD2A2E5765004FDCCB /* CreateProfileViewModel.swift in Sources */,
 				8E6D6A9329EC38D000589697 /* BasketManager.swift in Sources */,
 				8E714CCF29E6CB5600B3BBF1 /* ItemAddedToCardView.swift in Sources */,
 				8EC9E91129E0B1A1009CB6D3 /* UIButtons.swift in Sources */,

@@ -74,14 +74,21 @@ class CodeViewController: UIViewController {
                     UIApplication.shared.windows.first?.rootViewController = navigationController
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
                 } else {
-                    let user = User(uuid: currentUser.uid, phoneNumber: nil, fullName: nil, address: nil, imageUrl: nil)
-                    userManager.saveUserFields(user: user) {
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-                        let navigationController = UINavigationController(rootViewController: viewController)
+                    let user = User(uuid: currentUser.uid,
+                                    phoneNumber: nil,
+                                    fullName: nil,
+                                    city: nil,
+                                    country: nil,
+                                    street: nil,
+                                    zipCode: nil,
+                                    imageUrl: nil)
+                    userManager.saveUserFields(user: user) { [weak self] in
                         
-                        UIApplication.shared.windows.first?.rootViewController = navigationController
-                        UIApplication.shared.windows.first?.makeKeyAndVisible()
+                        let vc = self?.storyboard?.instantiateViewController(withIdentifier: "CreateProfileViewController") as! CreateProfileViewController
+
+                        vc.user = user
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                        
                     }
                 }
             }

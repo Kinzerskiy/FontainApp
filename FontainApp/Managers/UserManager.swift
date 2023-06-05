@@ -26,7 +26,7 @@ class UserManager {
     
     func saveUserFields(user: User, completion: @escaping () -> Void) {
         do {
-            try db.collection("Users").document(user.uuid).setData(from: user)
+            try db.collection("Users").document(user.uuid ?? "0").setData(from: user)
             completion()
         } catch let error {
             print("Error writing user to Firestore: \(error)")

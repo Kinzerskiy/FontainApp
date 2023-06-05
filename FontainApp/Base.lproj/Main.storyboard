@@ -171,6 +171,7 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="J6f-s3-AEw" eventType="touchUpInside" id="P4J-y0-tBn"/>
+                                    <segue destination="AXO-ex-T4T" kind="show" identifier="fromCodeToProfileFields" id="7Ba-id-WPR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-th-mwd">
@@ -228,6 +229,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj0-TM-Fax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2991" y="107"/>
+        </scene>
+        <!--Create Profile View Controller-->
+        <scene sceneID="oR8-VR-hfX">
+            <objects>
+                <viewController storyboardIdentifier="CreateProfileViewController" id="AXO-ex-T4T" customClass="CreateProfileViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWp-TH-UuY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-Zv-GCl">
+                                <rect key="frame" x="10" y="75" width="355" height="20"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CwA-fF-QoM">
+                                <rect key="frame" x="0.0" y="197" width="375" height="419"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXk-s5-3M2">
+                                <rect key="frame" x="30" y="616" width="315" height="51"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="XiN-Nk-yL5"/>
+                                    <constraint firstAttribute="height" constant="51" id="zTh-kA-0bL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="AXO-ex-T4T" eventType="touchUpInside" id="ZZW-Ym-K9V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-tb-Jed">
+                                <rect key="frame" x="324" y="102" width="21" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icon-edit"/>
+                                <connections>
+                                    <action selector="editPhotoAction:" destination="AXO-ex-T4T" eventType="touchUpInside" id="Qjr-bO-u5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhu-Wx-FBk">
+                                <rect key="frame" x="30" y="102" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="pfw-T3-cTu"/>
+                                    <constraint firstAttribute="height" constant="75" id="xZK-5n-TR3"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add photo"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Add photo">
+                                    <fontDescription key="titleFontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addPhotoAction:" destination="AXO-ex-T4T" eventType="touchUpInside" id="eHk-F6-uAB"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-sW-Lb3">
+                                <rect key="frame" x="30" y="102" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Cr2-wp-oi4"/>
+                                    <constraint firstAttribute="height" constant="75" id="Mff-nz-C2c"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ift-7D-fAb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZXk-s5-3M2" firstAttribute="top" secondItem="CwA-fF-QoM" secondAttribute="bottom" id="54r-6v-AYx"/>
+                            <constraint firstItem="FEp-Zv-GCl" firstAttribute="top" secondItem="Ift-7D-fAb" secondAttribute="top" constant="11" id="5oe-mJ-eeD"/>
+                            <constraint firstItem="Ift-7D-fAb" firstAttribute="bottom" secondItem="ZXk-s5-3M2" secondAttribute="bottom" id="Ay4-tu-NPA"/>
+                            <constraint firstItem="ZXk-s5-3M2" firstAttribute="leading" secondItem="Ift-7D-fAb" secondAttribute="leading" constant="30" id="Dec-5G-8rF"/>
+                            <constraint firstItem="jrk-sW-Lb3" firstAttribute="leading" secondItem="Ift-7D-fAb" secondAttribute="leading" constant="30" id="LB9-Cj-U6A"/>
+                            <constraint firstItem="Ift-7D-fAb" firstAttribute="trailing" secondItem="ZXk-s5-3M2" secondAttribute="trailing" constant="30" id="N7L-oK-0B1"/>
+                            <constraint firstItem="Ift-7D-fAb" firstAttribute="trailing" secondItem="CwA-fF-QoM" secondAttribute="trailing" id="PMY-Jj-TQ5"/>
+                            <constraint firstItem="CwA-fF-QoM" firstAttribute="top" secondItem="Fhu-Wx-FBk" secondAttribute="bottom" constant="20" id="Qqb-vH-08U"/>
+                            <constraint firstItem="Fhu-Wx-FBk" firstAttribute="leading" secondItem="Ift-7D-fAb" secondAttribute="leading" constant="30" id="RNr-JK-efq"/>
+                            <constraint firstItem="jrk-sW-Lb3" firstAttribute="top" secondItem="FEp-Zv-GCl" secondAttribute="bottom" constant="7" id="TeQ-IX-HB0"/>
+                            <constraint firstItem="Ift-7D-fAb" firstAttribute="trailing" secondItem="FEp-Zv-GCl" secondAttribute="trailing" constant="10" id="ap7-6M-YuQ"/>
+                            <constraint firstItem="CwA-fF-QoM" firstAttribute="leading" secondItem="Ift-7D-fAb" secondAttribute="leading" id="fcf-BQ-nBB"/>
+                            <constraint firstItem="FEp-Zv-GCl" firstAttribute="leading" secondItem="Ift-7D-fAb" secondAttribute="leading" constant="10" id="jrD-Mg-p7J"/>
+                            <constraint firstItem="1MK-tb-Jed" firstAttribute="top" secondItem="Fhu-Wx-FBk" secondAttribute="top" id="luR-Fj-dVg"/>
+                            <constraint firstItem="Fhu-Wx-FBk" firstAttribute="top" secondItem="FEp-Zv-GCl" secondAttribute="bottom" constant="7" id="qsW-NL-AIF"/>
+                            <constraint firstItem="Ift-7D-fAb" firstAttribute="trailing" secondItem="1MK-tb-Jed" secondAttribute="trailing" constant="30" id="ztE-TD-H0O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ybh-5X-cRf"/>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="Fhu-Wx-FBk" id="ehn-ru-qGt"/>
+                        <outlet property="editButton" destination="1MK-tb-Jed" id="rTZ-M4-vwg"/>
+                        <outlet property="profilePhoto" destination="jrk-sW-Lb3" id="I4b-Ed-lv0"/>
+                        <outlet property="saveButton" destination="ZXk-s5-3M2" id="6A3-Rz-0O8"/>
+                        <outlet property="tableView" destination="CwA-fF-QoM" id="7Bp-O6-Jn5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSH-Ga-s9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3884" y="-637"/>
         </scene>
         <!--Product-->
         <scene sceneID="IG0-Gb-oPJ">
@@ -492,64 +593,6 @@
             </objects>
             <point key="canvasLocation" x="6865" y="961"/>
         </scene>
-        <!--Create Profile View Controller-->
-        <scene sceneID="2lK-j4-3KD">
-            <objects>
-                <viewController storyboardIdentifier="CreateProfileViewController" id="Y3a-AF-cib" customClass="CreateProfileViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4cI-1n-2Ol">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-n6-WA2">
-                                <rect key="frame" x="20" y="75" width="335" height="24"/>
-                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJg-x5-rUK">
-                                <rect key="frame" x="30" y="619" width="315" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="syi-Kx-v7d"/>
-                                </constraints>
-                                <color key="tintColor" name="Primary"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save">
-                                    <fontDescription key="titleFontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="saveFieldsAction:" destination="Y3a-AF-cib" eventType="touchUpInside" id="2Lo-nV-cZd"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXf-MH-JIv">
-                                <rect key="frame" x="0.0" y="99" width="375" height="520"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="D5r-be-dvl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yJg-x5-rUK" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" constant="30" id="Bpm-9L-r7V"/>
-                            <constraint firstItem="tXf-MH-JIv" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" id="EsU-tJ-pf9"/>
-                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="yJg-x5-rUK" secondAttribute="trailing" constant="30" id="FOX-wC-xn8"/>
-                            <constraint firstItem="tXf-MH-JIv" firstAttribute="top" secondItem="pi4-n6-WA2" secondAttribute="bottom" id="Nnm-SO-bx3"/>
-                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="pi4-n6-WA2" secondAttribute="trailing" constant="20" id="bqY-YT-pQa"/>
-                            <constraint firstItem="D5r-be-dvl" firstAttribute="trailing" secondItem="tXf-MH-JIv" secondAttribute="trailing" id="gcx-Zi-jLT"/>
-                            <constraint firstItem="pi4-n6-WA2" firstAttribute="top" secondItem="D5r-be-dvl" secondAttribute="top" constant="11" id="kyZ-tA-seg"/>
-                            <constraint firstItem="yJg-x5-rUK" firstAttribute="top" secondItem="tXf-MH-JIv" secondAttribute="bottom" id="pqa-ZO-gDE"/>
-                            <constraint firstItem="pi4-n6-WA2" firstAttribute="leading" secondItem="D5r-be-dvl" secondAttribute="leading" constant="20" id="sEe-fl-f7r"/>
-                            <constraint firstItem="D5r-be-dvl" firstAttribute="bottom" secondItem="yJg-x5-rUK" secondAttribute="bottom" id="shN-Le-Mif"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="Property 122=active" id="FqU-J9-KCY"/>
-                    <navigationItem key="navigationItem" id="CIg-c0-YaU"/>
-                    <connections>
-                        <outlet property="createProfileButton" destination="yJg-x5-rUK" id="CPh-zv-rwg"/>
-                        <outlet property="createProfileView" destination="tXf-MH-JIv" id="wHO-fF-HOG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3t-A7-nvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2231" y="-931"/>
-        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="sve-d5-cqv">
             <objects>
@@ -585,7 +628,6 @@
                     <connections>
                         <outlet property="fontaineLabel" destination="X2Q-X7-vzW" id="aNN-M8-NEv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="welcomeSegue" id="sf1-dk-c29"/>
-                        <segue destination="Y3a-AF-cib" kind="show" identifier="welcomeSegue" id="WDK-7R-d2S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90n-dX-vMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -835,12 +877,12 @@
     <resources>
         <image name="Ellipse 1" width="174" height="313"/>
         <image name="Map" width="20" height="24"/>
-        <image name="Property 122=active" width="20" height="22"/>
         <image name="Property 1=active" width="23" height="23"/>
         <image name="Property 1=active (1)" width="24" height="23"/>
         <image name="amico 1" width="258" height="220"/>
         <image name="bro" width="175" height="173"/>
         <image name="history" width="22" height="21"/>
+        <image name="icon-edit" width="21" height="21"/>
         <namedColor name="Primary">
             <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

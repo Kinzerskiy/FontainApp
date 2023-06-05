@@ -19,7 +19,7 @@ class PreviousOrderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareView()
-        
+        selectionStyle = .none
     }
     
     func fill(with product: Product) {

@@ -29,10 +29,8 @@ class GoogleMapsViewController: UIViewController {
     
     
     func prepareUI() {
-        
         pointInfoView = StoreInfoView.setup(in: pointInfoView)
     }
-    
 }
 
 extension GoogleMapsViewController: CLLocationManagerDelegate {
@@ -47,7 +45,6 @@ extension GoogleMapsViewController: CLLocationManagerDelegate {
                 
                 self.mapView.addSubview(googleMapView)
                 
-                // Creates a marker in the center of the map.
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
                 marker.title = "Sydney"
@@ -56,7 +53,7 @@ extension GoogleMapsViewController: CLLocationManagerDelegate {
             }
         } else {
             DispatchQueue.main.async {
-                
+                return
             }
         }
     }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ABeeZee-Regular.ttf">
+            <string>ABeeZee-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="CreateProfileTableViewCell" customModule="FontainApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="346" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CreateProfileTableViewCell" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-2k-Yah">
+                        <rect key="frame" x="29.999999999999996" y="0.0" width="36.666666666666657" height="16.666666666666668"/>
+                        <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="14"/>
+                        <color key="textColor" red="0.50980395079999996" green="0.50980401040000001" blue="0.50980401040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2KY-gn-7B1">
+                        <rect key="frame" x="30" y="23.666666666666671" width="286" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Su2-2k-Yah" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="034-PG-gmu"/>
+                    <constraint firstItem="2KY-gn-7B1" firstAttribute="top" secondItem="Su2-2k-Yah" secondAttribute="bottom" constant="7" id="19L-F8-fqi"/>
+                    <constraint firstItem="2KY-gn-7B1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="8dH-7D-F0u"/>
+                    <constraint firstItem="Su2-2k-Yah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="hLS-A2-nUc"/>
+                    <constraint firstAttribute="trailing" secondItem="2KY-gn-7B1" secondAttribute="trailing" constant="30" id="i52-LI-pc7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="fieldNameLabel" destination="Su2-2k-Yah" id="NwL-8L-vfn"/>
+                <outlet property="infoTextField" destination="2KY-gn-7B1" id="CdQ-yC-TO7"/>
+            </connections>
+            <point key="canvasLocation" x="158.77862595419847" y="16.901408450704228"/>
+        </tableViewCell>
+    </objects>
+</document>

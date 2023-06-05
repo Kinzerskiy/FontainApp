@@ -6,10 +6,14 @@
 //
 
 import Foundation
+
 struct User: Codable {
-    let uuid: String
-    let phoneNumber: String?
-    let fullName: String?
-    let address: String?
-    let imageUrl: String?
+    var uuid: String?
+    var phoneNumber: String?
+    var fullName: String?
+    var city: String?
+    var country: String?
+    var street: String?
+    var zipCode: String?
+    var imageUrl: String?
 }
