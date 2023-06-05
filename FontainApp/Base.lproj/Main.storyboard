@@ -330,6 +330,79 @@
             </objects>
             <point key="canvasLocation" x="3884" y="-637"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="QQ0-kY-C6f">
+            <objects>
+                <viewController id="fF3-W7-G7b" customClass="ProfileViewController" customModule="FontainApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vB-0y-dDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTJ-Ap-cGc">
+                                <rect key="frame" x="10" y="20" width="355" height="20"/>
+                                <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="274-sZ-4Ky">
+                                <rect key="frame" x="28" y="77" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Qhb-8c-Up3"/>
+                                    <constraint firstAttribute="width" constant="75" id="WGX-sb-BuG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-yD-Py1">
+                                <rect key="frame" x="30" y="583" width="315" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="2Ul-YI-0Uv"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uAF-al-CjI">
+                                <rect key="frame" x="0.0" y="152" width="375" height="431"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxG-XP-SkV">
+                                <rect key="frame" x="324" y="77" width="21" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icon-edit"/>
+                                <connections>
+                                    <action selector="editPhotoAction:" destination="AXO-ex-T4T" eventType="touchUpInside" id="4SU-I0-lxq"/>
+                                    <action selector="editProfileAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="hkr-f5-OIq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hG7-rd-PHd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zft-yD-Py1" firstAttribute="top" secondItem="uAF-al-CjI" secondAttribute="bottom" id="4hC-4U-87V"/>
+                            <constraint firstItem="hG7-rd-PHd" firstAttribute="trailing" secondItem="Zft-yD-Py1" secondAttribute="trailing" constant="30" id="7EJ-Zg-e0C"/>
+                            <constraint firstItem="uAF-al-CjI" firstAttribute="leading" secondItem="hG7-rd-PHd" secondAttribute="leading" id="A1C-1b-uJo"/>
+                            <constraint firstItem="hG7-rd-PHd" firstAttribute="trailing" secondItem="uAF-al-CjI" secondAttribute="trailing" id="Cqg-MU-9Ly"/>
+                            <constraint firstItem="Zft-yD-Py1" firstAttribute="leading" secondItem="hG7-rd-PHd" secondAttribute="leading" constant="30" id="Dfb-kp-LU3"/>
+                            <constraint firstItem="hG7-rd-PHd" firstAttribute="bottom" secondItem="Zft-yD-Py1" secondAttribute="bottom" id="PjO-VQ-0oV"/>
+                            <constraint firstItem="uTJ-Ap-cGc" firstAttribute="leading" secondItem="hG7-rd-PHd" secondAttribute="leading" constant="10" id="ad8-h2-ocd"/>
+                            <constraint firstItem="hG7-rd-PHd" firstAttribute="trailing" secondItem="uTJ-Ap-cGc" secondAttribute="trailing" constant="10" id="fVB-4K-ZCe"/>
+                            <constraint firstItem="274-sZ-4Ky" firstAttribute="top" secondItem="uTJ-Ap-cGc" secondAttribute="bottom" constant="37" id="jmu-1d-F9q"/>
+                            <constraint firstItem="hG7-rd-PHd" firstAttribute="trailing" secondItem="dxG-XP-SkV" secondAttribute="trailing" constant="30" id="pk4-9k-oKv"/>
+                            <constraint firstItem="dxG-XP-SkV" firstAttribute="top" secondItem="274-sZ-4Ky" secondAttribute="top" id="sWB-jz-rpv"/>
+                            <constraint firstItem="274-sZ-4Ky" firstAttribute="leading" secondItem="hG7-rd-PHd" secondAttribute="leading" constant="28" id="str-kr-m4W"/>
+                            <constraint firstItem="uTJ-Ap-cGc" firstAttribute="top" secondItem="hG7-rd-PHd" secondAttribute="top" id="td6-Gt-37E"/>
+                            <constraint firstItem="uAF-al-CjI" firstAttribute="top" secondItem="274-sZ-4Ky" secondAttribute="bottom" id="vNZ-TQ-ZqU"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="MHe-8D-UwY"/>
+                    <connections>
+                        <outlet property="logOutButton" destination="Zft-yD-Py1" id="rGh-aI-6Ye"/>
+                        <outlet property="profilePhoto" destination="274-sZ-4Ky" id="wG8-d6-j1c"/>
+                        <outlet property="tableView" destination="uAF-al-CjI" id="UnO-Ig-SM7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzU-Bd-rP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4814" y="-637"/>
+        </scene>
         <!--Product-->
         <scene sceneID="IG0-Gb-oPJ">
             <objects>
@@ -379,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEi-1N-YFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5222" y="107"/>
+            <point key="canvasLocation" x="4814" y="107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EeQ-nc-6am">
@@ -395,6 +468,7 @@
                         <segue destination="eiU-DI-lNB" kind="relationship" relationship="viewControllers" destinationCreationSelector="0" id="cMQ-Dn-aVV"/>
                         <segue destination="fgm-Gl-Ppk" kind="relationship" relationship="viewControllers" id="UhR-bu-ghq"/>
                         <segue destination="RBf-8S-oIk" kind="relationship" relationship="viewControllers" id="8wS-Xv-Gb5"/>
+                        <segue destination="fF3-W7-G7b" kind="relationship" relationship="viewControllers" id="ohm-pY-Mac"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wi3-Ic-Isr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -481,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9F0-X4-pAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6102" y="107"/>
+            <point key="canvasLocation" x="5689" y="107"/>
         </scene>
         <!--Order History View Controller-->
         <scene sceneID="vig-a8-jCq">
@@ -529,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CD2-UR-Cnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6050" y="962"/>
+            <point key="canvasLocation" x="5689" y="960"/>
         </scene>
         <!--Order Details View Controller-->
         <scene sceneID="a6t-oR-zsu">
@@ -591,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ji-y7-I9J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6865" y="961"/>
+            <point key="canvasLocation" x="6545" y="959"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="sve-d5-cqv">
@@ -801,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yim-qU-rbW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6866" y="107"/>
+            <point key="canvasLocation" x="6546" y="107"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="ocd-Rn-EXu">
@@ -823,7 +897,6 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-fr-gzP" customClass="StoreInfoView" customModule="FontainApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="462" width="375" height="156"/>
-                                <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="jUz-5m-Q1c"/>
                                 </constraints>
@@ -852,7 +925,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4y-hs-tuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5222" y="1756"/>
+            <point key="canvasLocation" x="4814" y="1779"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NHJ-nd-Wdy">
@@ -871,7 +944,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClR-ce-k3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5222" y="962"/>
+            <point key="canvasLocation" x="4814" y="960"/>
         </scene>
     </scenes>
     <resources>
@@ -883,6 +956,7 @@
         <image name="bro" width="175" height="173"/>
         <image name="history" width="22" height="21"/>
         <image name="icon-edit" width="21" height="21"/>
+        <image name="profile" width="20" height="22"/>
         <namedColor name="Primary">
             <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

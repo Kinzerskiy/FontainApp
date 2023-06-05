@@ -21,15 +21,16 @@ class GoogleMapsViewController: UIViewController {
         prepareUI()
         
         if CLLocationManager.locationServicesEnabled() {
-               locationManager = CLLocationManager()
-               locationManager.delegate = self
-               locationManager.requestWhenInUseAuthorization()
-           }
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        pointInfo?.roundCorners([.topLeft, .topRight], radius: 30)
     }
     
-    
     func prepareUI() {
-        pointInfoView = StoreInfoView.setup(in: pointInfoView)
+        pointInfo = StoreInfoView.setup(in: pointInfoView)
     }
 }
 
