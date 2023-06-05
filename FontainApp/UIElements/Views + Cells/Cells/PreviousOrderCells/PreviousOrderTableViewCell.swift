@@ -18,8 +18,8 @@ class PreviousOrderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        prepareView()
-        selectionStyle = .none
+        prepareUI()
+        
     }
     
     func fill(with product: Product) {
@@ -32,10 +32,11 @@ class PreviousOrderTableViewCell: UITableViewCell {
             }
         }
     
-    func prepareView() {
-        
-        firstView.layer.borderWidth = 1
-        firstView.layer.cornerRadius = 12
-        firstView.layer.borderColor = UIColor(named: "Primary")?.cgColor
+    func prepareUI() {
+        selectionStyle = .none
+        productImage.layer.cornerRadius = 12
+        productImage.layer.borderWidth = 1
+        productImage.layer.borderColor = UIColor(named: "Primary")?.cgColor
+        productImage.clipsToBounds = true
     }
 }

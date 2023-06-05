@@ -13,8 +13,8 @@ class OrderHistoryViewController: UIViewController {
     
     let viewModel = OrderHistoryViewModel()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         navigationItem.setHidesBackButton(true, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
