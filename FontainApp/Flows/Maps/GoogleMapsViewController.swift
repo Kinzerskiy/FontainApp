@@ -7,10 +7,6 @@
 
 import UIKit
 import GoogleMaps
-import UIKit
-import GoogleMaps
-import UIKit
-import GoogleMaps
 
 class GoogleMapsViewController: UIViewController {
 
@@ -24,65 +20,72 @@ class GoogleMapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
-
-        if CLLocationManager.locationServicesEnabled() {
-            DispatchQueue.main.async {
-                self.locationManager = CLLocationManager()
-                self.locationManager.delegate = self
-                self.locationManager.requestWhenInUseAuthorization()
-            }
-        }
-
         pointInfo?.roundCorners([.topLeft, .topRight], radius: 30)
     }
 
     func prepareUI() {
         pointInfoView.isHidden = true
         pointInfo = StoreInfoView.setup(in: pointInfoView)
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkLocationAuthorization()
+    }
+    
+    func checkLocationAuthorization() {
+        let authorizationStatus = locationManager.authorizationStatus
+        
+        if authorizationStatus == .authorizedWhenInUse || authorizationStatus == .authorizedAlways {
+            startUpdatingLocation()
+        } else if authorizationStatus == .denied {
+            // Handle denied authorization status
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func startUpdatingLocation() {
+        DispatchQueue.main.async {
+            let camera = GMSCameraPosition.camera(withLatitude: 50.450526, longitude: 30.52797, zoom: 15.0)
+            self.googleMapView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
+            self.googleMapView?.delegate = self
+
+            if let mapView = self.googleMapView {
+                self.mapView.addSubview(mapView)
+
+                GoogleMapManager().getStoreLocations { locations in
+                    if let locations = locations {
+                        self.addMarkersToMap(with: locations, on: mapView)
+                    }
+                }
+            }
+        }
+    }
+    
+    func addMarkersToMap(with locations: [Location], on mapView: GMSMapView) {
+        for location in locations {
+            let marker = GMSMarker()
+            
+            marker.position = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
+            marker.title = location.title
+            marker.snippet = location.snippet
+            marker.map = mapView
+            marker.userData = location
+            
+            marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
+            marker.tracksInfoWindowChanges = true
+        }
     }
 }
 
 extension GoogleMapsViewController: CLLocationManagerDelegate {
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        let authorizationStatus = manager.authorizationStatus
-
-        if authorizationStatus == .authorizedWhenInUse {
-            DispatchQueue.main.async {
-                let camera = GMSCameraPosition.camera(withLatitude: 50.450526, longitude: 30.52797, zoom: 15.0)
-                self.googleMapView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
-                self.googleMapView?.delegate = self
-
-                if let mapView = self.googleMapView {
-                    self.mapView.addSubview(mapView)
-
-                    GoogleMapManager().getStoreLocations { locations in
-                        if let locations = locations {
-                            self.addMarkersToMap(with: locations, on: mapView)
-                        }
-                    }
-                }
-            }
-        } else {
-            DispatchQueue.main.async {
-                return
-            }
-        }
-    }
-
-    func addMarkersToMap(with locations: [Location], on mapView: GMSMapView) {
-        for location in locations {
-            let marker = GMSMarker()
-
-            marker.position = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
-            marker.title = location.title
-            marker.snippet = location.snippet
-            marker.map = mapView
-            marker.userData = location
-
-            marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
-            marker.tracksInfoWindowChanges = true
-        }
+        checkLocationAuthorization()
     }
 }
 
