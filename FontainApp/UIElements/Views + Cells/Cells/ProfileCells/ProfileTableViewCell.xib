@@ -26,13 +26,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHD-eV-Szq">
-                        <rect key="frame" x="30" y="30" width="35" height="19"/>
+                        <rect key="frame" x="20" y="30" width="35" height="19"/>
                         <fontDescription key="fontDescription" name="Arimo-Regular" family="Arimo" pointSize="14"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHg-9s-gs3">
-                        <rect key="frame" x="244" y="30" width="42" height="19"/>
+                        <rect key="frame" x="304" y="30" width="42" height="19"/>
                         <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -41,8 +41,8 @@
                 <constraints>
                     <constraint firstItem="kHD-eV-Szq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Tgc-d3-hzd"/>
                     <constraint firstItem="vHg-9s-gs3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="aDu-fd-vH6"/>
-                    <constraint firstAttribute="trailing" secondItem="vHg-9s-gs3" secondAttribute="trailing" constant="80" id="bS8-MK-eoj"/>
-                    <constraint firstItem="kHD-eV-Szq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="oC1-ri-1bi"/>
+                    <constraint firstAttribute="trailing" secondItem="vHg-9s-gs3" secondAttribute="trailing" constant="20" id="bS8-MK-eoj"/>
+                    <constraint firstItem="kHD-eV-Szq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oC1-ri-1bi"/>
                     <constraint firstItem="vHg-9s-gs3" firstAttribute="centerY" secondItem="kHD-eV-Szq" secondAttribute="centerY" id="plM-aL-qpP"/>
                 </constraints>
             </tableViewCellContentView>

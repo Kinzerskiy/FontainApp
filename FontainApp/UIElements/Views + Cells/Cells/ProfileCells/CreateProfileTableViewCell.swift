@@ -9,7 +9,6 @@ import UIKit
 
 enum  NameOfLabels: String  {
     case fullName = "Full name"
-    case phoneNumber = "Phone number"
     case country = "Country"
     case city = "City"
     case street = "Street, house number"

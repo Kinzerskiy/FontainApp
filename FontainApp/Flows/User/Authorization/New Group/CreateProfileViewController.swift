@@ -20,7 +20,7 @@ class CreateProfileViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
-    var dataSource: [NameOfLabels] = [.fullName, .phoneNumber, .country, .city, .street, .zipCode]
+    var dataSource: [NameOfLabels] = [.fullName, .country, .city, .street, .zipCode]
     var user: User?
     
     override func viewDidLoad() {
@@ -47,11 +47,9 @@ class CreateProfileViewController: UIViewController {
         profilePhoto.contentMode = .scaleAspectFill
         profilePhoto.clipsToBounds = true
         profilePhoto.isHidden = true
-        
-       
     }
     
-    @IBAction func addPhotoAction(_ sender: Any) {
+    func addPhoto() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
@@ -59,8 +57,12 @@ class CreateProfileViewController: UIViewController {
         present(picker, animated: true)
     }
     
+    @IBAction func addPhotoAction(_ sender: Any) {
+        addPhoto()
+    }
+    
     @IBAction func editPhotoAction(_ sender: Any) {
-        
+        addPhoto()
     }
     
     @IBAction func saveAction(_ sender: Any) {
@@ -75,7 +77,7 @@ class CreateProfileViewController: UIViewController {
                 guard let self = self, let user = self.user else { return }
                 
                 let newUser = User(uuid: Auth.auth().currentUser!.uid,
-                                   phoneNumber: user.phoneNumber,
+                                   phoneNumber: Auth.auth().currentUser!.phoneNumber,
                                    fullName: user.fullName,
                                    city: user.city,
                                    country: user.country,
@@ -87,6 +89,7 @@ class CreateProfileViewController: UIViewController {
                 userManager.saveUserFields(user: newUser) { [weak self] in
                     self?.user = newUser
                 }
+                navigationController?.popToRootViewController(animated: true)
             }
         } else {
             return
@@ -124,8 +127,6 @@ extension CreateProfileViewController: UITableViewDelegate, UITableViewDataSourc
         switch model {
         case .fullName:
             user?.fullName = text
-        case .phoneNumber:
-            user?.phoneNumber = text
         case .country:
             user?.country = text
         case .city:
