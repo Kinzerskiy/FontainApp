@@ -352,15 +352,17 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-yD-Py1">
-                                <rect key="frame" x="30" y="583" width="315" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <rect key="frame" x="30" y="586" width="315" height="32"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <color key="tintColor" name="Error"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Logout"/>
                                 <connections>
-                                    <action selector="logOutAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="2Ul-YI-0Uv"/>
+                                    <action selector="editProfileAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="2Ul-YI-0Uv"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uAF-al-CjI">
-                                <rect key="frame" x="0.0" y="152" width="375" height="431"/>
+                                <rect key="frame" x="0.0" y="152" width="375" height="434"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxG-XP-SkV">
@@ -369,7 +371,7 @@
                                 <state key="normal" image="icon-edit"/>
                                 <connections>
                                     <action selector="editPhotoAction:" destination="AXO-ex-T4T" eventType="touchUpInside" id="4SU-I0-lxq"/>
-                                    <action selector="editProfileAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="hkr-f5-OIq"/>
+                                    <action selector="editPhotoAction:" destination="fF3-W7-G7b" eventType="touchUpInside" id="hkr-f5-OIq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -394,7 +396,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile" id="MHe-8D-UwY"/>
                     <connections>
-                        <outlet property="logOutButton" destination="Zft-yD-Py1" id="rGh-aI-6Ye"/>
+                        <outlet property="editProfileButton" destination="Zft-yD-Py1" id="rGh-aI-6Ye"/>
                         <outlet property="profilePhoto" destination="274-sZ-4Ky" id="wG8-d6-j1c"/>
                         <outlet property="tableView" destination="uAF-al-CjI" id="UnO-Ig-SM7"/>
                     </connections>
@@ -957,6 +959,9 @@
         <image name="history" width="22" height="21"/>
         <image name="icon-edit" width="21" height="21"/>
         <image name="profile" width="20" height="22"/>
+        <namedColor name="Error">
+            <color red="1" green="0.35699999332427979" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.0" green="0.72899997234344482" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -21,8 +21,8 @@ class ProfileViewController: UIViewController {
     
     func prepareUI() {
         tableView.register(.init(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
         
         logOutButton.layer.cornerRadius = logOutButton.frame.height / 2
         logOutButton.layer.borderColor = UIColor.init(named: "Error")?.cgColor
@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController {
     }
     
 }
-
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-    
-}
+//
+//extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+//    
+//}

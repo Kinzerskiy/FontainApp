@@ -66,14 +66,8 @@ class CreateProfileViewController: UIViewController {
     @IBAction func saveAction(_ sender: Any) {
         guard user != nil else { return }
         
-        let allFieldsFilled = dataSource.allSatisfy { model in
-            guard let indexPath = dataSource.firstIndex(of: model),
-                  let cell = tableView.cellForRow(at: IndexPath(row: 0, section: indexPath)) as? CreateProfileTableViewCell else { return false }
-            return cell.isFilled
-        }
-        
-        if allFieldsFilled, let profileImage = profilePhoto.image {
-            addPhotoButton.activeStyle()
+        if let profileImage = profilePhoto.image {
+          
             let fileManager = FileManager()
             guard let imageData = profileImage.pngData(), let currentUser = Auth.auth().currentUser else { return }
             
@@ -141,6 +135,13 @@ extension CreateProfileViewController: UITableViewDelegate, UITableViewDataSourc
         case .zipCode:
             user?.zipCode = text
         }
+        guard let user = user else { return }
+        if user.checkIsUserFilled() {
+            saveButton.activeStyle()
+        } else {
+            saveButton.unactiveStyle()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

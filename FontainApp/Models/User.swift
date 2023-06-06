@@ -16,4 +16,11 @@ struct User: Codable {
     var street: String?
     var zipCode: String?
     var imageUrl: String?
+    
+    
+    func checkIsUserFilled() -> Bool {
+        if fullName != nil, city != nil, country != nil, street != nil, zipCode != nil {
+            return true
+        } else { return false }
+    }
 }

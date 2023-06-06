@@ -21,9 +21,11 @@ class GoogleMapsViewController: UIViewController {
         prepareUI()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
+            DispatchQueue.main.async {
+                self.locationManager = CLLocationManager()
+                self.locationManager.delegate = self
+                self.locationManager.requestWhenInUseAuthorization()
+            }
         }
         
         pointInfo?.roundCorners([.topLeft, .topRight], radius: 30)
