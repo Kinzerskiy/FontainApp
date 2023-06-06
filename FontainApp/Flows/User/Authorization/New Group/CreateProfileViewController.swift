@@ -136,13 +136,12 @@ extension CreateProfileViewController: UITableViewDelegate, UITableViewDataSourc
         case .zipCode:
             user?.zipCode = text
         }
-        guard let user = user else { return }
-        if user.checkIsUserFilled() {
+        
+         if let user = user, user.checkIsUserFilled() {
             saveButton.activeStyle()
         } else {
             saveButton.unactiveStyle()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

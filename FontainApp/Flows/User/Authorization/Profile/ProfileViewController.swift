@@ -61,9 +61,6 @@ class ProfileViewController: UIViewController {
         profilePhoto.clipsToBounds = true
     }
     
-  
-    
-    
     @IBAction func editProfileAction(_ sender: Any) {
         let user = User(uuid: user?.uuid,
                         phoneNumber: nil,
@@ -83,8 +80,19 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutAction(_ sender: Any) {
-        
-    }
+        do {
+            try Auth.auth().signOut()
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+
+            UIApplication.shared.windows.first?.rootViewController = navigationController
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            
+           } catch let error as NSError {
+               print("Error signing out: \(error.localizedDescription)")
+           }
+       }
     
 }
 
@@ -95,7 +103,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
             return 6
         }
         

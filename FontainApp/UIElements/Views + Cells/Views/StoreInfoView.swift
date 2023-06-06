@@ -9,6 +9,9 @@ import UIKit
 
 class StoreInfoView: UIView {
 
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var storeAddress: UILabel!
+    @IBOutlet weak var storePhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +24,12 @@ class StoreInfoView: UIView {
         view.addSubview(storeInfoView)
         return storeInfoView
     }
+    
+    func configure(with location: Location) {
+           storeName.text = location.storeName
+           storeAddress.text = location.storeAddress
+           // Set the store photo using location.storePhoto
+       }
     
     
     func prepareView() {
