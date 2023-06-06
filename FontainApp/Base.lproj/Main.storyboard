@@ -889,16 +889,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMF-d6-k7H">
-                                <rect key="frame" x="0.0" y="66" width="375" height="396"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKn-55-yJq">
-                                <rect key="frame" x="20" y="31" width="335" height="24"/>
+                                <rect key="frame" x="134.5" y="31" width="106" height="24"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-fr-gzP" customClass="StoreInfoView" customModule="FontainApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-fr-gzP">
                                 <rect key="frame" x="0.0" y="462" width="375" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="jUz-5m-Q1c"/>
@@ -908,16 +908,15 @@
                         <viewLayoutGuide key="safeArea" id="7Mz-KX-RiS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HMF-d6-k7H" firstAttribute="top" secondItem="fKn-55-yJq" secondAttribute="bottom" constant="11" id="8Wz-CM-fs9"/>
-                            <constraint firstItem="ZZ3-fr-gzP" firstAttribute="trailing" secondItem="HMF-d6-k7H" secondAttribute="trailing" id="GJD-Su-zx3"/>
-                            <constraint firstItem="HMF-d6-k7H" firstAttribute="leading" secondItem="7Mz-KX-RiS" secondAttribute="leading" id="XE9-Su-0d8"/>
-                            <constraint firstItem="ZZ3-fr-gzP" firstAttribute="leading" secondItem="HMF-d6-k7H" secondAttribute="leading" id="fng-5z-I5m"/>
-                            <constraint firstItem="fKn-55-yJq" firstAttribute="top" secondItem="7Mz-KX-RiS" secondAttribute="top" constant="11" id="i1P-Ql-7ol"/>
-                            <constraint firstItem="7Mz-KX-RiS" firstAttribute="bottom" secondItem="ZZ3-fr-gzP" secondAttribute="bottom" id="ign-Yc-L32"/>
-                            <constraint firstItem="7Mz-KX-RiS" firstAttribute="trailing" secondItem="HMF-d6-k7H" secondAttribute="trailing" id="mL2-9F-13M"/>
-                            <constraint firstItem="7Mz-KX-RiS" firstAttribute="trailing" secondItem="fKn-55-yJq" secondAttribute="trailing" constant="20" id="nPT-oh-9Dj"/>
-                            <constraint firstItem="ZZ3-fr-gzP" firstAttribute="top" secondItem="HMF-d6-k7H" secondAttribute="bottom" id="uCY-Q5-Lpm"/>
-                            <constraint firstItem="fKn-55-yJq" firstAttribute="leading" secondItem="7Mz-KX-RiS" secondAttribute="leading" constant="20" id="zqi-dN-i0M"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="leading" secondItem="7Mz-KX-RiS" secondAttribute="leading" id="0QO-DD-cio"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="top" secondItem="93d-9R-puN" secondAttribute="top" constant="66" id="Cu2-Y5-Cjm"/>
+                            <constraint firstItem="7Mz-KX-RiS" firstAttribute="bottom" secondItem="HMF-d6-k7H" secondAttribute="bottom" id="EMu-TQ-FO8"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="centerX" secondItem="fKn-55-yJq" secondAttribute="centerX" id="MSf-Vf-eMC"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="trailing" secondItem="ZZ3-fr-gzP" secondAttribute="trailing" id="T35-uO-NeA"/>
+                            <constraint firstItem="7Mz-KX-RiS" firstAttribute="bottom" secondItem="ZZ3-fr-gzP" secondAttribute="bottom" id="Tax-YN-glU"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="trailing" secondItem="7Mz-KX-RiS" secondAttribute="trailing" id="ay6-Zz-dTI"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="leading" secondItem="ZZ3-fr-gzP" secondAttribute="leading" id="iFK-qU-f3B"/>
+                            <constraint firstItem="HMF-d6-k7H" firstAttribute="top" secondItem="fKn-55-yJq" secondAttribute="bottom" constant="11" id="zT9-An-MPP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Map" id="7Up-l9-ORO"/>
