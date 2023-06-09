@@ -20,9 +20,10 @@ class GoogleMapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
-        pointInfo?.roundCorners([.topLeft, .topRight], radius: 30)
+        self.tabBarController?.delegate = self
+        pointInfoView.roundCorners([.topLeft, .topRight], radius: 30)
     }
-
+    
     func prepareUI() {
         pointInfoView.isHidden = true
         pointInfo = StoreInfoView.setup(in: pointInfoView)
@@ -101,4 +102,14 @@ extension GoogleMapsViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         pointInfoView.isHidden = true
     }
+}
+
+extension GoogleMapsViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+            if let tappedIndex = tabBarController.viewControllers?.firstIndex(of: viewController) {
+                tabBarController.tabBar.items?[tappedIndex].scaleUpSymbol()
+            }
+            return true
+        }
 }

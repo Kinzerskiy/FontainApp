@@ -26,6 +26,13 @@ class CreateProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(endEdit)))
+    }
+    
+    
+    @objc func endEdit() {
+        view.endEditing(true)
     }
     
     func prepareUI() {

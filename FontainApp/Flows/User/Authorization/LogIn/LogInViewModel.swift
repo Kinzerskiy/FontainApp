@@ -15,7 +15,7 @@ class LogInViewModel {
     var isPrivacyAccepted: Bool = false
     
     func isValidData() -> Bool {
-        return phoneNumber.count <= 11 && isPrivacyAccepted
+        return phoneNumber.count <= 13 && isPrivacyAccepted
         }
     
     func login(completion: @escaping (String?) -> ()) {

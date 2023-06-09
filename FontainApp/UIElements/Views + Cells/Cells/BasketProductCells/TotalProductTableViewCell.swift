@@ -15,6 +15,8 @@ class TotalProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var firstView: UIView!
     
+    @IBOutlet weak var countLabel: UILabel!
+    
     @IBOutlet weak var plusView: UIView!
     @IBOutlet weak var minusView: UIView!
     
@@ -31,13 +33,15 @@ class TotalProductTableViewCell: UITableViewCell {
     }
     
     func fill(with model: BasketProduct) {
-        
-        guard let imageUrl = model.product.productImageUrl, let source = URL.init(string: imageUrl) else { return }
-        
-        productImage.kf.setImage(with: source)
         productNameLabel.text = model.product.name
         productMeasureLabel.text = model.product.measure
+        countLabel.text = String(model.count)
+        
         productPriceLabel.text = "€" + String(model.product.price)
+        
+        guard let imageUrl = model.product.productImageUrl, let source = URL.init(string: imageUrl) else { return }
+        productImage.kf.setImage(with: source)
+        
         
     }
     

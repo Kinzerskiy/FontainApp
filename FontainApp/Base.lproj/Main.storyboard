@@ -3,7 +3,8 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -171,7 +172,6 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="J6f-s3-AEw" eventType="touchUpInside" id="P4J-y0-tBn"/>
-                                    <segue destination="AXO-ex-T4T" kind="show" identifier="fromCodeToProfileFields" id="7Ba-id-WPR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwg-th-mwd">
@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj0-TM-Fax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991" y="107"/>
+            <point key="canvasLocation" x="3036" y="107"/>
         </scene>
         <!--Create Profile View Controller-->
         <scene sceneID="oR8-VR-hfX">
@@ -239,13 +239,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-Zv-GCl">
-                                <rect key="frame" x="10" y="75" width="355" height="20"/>
+                                <rect key="frame" x="10" y="31" width="355" height="20"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CwA-fF-QoM">
-                                <rect key="frame" x="0.0" y="197" width="375" height="419"/>
+                                <rect key="frame" x="0.0" y="153" width="375" height="463"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXk-s5-3M2">
@@ -265,7 +265,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MK-tb-Jed">
-                                <rect key="frame" x="324" y="102" width="21" height="22"/>
+                                <rect key="frame" x="324" y="58" width="21" height="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="icon-edit"/>
                                 <connections>
@@ -273,7 +273,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhu-Wx-FBk">
-                                <rect key="frame" x="30" y="102" width="75" height="75"/>
+                                <rect key="frame" x="30" y="58" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="pfw-T3-cTu"/>
                                     <constraint firstAttribute="height" constant="75" id="xZK-5n-TR3"/>
@@ -289,7 +289,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrk-sW-Lb3">
-                                <rect key="frame" x="30" y="102" width="75" height="75"/>
+                                <rect key="frame" x="30" y="58" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Cr2-wp-oi4"/>
                                     <constraint firstAttribute="height" constant="75" id="Mff-nz-C2c"/>
@@ -898,7 +898,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-fr-gzP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ3-fr-gzP" customClass="StoreInfoView" customModule="FontainApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="462" width="375" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="jUz-5m-Q1c"/>
@@ -919,7 +919,9 @@
                             <constraint firstItem="HMF-d6-k7H" firstAttribute="top" secondItem="fKn-55-yJq" secondAttribute="bottom" constant="11" id="zT9-An-MPP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Map" id="7Up-l9-ORO"/>
+                    <tabBarItem key="tabBarItem" title="" id="7Up-l9-ORO">
+                        <imageReference key="image" image="sales point" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="mapView" destination="HMF-d6-k7H" id="TAD-hq-5Xa"/>
                         <outlet property="pointInfoView" destination="ZZ3-fr-gzP" id="SFl-pz-mEA"/>
@@ -951,7 +953,6 @@
     </scenes>
     <resources>
         <image name="Ellipse 1" width="174" height="313"/>
-        <image name="Map" width="20" height="24"/>
         <image name="Property 1=active" width="23" height="23"/>
         <image name="Property 1=active (1)" width="24" height="23"/>
         <image name="amico 1" width="258" height="220"/>
@@ -959,6 +960,7 @@
         <image name="history" width="22" height="21"/>
         <image name="icon-edit" width="21" height="21"/>
         <image name="profile" width="20" height="22"/>
+        <image name="sales point" width="20" height="24"/>
         <namedColor name="Error">
             <color red="1" green="0.35699999332427979" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

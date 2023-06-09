@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -156,6 +156,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="countLabel" destination="VTd-40-HK3" id="qgt-3x-GC9"/>
                 <outlet property="firstView" destination="ChK-52-OT8" id="EfA-8R-M32"/>
                 <outlet property="minusButton" destination="jkz-nP-OZM" id="S4j-1j-bW8"/>
                 <outlet property="minusView" destination="VyN-Hp-hVH" id="iTp-CJ-m69"/>

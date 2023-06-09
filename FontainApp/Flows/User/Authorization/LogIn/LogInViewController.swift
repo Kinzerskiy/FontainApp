@@ -40,7 +40,7 @@ class LogInViewController: UIViewController, CountryPickerDelegate {
         
         let locale = Locale.current
         _ = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
-        picker.displayOnlyCountriesWithCodes = [ "SE", "NO", "DE", "UA"] //display only
+        picker.displayOnlyCountriesWithCodes = ["UA", "SE", "NO", "DE"] //display only
         picker.exeptCountriesWithCodes = ["RU"] //exept country
         let theme = CountryViewTheme(countryCodeTextColor: .black, countryNameTextColor: .black, rowBackgroundColor: .white, showFlagsBorder: false)
         picker.theme = theme
