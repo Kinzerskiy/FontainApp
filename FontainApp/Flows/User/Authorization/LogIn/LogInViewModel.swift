@@ -15,14 +15,13 @@ class LogInViewModel {
     var isPrivacyAccepted: Bool = false
     
     func isValidData() -> Bool {
-        return phoneNumber.count <= 13 && isPrivacyAccepted
+        return phoneNumber.count <= 14 && isPrivacyAccepted
         }
     
     func login(completion: @escaping (String?) -> ()) {
         
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if let verificationID = verificationID {
-//                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
                 completion(verificationID)
             } else if let error = error {
                 print(error.localizedDescription)

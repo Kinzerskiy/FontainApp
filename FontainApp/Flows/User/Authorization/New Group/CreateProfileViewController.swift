@@ -19,17 +19,70 @@ class CreateProfileViewController: UIViewController {
     @IBOutlet weak var profilePhoto: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
-    
+
     var dataSource: [NameOfLabels] = [.fullName, .country, .city, .street, .zipCode]
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
-        view.isUserInteractionEnabled = true
+        showNotificationPermissionPopup()
         view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(endEdit)))
     }
     
+    func showNotificationPermissionPopup() {
+        let alertController = UIAlertController(title: "Water Delivery Would Like to Send You Notifications",
+                                                message: "Notifications may include alerts, sounds, and icon badges. They can be configured in Settings.",
+                                                preferredStyle: .alert)
+        
+        let allowAction = UIAlertAction(title: "Allow", style: .default) { _ in
+            self.handleAllowNotification()
+        }
+        alertController.addAction(allowAction)
+        
+        let dontAllowAction = UIAlertAction(title: "Don't Allow", style: .cancel) { _ in
+            self.handleDontAllowNotification()
+        }
+        alertController.addAction(dontAllowAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleAllowNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                    self.showNotificationEnabledAlert()
+                }
+            } else {
+                self.showNotificationDisabledAlert()
+            }
+        }
+    }
+    
+    func handleDontAllowNotification() {
+        self.showNotificationDisabledAlert()
+    }
+    
+    func showNotificationEnabledAlert() {
+        let alertController = UIAlertController(title: "Notifications Enabled",
+                                                message: "You will now receive notifications.",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNotificationDisabledAlert() {
+        
+        let alertController = UIAlertController(title: "Notifications Disabled",
+                                                message: "You have disabled notifications for this app. You can enable them later in Settings.",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
     
     @objc func endEdit() {
         view.endEditing(true)

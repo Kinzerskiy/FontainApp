@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +29,6 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wge-ba-0p5">
                                     <rect key="frame" x="104" y="0.0" width="1" height="38"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="gfS-DO-DHh"/>
                                     </constraints>
@@ -59,7 +58,7 @@
                                         <action selector="selectCountryButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="OdJ-E1-PBj"/>
                                     </connections>
                                 </button>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-yF-4ae">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-yF-4ae">
                                     <rect key="frame" x="105" y="0.0" width="236" height="38"/>
                                     <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
@@ -84,7 +83,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="msH-9s-tfZ" firstAttribute="leading" secondItem="pfR-4i-nS7" secondAttribute="leading" constant="1" id="9MW-L3-P2k"/>
                         <constraint firstItem="msH-9s-tfZ" firstAttribute="top" secondItem="pfR-4i-nS7" secondAttribute="top" constant="1" id="DL5-fH-Wud"/>
@@ -93,8 +91,8 @@
                         <constraint firstAttribute="bottom" secondItem="msH-9s-tfZ" secondAttribute="bottom" constant="1" id="hu0-ww-lrW"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error_text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-re-WAS">
-                    <rect key="frame" x="0.0" y="99" width="61" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter correct number." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-re-WAS">
+                    <rect key="frame" x="0.0" y="99" width="176" height="16"/>
                     <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="13"/>
                     <color key="textColor" name="Error"/>
                     <nil key="highlightedColor"/>
@@ -120,6 +118,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="borderView" destination="wge-ba-0p5" id="LiZ-wk-i20"/>
                 <outlet property="contentView" destination="pfR-4i-nS7" id="37h-nP-YFk"/>
                 <outlet property="contentView2" destination="msH-9s-tfZ" id="Ehv-hv-Fx1"/>
                 <outlet property="errorTextLabel" destination="fgV-re-WAS" id="sGE-uR-zIc"/>

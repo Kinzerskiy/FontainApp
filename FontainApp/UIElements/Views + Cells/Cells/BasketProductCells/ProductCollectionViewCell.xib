@@ -123,7 +123,7 @@
                 <outlet property="buyView" destination="axL-d9-qdH" id="hrK-j2-6V2"/>
                 <outlet property="firstView" destination="7pT-fY-6hN" id="IDZ-Cg-EX0"/>
                 <outlet property="productCostLabel" destination="t7M-EH-sXK" id="Xxc-Tq-H8G"/>
-                <outlet property="productImageLabel" destination="ByV-zj-UlL" id="qrs-iH-tif"/>
+                <outlet property="productImageView" destination="ByV-zj-UlL" id="qrs-iH-tif"/>
                 <outlet property="productMeasureLabel" destination="58m-1B-FKC" id="0cq-38-BQw"/>
                 <outlet property="productNameLabel" destination="OHV-8J-a0c" id="dRa-Ba-zUg"/>
             </connections>

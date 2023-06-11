@@ -33,9 +33,26 @@ class SmsView: UIView {
         return smsView
     }
     
+    func checkCode() {
+        let codeText = codeTextField.text ?? ""
+        let isValidCode = codeText.count == 6
+        
+        errorLabel.isHidden = isValidCode
+        
+        if isValidCode {
+            codeTextField.layer.borderColor = UIColor.systemGray.cgColor
+            codeTextField.layer.borderWidth = 0
+           } else {
+               codeTextField.layer.borderColor = UIColor(named: "Error")?.cgColor
+               codeTextField.layer.borderWidth = 1.0
+           }
+       }
+    
     @objc func textFieldEdidtingDidChange(_ textField :UITextField) {
         let attributedString = NSMutableAttributedString(string: textField.text!)
         attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(20.0), range: NSRange(location: 0, length: attributedString.length))
         textField.attributedText = attributedString
+        
+        checkCode()
     }
 }

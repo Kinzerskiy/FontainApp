@@ -9,20 +9,26 @@ import UIKit
 import Kingfisher
 
 class ProductViewController: UIViewController {
-
+    
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var addProductView: UIView!
     
     var productPopUp: ItemAddedToCardView?
     var viewModel = ProductViewModel()
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        prepareUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareUI()
        
         prepareCollectionView()
         getData()
     }
+   
     
     func getData() {
         viewModel.getData { [weak self] error in
@@ -35,24 +41,22 @@ class ProductViewController: UIViewController {
     }
     
     func prepareCollectionView() {
-        
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
         
         productCollectionView.register(.init(nibName: "ProductCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductCollectionViewCell")
     }
     
+    // TODO: make notification "would like to permission to track you across app." and "showing notifications from  Firebase Cloud Messaging"
+    
     func prepareUI() {
-
-        self.navigationItem.setHidesBackButton(true, animated: true)
         productPopUp = ItemAddedToCardView.setup(in: addProductView)
-        
+        self.navigationItem.setHidesBackButton(true, animated: true)
         productPopUp?.isHidden = true
     }
 }
 
 extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
@@ -62,11 +66,11 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           
-            let cellWidth = collectionView.frame.width / 2 - 20
-            let cellHeight = cellWidth
-            return CGSize(width: cellWidth, height: cellHeight)
-        }
+        
+        let cellWidth = collectionView.frame.width / 2 - 20
+        let cellHeight = cellWidth
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.productManager.models.count
@@ -83,9 +87,22 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.buyComplition = {
             BasketManager.shared.add(product: product)
+            
+            
+            // TODO: make wright productPopUp not overlaying collectionView
+            
             self.productPopUp?.show()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                   self.view.insertSubview(self.addProductView, at: 0)
+               }
+            
+            self.productPopUp?.viewBuyCompletion = {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "BasketViewController") as! BasketViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         }
+       
         return cell
     }
-    
 }

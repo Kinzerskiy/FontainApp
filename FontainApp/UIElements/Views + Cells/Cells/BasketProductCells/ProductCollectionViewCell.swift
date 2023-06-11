@@ -13,7 +13,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productMeasureLabel: UILabel!
     @IBOutlet weak var productCostLabel: UILabel!
-    @IBOutlet weak var productImageLabel: UIImageView!
+    @IBOutlet weak var productImageView: UIImageView!
     
     @IBOutlet weak var buyView: UIView!
     @IBOutlet weak var buyButton: UIButton!
@@ -30,11 +30,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         guard let imageUrl = model.productImageUrl, let source = URL.init(string: imageUrl) else { return }
         
-        productImageLabel.kf.setImage(with: source)
+        productImageView.kf.setImage(with: source)
         productNameLabel.text = model.name
         productMeasureLabel.text = model.measure
         productCostLabel.text = "€" + String(model.price)
-        productImageLabel.image = UIImage(named: model.productImageUrl ?? "")
     }
     
     func prepareUI() {
@@ -50,7 +49,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buyButtonPressed(_ sender: Any) {
         buyComplition?()
-       
     }
-    
 }
