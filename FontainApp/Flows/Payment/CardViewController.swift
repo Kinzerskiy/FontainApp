@@ -39,10 +39,11 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     func saveOrder() {
         let orderManager = OrderManager()
         
-        orderManager.saveOrder(order: order) { [weak self] in
+        orderManager.saveOrder(order: order) {
             DispatchQueue.main.async {
-                self?.navigationController?.popToRootViewController(animated: true)
-                
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+                let navigationController = UINavigationController(rootViewController: viewController)
             }
         }
     }

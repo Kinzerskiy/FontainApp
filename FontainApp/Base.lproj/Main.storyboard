@@ -14,6 +14,9 @@
         <array key="ABeeZee-Regular.ttf">
             <string>ABeeZee-Regular</string>
         </array>
+        <array key="Arimo-Regular.ttf">
+            <string>Arimo-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Log In View Controller-->
@@ -404,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzU-Bd-rP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4898" y="-637"/>
+            <point key="canvasLocation" x="4896.8000000000002" y="-637.33133433283365"/>
         </scene>
         <!--Product-->
         <scene sceneID="IG0-Gb-oPJ">
@@ -617,7 +620,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="92V-fp-E3k">
-                                <rect key="frame" x="0.0" y="68" width="375" height="499"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="424"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-Kv-nEk">
@@ -639,9 +642,26 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="repeatOrderButton:" destination="ttM-bD-Xh4" eventType="touchUpInside" id="SIZ-92-xEd"/>
+                                    <action selector="repeatOrderAction:" destination="ttM-bD-Xh4" eventType="touchUpInside" id="SIZ-92-xEd"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80Z-XF-Zpj">
+                                <rect key="frame" x="30" y="507" width="315" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFR-yf-wb6">
+                                        <rect key="frame" x="0.0" y="0.0" width="255.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Arimo-Regular" family="Arimo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-6z-uPQ">
+                                        <rect key="frame" x="275.5" y="0.0" width="39.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="Arimo-Regular" family="Arimo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3fc-d7-1RA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -651,11 +671,14 @@
                             <constraint firstItem="U8a-Kv-nEk" firstAttribute="top" secondItem="TxB-kW-g5R" secondAttribute="top" constant="33" id="FAd-6k-Xa9"/>
                             <constraint firstItem="3fc-d7-1RA" firstAttribute="trailing" secondItem="U8a-Kv-nEk" secondAttribute="trailing" constant="20" id="Gkv-J6-x5W"/>
                             <constraint firstItem="3fc-d7-1RA" firstAttribute="trailing" secondItem="FOx-Lo-Uld" secondAttribute="trailing" constant="30" id="KRj-ng-uct"/>
+                            <constraint firstItem="3fc-d7-1RA" firstAttribute="trailing" secondItem="80Z-XF-Zpj" secondAttribute="trailing" constant="30" id="Xa0-2p-CgU"/>
                             <constraint firstItem="U8a-Kv-nEk" firstAttribute="leading" secondItem="3fc-d7-1RA" secondAttribute="leading" constant="20" id="aaS-3M-ltO"/>
+                            <constraint firstItem="80Z-XF-Zpj" firstAttribute="top" secondItem="92V-fp-E3k" secondAttribute="bottom" constant="15" id="b2N-XM-bIz"/>
                             <constraint firstItem="92V-fp-E3k" firstAttribute="leading" secondItem="3fc-d7-1RA" secondAttribute="leading" id="bCA-gL-dnW"/>
-                            <constraint firstItem="FOx-Lo-Uld" firstAttribute="top" secondItem="92V-fp-E3k" secondAttribute="bottom" id="bhS-3x-QeU"/>
+                            <constraint firstItem="FOx-Lo-Uld" firstAttribute="top" secondItem="80Z-XF-Zpj" secondAttribute="bottom" constant="42" id="hon-86-usp"/>
                             <constraint firstItem="FOx-Lo-Uld" firstAttribute="leading" secondItem="3fc-d7-1RA" secondAttribute="leading" constant="30" id="iCq-B0-5Zd"/>
                             <constraint firstItem="3fc-d7-1RA" firstAttribute="bottom" secondItem="FOx-Lo-Uld" secondAttribute="bottom" id="puX-32-aBv"/>
+                            <constraint firstItem="80Z-XF-Zpj" firstAttribute="leading" secondItem="3fc-d7-1RA" secondAttribute="leading" constant="30" id="u2q-XR-No8"/>
                             <constraint firstItem="3fc-d7-1RA" firstAttribute="trailing" secondItem="FOx-Lo-Uld" secondAttribute="trailing" constant="30" id="uco-pz-cCA"/>
                             <constraint firstItem="3fc-d7-1RA" firstAttribute="trailing" secondItem="92V-fp-E3k" secondAttribute="trailing" id="zyl-pB-Sfo"/>
                         </constraints>
@@ -663,6 +686,8 @@
                     <navigationItem key="navigationItem" id="1YF-H9-acG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="orderTotalLabel" destination="TdE-6z-uPQ" id="TiR-7O-ITa"/>
+                        <outlet property="repeatOrderButton" destination="FOx-Lo-Uld" id="G3o-aD-OTH"/>
                         <outlet property="tableView" destination="92V-fp-E3k" id="0Z9-gO-dYe"/>
                     </connections>
                 </viewController>

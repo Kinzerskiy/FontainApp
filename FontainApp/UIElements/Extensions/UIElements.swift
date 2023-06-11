@@ -44,18 +44,3 @@ extension UIView {
         layer.mask = maskLayer
     }
 }
-
-extension UITabBarItem {
-    func scaleUpSymbol() {
-        guard let imageView = self.value(forKey: "view") as? UIView else { return }
-        
-        UIView.animate(withDuration: 0.2, animations: {
-            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        }) { (_) in
-            UIView.animate(withDuration: 0.2, animations: {
-                imageView.transform = CGAffineTransform.identity
-            })
-        }
-    }
-}
-
