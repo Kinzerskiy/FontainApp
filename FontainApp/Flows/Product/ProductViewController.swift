@@ -47,8 +47,6 @@ class ProductViewController: UIViewController {
         productCollectionView.register(.init(nibName: "ProductCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductCollectionViewCell")
     }
     
-    // TODO: make notification "would like to permission to track you across app." and "showing notifications from  Firebase Cloud Messaging"
-    
     func prepareUI() {
         productPopUp = ItemAddedToCardView.setup(in: addProductView)
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -88,15 +86,13 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.buyComplition = {
             BasketManager.shared.add(product: product)
             
-            
-            // TODO: make wright productPopUp not overlaying collectionView
-            
             self.productPopUp?.show()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                    self.view.insertSubview(self.addProductView, at: 0)
                }
             
             self.productPopUp?.viewBuyCompletion = {
+               
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "BasketViewController") as! BasketViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }

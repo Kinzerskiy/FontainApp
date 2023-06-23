@@ -14,6 +14,7 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var cardInputLayout: PSCardInputLayout!
+    @IBOutlet weak var payOrderButton: UIButton!
     
     var cloudipspWebView: PSCloudipspWKWebView!
 
@@ -28,6 +29,7 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     
     
     func prepareUI() {
+        payOrderButton.activeStyle()
         cloudipspWebView = PSCloudipspWKWebView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height))
         self.view.addSubview(cloudipspWebView)
         
@@ -41,9 +43,11 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
         
         orderManager.saveOrder(order: order) {
             DispatchQueue.main.async {
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-                let navigationController = UINavigationController(rootViewController: viewController)
+                
+                
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+//                let navigationController = UINavigationController(rootViewController: viewController)
             }
         }
     }

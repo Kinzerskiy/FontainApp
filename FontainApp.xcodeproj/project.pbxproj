@@ -10,7 +10,6 @@
 		20AC5BDA27CB432A01458C83 /* Pods_FontainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289F779B3044489A9A97E331 /* Pods_FontainApp.framework */; };
 		8E2A2C412A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */; };
 		8E2A2C422A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */; };
-		8E34F3BB2A2E574B004FDCCB /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */; };
 		8E34F3C22A2E57CE004FDCCB /* CreateProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E34F3C02A2E57CE004FDCCB /* CreateProfileTableViewCell.swift */; };
 		8E34F3C32A2E57CE004FDCCB /* CreateProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E34F3C12A2E57CE004FDCCB /* CreateProfileTableViewCell.xib */; };
 		8E4410412A2EA0770026FD9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4410402A2EA0770026FD9D /* ProfileViewController.swift */; };
@@ -23,6 +22,8 @@
 		8E5D184329FD8A7700DE2B74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184229FD8A7700DE2B74 /* User.swift */; };
 		8E5D184529FD8A8900DE2B74 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184429FD8A8900DE2B74 /* Order.swift */; };
 		8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */; };
+		8E5E9E1C2A46098A002E82DF /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E9E1B2A46098A002E82DF /* CreateProfileViewController.swift */; };
+		8E5E9E1E2A460BBC002E82DF /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */; };
 		8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542D29EAC48D003CE78E /* LogInViewController.swift */; };
 		8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */; };
 		8E6D6A8729EC31C500589697 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D6A8629EC31C500589697 /* WelcomeViewController.swift */; };
@@ -88,7 +89,6 @@
 		3F717BE311EE770666B08C62 /* Pods-FontainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontainApp.release.xcconfig"; path = "Target Support Files/Pods-FontainApp/Pods-FontainApp.release.xcconfig"; sourceTree = "<group>"; };
 		8E2A2C3F2A213E130076FA3B /* OrderDetailsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8E2A2C402A213E130076FA3B /* OrderDetailsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailsHeaderTableViewCell.xib; sourceTree = "<group>"; };
-		8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfileViewController.swift; path = "../New Group/CreateProfileViewController.swift"; sourceTree = "<group>"; };
 		8E34F3C02A2E57CE004FDCCB /* CreateProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileTableViewCell.swift; sourceTree = "<group>"; };
 		8E34F3C12A2E57CE004FDCCB /* CreateProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateProfileTableViewCell.xib; sourceTree = "<group>"; };
 		8E4410402A2EA0770026FD9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		8E5D184229FD8A7700DE2B74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E5D184429FD8A8900DE2B74 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModels.swift; sourceTree = "<group>"; };
+		8E5E9E1B2A46098A002E82DF /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentViewController.swift; sourceTree = "<group>"; };
 		8E61542D29EAC48D003CE78E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8E6D6A8629EC31C500589697 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = FontainApp/Flows/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -194,7 +196,7 @@
 		8E34F3BE2A2E577E004FDCCB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				8E34F3BA2A2E574B004FDCCB /* CreateProfileViewController.swift */,
+				8E5E9E1B2A46098A002E82DF /* CreateProfileViewController.swift */,
 				8E4410402A2EA0770026FD9D /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -226,6 +228,7 @@
 		8E5D184A29FD8E0D00DE2B74 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				8E34F3BE2A2E577E004FDCCB /* Profile */,
 				8E61542B29EAC44C003CE78E /* Authorization */,
 			);
 			path = User;
@@ -255,7 +258,6 @@
 		8E61542B29EAC44C003CE78E /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				8E34F3BE2A2E577E004FDCCB /* Profile */,
 				8E61542C29EAC468003CE78E /* LogIn */,
 			);
 			path = Authorization;
@@ -381,6 +383,7 @@
 			children = (
 				8EC00EE82A0D47760038B9C8 /* CardViewController.swift */,
 				8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */,
+				8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -661,10 +664,11 @@
 				8E6D6A8D29EC386E00589697 /* UserManager.swift in Sources */,
 				8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */,
 				8E5D184129FD8A5400DE2B74 /* Product.swift in Sources */,
+				8E5E9E1E2A460BBC002E82DF /* SuccessPaymentViewController.swift in Sources */,
 				8E73D7472A09319C002B9217 /* TotalProductTableViewCell.swift in Sources */,
 				8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */,
 				8E714CD329E6D05C00B3BBF1 /* StoreInfoView.swift in Sources */,
-				8E34F3BB2A2E574B004FDCCB /* CreateProfileViewController.swift in Sources */,
+				8E5E9E1C2A46098A002E82DF /* CreateProfileViewController.swift in Sources */,
 				8E56BCB72A2F6C3A00189A77 /* Location.swift in Sources */,
 				8E7197F72A20FD7000593D34 /* OrderDetailsViewController.swift in Sources */,
 				8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */,

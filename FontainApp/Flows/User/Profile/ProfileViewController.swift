@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        logOutButton.layer.cornerRadius = logOutButton.frame.height / 2
+        logOutButton.layer.cornerRadius = 30
         logOutButton.layer.borderColor = UIColor.init(named: "Error")?.cgColor
         logOutButton.layer.borderWidth = 1
         tableView.separatorStyle = .none
