@@ -37,11 +37,12 @@ class OrderHistoryCollectionViewCell: UICollectionViewCell {
             
         if let products = model.products {
                 let productNames = products.compactMap { $0.product.name }
-                print("productNames: \(productNames)")
-                
+               
+           
+
                 orderProductLabel.text = productNames.joined(separator: ",")
                    } else {
-                       print("model.products is nil") // Debug print
+                       print("model.products is nil")
                    }
             
             if let total = model.total {

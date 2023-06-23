@@ -87,16 +87,11 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
             BasketManager.shared.add(product: product)
             
             self.productPopUp?.show()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                   self.view.insertSubview(self.addProductView, at: 0)
-               }
-            
+          
             self.productPopUp?.viewBuyCompletion = {
-               
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "BasketViewController") as! BasketViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-            
         }
        
         return cell

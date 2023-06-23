@@ -14,7 +14,6 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var basketTableView: UITableView!
-    @IBOutlet weak var cartLabel: UILabel!
     
     var dataSource: [DeliverySection] = []
     
@@ -87,9 +86,8 @@ class BasketViewController: UIViewController {
             vc.order = order
             self.navigationController?.pushViewController(vc, animated: true)
            } else {
-               if let tabBarController = self.tabBarController {
-                           tabBarController.selectedIndex = 0
-                       }
+               let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+               self.navigationController?.pushViewController(vc, animated: true)
            }
     }
     

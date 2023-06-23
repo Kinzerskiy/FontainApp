@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,22 +33,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcZ-jn-bN0">
-                                <rect key="frame" x="20" y="43" width="81.666666666666671" height="16"/>
-                                <string key="text">Fiji (0,5 L) - 1
-Morshynska (1,5 L) - 1</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiji (0,5 L) - 1 Morshynska (1,5 L) - ddddddddddddddddddddddddddddddddddddddd1" textAlignment="natural" lineBreakMode="clip" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcZ-jn-bN0">
+                                <rect key="frame" x="20" y="48" width="220" height="15.666666666666664"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="zJa-1i-U0U"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <lineBreakStrategy key="lineBreakStrategy" pushOut="YES" hangulWordPriority="YES"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 3,60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1js-8T-WsZ">
-                                <rect key="frame" x="253" y="43.333333333333336" width="39" height="15.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="€ 3,60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1js-8T-WsZ">
+                                <rect key="frame" x="253" y="48" width="39" height="15.666666666666664"/>
                                 <fontDescription key="fontDescription" name="ABeeZee-Regular" family="ABeeZee" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJe-47-3hk">
-                                <rect key="frame" x="295" y="41" width="25" height="20"/>
+                                <rect key="frame" x="295" y="46" width="25" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Tim-by-0fQ"/>
                                     <constraint firstAttribute="width" constant="25" id="aC5-gG-Hk8"/>
@@ -60,14 +62,14 @@ Morshynska (1,5 L) - 1</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1js-8T-WsZ" firstAttribute="top" secondItem="NcZ-jn-bN0" secondAttribute="top" id="2gr-il-xVf"/>
+                            <constraint firstItem="qJe-47-3hk" firstAttribute="leading" secondItem="1js-8T-WsZ" secondAttribute="trailing" constant="3" id="BVU-xk-aCW"/>
                             <constraint firstItem="CA1-wY-peg" firstAttribute="leading" secondItem="aAI-8t-V3w" secondAttribute="leading" constant="20" id="DbD-0e-XnP"/>
-                            <constraint firstItem="1js-8T-WsZ" firstAttribute="centerY" secondItem="NcZ-jn-bN0" secondAttribute="centerY" id="Fc0-tA-hgM"/>
-                            <constraint firstItem="NcZ-jn-bN0" firstAttribute="leading" secondItem="aAI-8t-V3w" secondAttribute="leading" constant="20" id="JOC-iS-RG8"/>
                             <constraint firstItem="CA1-wY-peg" firstAttribute="top" secondItem="aAI-8t-V3w" secondAttribute="top" constant="20" id="KVt-Kz-wjF"/>
-                            <constraint firstItem="NcZ-jn-bN0" firstAttribute="top" secondItem="CA1-wY-peg" secondAttribute="bottom" constant="5" id="ale-p7-RJN"/>
-                            <constraint firstItem="qJe-47-3hk" firstAttribute="leading" secondItem="1js-8T-WsZ" secondAttribute="trailing" constant="3" id="c8v-JV-zUN"/>
-                            <constraint firstItem="qJe-47-3hk" firstAttribute="centerY" secondItem="1js-8T-WsZ" secondAttribute="centerY" id="mah-3H-vHg"/>
+                            <constraint firstItem="NcZ-jn-bN0" firstAttribute="leading" secondItem="aAI-8t-V3w" secondAttribute="leading" constant="20" id="cNh-pT-kam"/>
+                            <constraint firstItem="NcZ-jn-bN0" firstAttribute="top" secondItem="CA1-wY-peg" secondAttribute="bottom" constant="10" id="omE-Dq-1xf"/>
                             <constraint firstAttribute="trailing" secondItem="qJe-47-3hk" secondAttribute="trailing" constant="3" id="pyT-O1-02G"/>
+                            <constraint firstItem="qJe-47-3hk" firstAttribute="centerY" secondItem="1js-8T-WsZ" secondAttribute="centerY" id="w8C-DT-RXF"/>
                         </constraints>
                     </view>
                 </subviews>

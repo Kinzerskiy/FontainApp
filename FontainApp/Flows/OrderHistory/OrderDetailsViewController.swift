@@ -31,7 +31,7 @@ class OrderDetailsViewController: UIViewController {
         repeatOrderButton.activeStyle()
         
         if let total = order?.total?.description {
-            orderTotalLabel.text = String(format: "%.2f", "€ \(total)")
+            orderTotalLabel.text = String("€ \(total)")
         } else {
             orderTotalLabel.text = "€ 0"
         }
