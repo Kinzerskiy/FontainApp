@@ -60,4 +60,8 @@ class BasketManager {
     func removeProduct(at index: Int) {
         order.products.remove(at: index)
     }
+    
+    func removeAllProducts() {
+        order.products.removeAll()
+    }
 }

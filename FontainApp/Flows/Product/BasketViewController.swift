@@ -137,6 +137,13 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
                     self?.updateDataSource()
                     self?.basketTableView.reloadData()
                 }
+                
+                cell.removeAllCompletion = { [weak self] in
+                    BasketManager.shared.removeProduct(at: indexPath.row)
+                    self?.updateDataSource()
+                    self?.basketTableView.reloadData()
+                }
+                
                 return cell
                 
             default: return UITableViewCell()

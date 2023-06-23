@@ -24,6 +24,7 @@
 		8E5D184F29FEEE6200DE2B74 /* OrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */; };
 		8E5E9E1C2A46098A002E82DF /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E9E1B2A46098A002E82DF /* CreateProfileViewController.swift */; };
 		8E5E9E1E2A460BBC002E82DF /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */; };
+		8E5E9E202A460F64002E82DF /* PaymentNotRecivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5E9E1F2A460F64002E82DF /* PaymentNotRecivedViewController.swift */; };
 		8E61542E29EAC48D003CE78E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542D29EAC48D003CE78E /* LogInViewController.swift */; };
 		8E61543029EAC4A3003CE78E /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */; };
 		8E6D6A8729EC31C500589697 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6D6A8629EC31C500589697 /* WelcomeViewController.swift */; };
@@ -67,7 +68,6 @@
 		8E8AADDF2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */; };
 		8E8AADE02A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */; };
 		8EC00EE92A0D47760038B9C8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EE82A0D47760038B9C8 /* CardViewController.swift */; };
-		8EC00EEB2A0D47B60038B9C8 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */; };
 		8EC99B7329EABC2300EC255C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC99B7229EABC2200EC255C /* UIView+Extension.swift */; };
 		8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */; };
 		8EC9E8ED29E09D28009CB6D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9E8EC29E09D28009CB6D3 /* SceneDelegate.swift */; };
@@ -103,6 +103,7 @@
 		8E5D184E29FEEE6200DE2B74 /* OrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModels.swift; sourceTree = "<group>"; };
 		8E5E9E1B2A46098A002E82DF /* CreateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
 		8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentViewController.swift; sourceTree = "<group>"; };
+		8E5E9E1F2A460F64002E82DF /* PaymentNotRecivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNotRecivedViewController.swift; sourceTree = "<group>"; };
 		8E61542D29EAC48D003CE78E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8E61542F29EAC4A3003CE78E /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8E6D6A8629EC31C500589697 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = FontainApp/Flows/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -146,7 +147,6 @@
 		8E8AADDD2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E8AADDE2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		8EC00EE82A0D47760038B9C8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		8EC99B7229EABC2200EC255C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8EC9E8E729E09D28009CB6D3 /* FontainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC9E8EA29E09D28009CB6D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -382,8 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				8EC00EE82A0D47760038B9C8 /* CardViewController.swift */,
-				8EC00EEA2A0D47B60038B9C8 /* CardViewModel.swift */,
 				8E5E9E1D2A460BBC002E82DF /* SuccessPaymentViewController.swift */,
+				8E5E9E1F2A460F64002E82DF /* PaymentNotRecivedViewController.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -654,7 +654,6 @@
 				8E56BCB52A2F6B6A00189A77 /* GoogleMapManager.swift in Sources */,
 				8E5CF2E92A01C03C00B39B3C /* ProductViewModel.swift in Sources */,
 				8E8AADDC2A1FA45C007BBB6A /* OrderHistoryViewModel.swift in Sources */,
-				8EC00EEB2A0D47B60038B9C8 /* CardViewModel.swift in Sources */,
 				8E73D74C2A094511002B9217 /* TotalTableViewCell.swift in Sources */,
 				8E73D74A2A093C5F002B9217 /* BasketProduct.swift in Sources */,
 				8E6D6A9129EC38B000589697 /* FileManager.swift in Sources */,
@@ -676,6 +675,7 @@
 				8E8AADDF2A1FA676007BBB6A /* OrderHistoryCollectionViewCell.swift in Sources */,
 				8E73D7502A09471A002B9217 /* DeliveryInfoTableViewCell.swift in Sources */,
 				8EC9E8EB29E09D28009CB6D3 /* AppDelegate.swift in Sources */,
+				8E5E9E202A460F64002E82DF /* PaymentNotRecivedViewController.swift in Sources */,
 				8E73D7422A092FFC002B9217 /* BasketViewModel.swift in Sources */,
 				8E714CB729E6B9AD00B3BBF1 /* SmsView.swift in Sources */,
 				8E34F3C22A2E57CE004FDCCB /* CreateProfileTableViewCell.swift in Sources */,
@@ -762,7 +762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -816,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -848,7 +848,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kinzerskiy.FontainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kinzerskiy1.FontainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -878,7 +878,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kinzerskiy.FontainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kinzerskiy1.FontainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

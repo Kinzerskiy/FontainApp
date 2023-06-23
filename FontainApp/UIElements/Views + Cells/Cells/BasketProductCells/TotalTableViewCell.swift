@@ -18,7 +18,7 @@ class TotalTableViewCell: UITableViewCell {
     }
     
     func fill(with model: OrderTotalViewModel) {
-            priceLabel.text = "€" + String(model.total)
+            priceLabel.text = "€" + String(format: "%.2f", model.total)
     }
 
 }

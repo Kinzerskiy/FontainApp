@@ -45,7 +45,7 @@ class OrderHistoryCollectionViewCell: UICollectionViewCell {
                    }
             
             if let total = model.total {
-                orderTotalLabel.text = String(total)
+                orderTotalLabel.text = String(format: "%.2f", total)
             } else {
                 orderTotalLabel.text = "N/A"
             }

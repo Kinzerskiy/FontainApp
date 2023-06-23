@@ -27,9 +27,15 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
         prepareUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        payOrderButton.activeStyle()
+    }
+    
     
     func prepareUI() {
-        payOrderButton.activeStyle()
+       
         cloudipspWebView = PSCloudipspWKWebView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.width, height: self.view.bounds.height))
         self.view.addSubview(cloudipspWebView)
         
@@ -44,10 +50,10 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
         orderManager.saveOrder(order: order) {
             DispatchQueue.main.async {
                 
-                
-//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-//                let navigationController = UINavigationController(rootViewController: viewController)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SuccessPaymentViewController") as! SuccessPaymentViewController
+                vc.order = self.order
+                self.navigationController?.pushViewController(vc, animated: true)
+               
             }
         }
     }
@@ -85,7 +91,6 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     
     @IBAction func onPayPressed(_ sender: Any) {
                 
-        
             guard let merchantIDString = merchantIDTextField.text,
                     let merchantID = Int(merchantIDString), merchantID > 0
         else { debugPrint("Invalid merchant ID")
@@ -114,6 +119,9 @@ class CardViewController: UIViewController, PSPayCallbackDelegate {
     
     func onPaidFailure(_ error: Error!) {
         debugPrint("onPaidFailure: %@", error.localizedDescription)
+        
+        let paymentNotReceivedVC = storyboard?.instantiateViewController(withIdentifier: "PaymentNotRecivedViewController") as! PaymentNotRecivedViewController
+           navigationController?.pushViewController(paymentNotReceivedVC, animated: true)
     }
     
     func onWaitConfirm() {

@@ -23,9 +23,10 @@ class TotalProductTableViewCell: UITableViewCell {
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     
+    
     var addCompletion: (() -> Void)?
     var removeCompletion: (() -> Void)?
-    
+    var removeAllCompletion: (() -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareView()
@@ -70,5 +71,10 @@ class TotalProductTableViewCell: UITableViewCell {
     @IBAction func minusButtonAction(_ sender: Any) {
         removeCompletion?()
     }
+    
+    @IBAction func removeProductAction(_ sender: Any) {
+        removeAllCompletion?()
+    }
+    
     
 }
