@@ -10,8 +10,6 @@ import Firebase
 
 class OrderHistoryViewModel {
     
-   
-    
     let orderManager = OrderManager()
     
     func getOrders(completion: @escaping () -> ()) {
